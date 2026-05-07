@@ -432,6 +432,11 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
 .nav-hamburger{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;}
 @media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:block;}nav#sitenav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#141414;padding:1.5rem 2rem;gap:1rem;border-bottom:1px solid rgba(232,84,58,.2);}nav#sitenav{padding:1rem 1.5rem;}}
 
+
+/* Force all content visible */
+.reveal { opacity: 1 !important; transform: translateY(0) !important; }
+.contact-info-panel, .contact-form-panel { opacity: 1 !important; }
+
 </style>
 
 <!-- ============================================
@@ -555,26 +560,191 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
     </div>
 
     <!-- GHL Form Embed -->
-    <div id="ghlFormWrap" style="min-height:920px;opacity:1;transform:none;">
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/V7sszU4p4jUsmp6l5ASW"
-        style="width:100%;height:920px;border:none;border-radius:8px;display:block;"
-        id="inline-V7sszU4p4jUsmp6l5ASW"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Contact Page Form"
-        data-height="868"
-        data-layout-iframe-id="inline-V7sszU4p4jUsmp6l5ASW"
-        data-form-id="V7sszU4p4jUsmp6l5ASW"
-        title="Contact Page Form">
-      </iframe>
+    <div id="ghlFormWrap" style="opacity:1;transform:none;">
+
+      <!-- Service Chips -->
+      <div style="margin-bottom:1.5rem;">
+        <div style="font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">I'm Interested In</div>
+        <div class="service-chips" id="serviceChips">
+          <div class="chip" data-val="seo">🔍 SEO</div>
+          <div class="chip" data-val="meta">📊 Meta Ads</div>
+          <div class="chip" data-val="google">📈 Google Ads</div>
+          <div class="chip" data-val="content">✍️ Content</div>
+          <div class="chip" data-val="social">📱 Social Media</div>
+          <div class="chip" data-val="creative">🎨 Creative</div>
+          <div class="chip" data-val="email">📧 Email & CRM</div>
+          <div class="chip" data-val="strategy">🎯 Strategy</div>
+          <div class="chip" data-val="fullstack">🚀 Full Stack</div>
+        </div>
+      </div>
+
+      <!-- Form Fields -->
+      <div class="form" id="contactForm">
+        <div class="form-row">
+          <div class="field">
+            <label>Your Name *</label>
+            <input type="text" id="fname" placeholder="Rahul Sharma" required>
+          </div>
+          <div class="field">
+            <label>Business Name</label>
+            <input type="text" id="bname" placeholder="Your Brand / Company">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Email Address *</label>
+            <input type="email" id="femail" placeholder="you@company.com" required>
+          </div>
+          <div class="field">
+            <label>Phone Number *</label>
+            <input type="tel" id="fphone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Business Type</label>
+            <select id="fbiztype">
+              <option value="" disabled selected>Select your industry</option>
+              <option>D2C / E-commerce</option>
+              <option>Fashion & Lifestyle</option>
+              <option>Education</option>
+              <option>Wellness & Ayurveda</option>
+              <option>Real Estate</option>
+              <option>Food & Beverage</option>
+              <option>Healthcare & Clinics</option>
+              <option>B2B Services</option>
+              <option>Hospitality</option>
+              <option>Luxury / Premium Brand</option>
+              <option>Local Business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Monthly Revenue</label>
+            <select id="frevenue">
+              <option value="" disabled selected>Select range</option>
+              <option>Below ₹1 Lakh</option>
+              <option>₹1L – ₹5L</option>
+              <option>₹5L – ₹20L</option>
+              <option>₹20L – ₹1 Crore</option>
+              <option>₹1 Crore+</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Marketing Budget</label>
+          <select id="fbudget">
+            <option value="" disabled selected>Select budget range</option>
+            <option>Below ₹10,000/month</option>
+            <option>₹10K – ₹50K/month</option>
+            <option>₹50K – ₹2L/month</option>
+            <option>₹2L – ₹5L/month</option>
+            <option>₹5L+/month</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Tell Us About Your Goal *</label>
+          <textarea id="fmessage" placeholder="E.g. We're a D2C skincare brand in Delhi looking to scale from ₹5L to ₹20L/month. Currently running Meta Ads with 1.8x ROAS and want to improve..." required style="min-height:130px;"></textarea>
+        </div>
+        <div class="field">
+          <label>Website URL (if any)</label>
+          <input type="url" id="fwebsite" placeholder="https://yourbrand.com">
+        </div>
+
+        <!-- Error -->
+        <div id="fError" style="display:none;background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);border-radius:8px;padding:0.85rem 1.25rem;font-size:0.85rem;color:#f87171;margin-bottom:1rem;">
+          ⚠️ <span id="fErrorMsg">Please fill all required fields.</span>
+        </div>
+
+        <div class="submit-row">
+          <button class="submit-btn" id="fSubmitBtn" type="button">
+            <span id="fBtnText">Send Message →</span>
+            <span id="fBtnLoader" style="display:none;">Sending...</span>
+          </button>
+          <p class="submit-note">We'll reply within 24 hours.<br>No spam, ever.</p>
+        </div>
+      </div>
+
+      <!-- Success -->
+      <div class="form-success" id="fSuccess" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem;gap:1rem;">
+        <div style="font-size:3rem;">🎯</div>
+        <h3 style="font-size:1.8rem;font-weight:800;color:#fff;">Message Received!</h3>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.45);max-width:360px;line-height:1.7;">Thanks for reaching out. Our team will review your details and get back to you within 24 hours.</p>
+        <a href="https://api.leadconnectorhq.com/widget/booking/NAeu7pP8iCHJOsgvcZVv" target="_blank" style="background:#E8543A;color:#fff;padding:0.85rem 2rem;border-radius:4px;text-decoration:none;font-weight:700;margin-top:0.5rem;">Book Strategy Call →</a>
+      </div>
+
     </div>
-    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+
+    <script>
+    // Service chips
+    document.querySelectorAll('.chip').forEach(function(c){
+      c.addEventListener('click',function(){c.classList.toggle('selected');});
+    });
+
+    // Submit → GHL Webhook
+    document.getElementById('fSubmitBtn').addEventListener('click',function(){
+      var fname  = (document.getElementById('fname').value||'').trim();
+      var femail = (document.getElementById('femail').value||'').trim();
+      var fphone = (document.getElementById('fphone').value||'').trim();
+      var fmsg   = (document.getElementById('fmessage').value||'').trim();
+      var bname  = (document.getElementById('bname').value||'').trim();
+      var biz    = (document.getElementById('fbiztype').value||'').trim();
+      var rev    = (document.getElementById('frevenue').value||'').trim();
+      var bud    = (document.getElementById('fbudget').value||'').trim();
+      var web    = (document.getElementById('fwebsite').value||'').trim();
+      var svcs   = Array.from(document.querySelectorAll('.chip.selected')).map(function(c){return c.dataset.val;}).join(', ');
+
+      var errEl = document.getElementById('fError');
+      var errMsg = document.getElementById('fErrorMsg');
+
+      if(!fname||!femail||!fphone||!fmsg){
+        errEl.style.display='block';
+        errMsg.textContent='Please fill in Name, Email, Phone and Goal fields.';
+        return;
+      }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(femail)){
+        errEl.style.display='block';
+        errMsg.textContent='Please enter a valid email address.';
+        return;
+      }
+      errEl.style.display='none';
+
+      var btn=document.getElementById('fSubmitBtn');
+      btn.disabled=true;
+      document.getElementById('fBtnText').style.display='none';
+      document.getElementById('fBtnLoader').style.display='inline';
+
+      var payload={
+        firstName: fname.split(' ')[0],
+        lastName:  fname.split(' ').slice(1).join(' ')||'',
+        name:      fname,
+        email:     femail,
+        phone:     fphone,
+        businessName: bname,
+        businessType: biz,
+        monthlyRevenue: rev,
+        marketingBudget: bud,
+        servicesInterested: svcs||'Not specified',
+        website: web,
+        message: fmsg,
+        source:  'Website Contact Form',
+        tags:    ['source-website','audit-requested']
+      };
+
+      fetch('https://services.leadconnectorhq.com/hooks/rTvy0ecU0xKjIm16OJbL/webhook-trigger/4f8583ca-eb8d-410d-b5c3-4412cf96d059',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(payload)
+      }).finally(function(){
+        document.getElementById('contactForm').style.display='none';
+        document.getElementById('serviceChips').parentElement.style.display='none';
+        document.querySelector('.form-subtext') && (document.querySelector('.form-subtext').style.display='none');
+        document.querySelector('.form-heading') && (document.querySelector('.form-heading').style.display='none');
+        document.getElementById('fSuccess').style.display='flex';
+      });
+    });
+    </script>
 
   </div>
 </div>
