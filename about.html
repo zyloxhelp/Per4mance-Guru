@@ -222,6 +222,21 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
 .nav-hamburger{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;}
 @media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:block;}nav#sitenav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#141414;padding:1.5rem 2rem;gap:1rem;border-bottom:1px solid rgba(232,84,58,.2);}nav#sitenav{padding:1rem 1.5rem;}}
 
+
+/* Dropdown */
+.nav-item{position:relative;}
+.dropdown{display:none;position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:#141414;border:1px solid rgba(232,84,58,0.2);border-radius:10px;min-width:220px;padding:0.5rem 0;z-index:2000;box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:#141414;border-left:1px solid rgba(232,84,58,0.2);border-top:1px solid rgba(232,84,58,0.2);}
+.nav-item:hover .dropdown{display:block;animation:ddIn 0.2s ease;}
+@keyframes ddIn{from{opacity:0;transform:translateX(-50%) translateY(-8px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+.dropdown a{display:flex;align-items:center;gap:0.65rem;padding:0.6rem 1.25rem;font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;transition:background 0.15s,color 0.15s;white-space:nowrap;}
+.dropdown a:hover{background:rgba(232,84,58,0.1);color:var(--coral,#E8543A);}
+.dropdown a::after{display:none!important;}
+.dd-icon{font-size:0.95rem;width:20px;text-align:center;}
+.dropdown-divider{height:1px;background:rgba(255,255,255,0.06);margin:0.35rem 0;}
+.nav-chevron{font-size:0.65rem;margin-left:2px;display:inline-block;transition:transform 0.2s;}
+.nav-item:hover .nav-chevron{transform:rotate(180deg);}
+
 </style>
 </head>
 <body>
@@ -233,6 +248,22 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
   </a>
   <ul class="nav-links"><li><a href="/about.html" class="active">About Us</a></li>
 <li><a href="/process.html">Our Process</a></li>
+    <li class="nav-item">
+      <a href="/services.html">Services <span class="nav-chevron">▾</span></a>
+      <div class="dropdown">
+        <a href="/services.html#seo"><span class="dd-icon">🔍</span>SEO Services</a>
+        <a href="/services.html#meta-ads"><span class="dd-icon">📊</span>Meta Ads</a>
+        <a href="/services.html#google-ads"><span class="dd-icon">📈</span>Google Ads</a>
+        <a href="/services.html#social-media"><span class="dd-icon">📱</span>Social Media</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#creative"><span class="dd-icon">🎨</span>Creative Services</a>
+        <a href="/services.html#content"><span class="dd-icon">✍️</span>Content Marketing</a>
+        <a href="/services.html#email-crm"><span class="dd-icon">📧</span>Email & CRM</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#analytics"><span class="dd-icon">📉</span>Analytics</a>
+        <a href="/services.html#strategy"><span class="dd-icon">🎯</span>Strategy</a>
+      </div>
+    </li>
 <li><a href="/locations.html">Locations</a></li>
 <li><a href="/blog.html">Blog</a></li>
 <li><a href="/team.html">Team</a></li>
@@ -539,6 +570,22 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
       <ul>
         <li><a href="/about.html" class="active">About Us</a></li>
         <li><a href="/process.html">Our Process</a></li>
+    <li class="nav-item">
+      <a href="/services.html">Services <span class="nav-chevron">▾</span></a>
+      <div class="dropdown">
+        <a href="/services.html#seo"><span class="dd-icon">🔍</span>SEO Services</a>
+        <a href="/services.html#meta-ads"><span class="dd-icon">📊</span>Meta Ads</a>
+        <a href="/services.html#google-ads"><span class="dd-icon">📈</span>Google Ads</a>
+        <a href="/services.html#social-media"><span class="dd-icon">📱</span>Social Media</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#creative"><span class="dd-icon">🎨</span>Creative Services</a>
+        <a href="/services.html#content"><span class="dd-icon">✍️</span>Content Marketing</a>
+        <a href="/services.html#email-crm"><span class="dd-icon">📧</span>Email & CRM</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#analytics"><span class="dd-icon">📉</span>Analytics</a>
+        <a href="/services.html#strategy"><span class="dd-icon">🎯</span>Strategy</a>
+      </div>
+    </li>
         <li><a href="/team.html">Team</a></li>
         <li><a href="/blog.html">Blog</a></li>
         <li><a href="/contact.html">Contact</a></li>
