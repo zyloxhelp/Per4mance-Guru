@@ -1035,5 +1035,28 @@ window.addEventListener('scroll',function(){
   if(n) n.style.padding=window.scrollY>50?'.7rem 4rem':'1.1rem 4rem';
 });
 </script>
+
+<script>
+// Force all reveal elements visible — IntersectionObserver fallback
+(function() {
+  function forceReveal() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  }
+  // Try immediately on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceReveal);
+  } else {
+    forceReveal();
+  }
+  // Also fire after short delay as backup
+  setTimeout(forceReveal, 300);
+  setTimeout(forceReveal, 800);
+})();
+</script>
+
 </body>
 </html>

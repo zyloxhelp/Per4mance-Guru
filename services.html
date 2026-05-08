@@ -492,57 +492,6 @@ footer{background:var(--bs);padding:3rem 4rem;border-top:1px solid rgba(255,255,
   </div>
 </div>
 
-<!-- Pricing -->
-<section class="pricing-sec">
-  <div class="sec-label" style="color:var(--coral);">Investment</div>
-  <h2 class="sec-title" style="color:#fff;">Flexible Packages<br>for Every <span>Stage of Growth</span></h2>
-  <div class="pkg-grid">
-    <div class="pkg">
-      <div class="pkg-name">Starter</div>
-      <div class="pkg-ideal">For new businesses & local brands</div>
-      <div class="pkg-price">Starting from<br><strong>₹25,000</strong>/month</div>
-      <ul class="pkg-services">
-        <li>1 Core Service (SEO or Paid Ads)</li>
-        <li>Monthly content (4 posts)</li>
-        <li>GMB management</li>
-        <li>Monthly performance report</li>
-        <li>Email support</li>
-      </ul>
-      <a href="/contact.html" class="pkg-cta ghost">Get Started →</a>
-    </div>
-    <div class="pkg featured">
-      <div class="pkg-badge">Most Popular</div>
-      <div class="pkg-name">Growth</div>
-      <div class="pkg-ideal">For scaling D2C & service brands</div>
-      <div class="pkg-price">Starting from<br><strong>₹60,000</strong>/month</div>
-      <ul class="pkg-services">
-        <li>2–3 Core Services</li>
-        <li>Full content calendar (12 posts)</li>
-        <li>Ad creative production</li>
-        <li>Weekly optimisation calls</li>
-        <li>Custom dashboard & reporting</li>
-        <li>Dedicated account manager</li>
-      </ul>
-      <a href="/contact.html" class="pkg-cta primary">Get Started →</a>
-    </div>
-    <div class="pkg">
-      <div class="pkg-name">Performance</div>
-      <div class="pkg-ideal">For brands serious about scale</div>
-      <div class="pkg-price">Starting from<br><strong>₹1,20,000</strong>/month</div>
-      <ul class="pkg-services">
-        <li>Full-stack digital marketing</li>
-        <li>Unlimited creative production</li>
-        <li>CRM & automation setup</li>
-        <li>Weekly strategy sessions</li>
-        <li>Founder-level access</li>
-        <li>Priority support & execution</li>
-      </ul>
-      <a href="/contact.html" class="pkg-cta ghost">Get Started →</a>
-    </div>
-  </div>
-  <p style="text-align:center;font-size:.82rem;color:rgba(255,255,255,.25);margin-top:1.5rem;">All packages are customisable. Ad spend billed separately. <a href="/contact.html" style="color:var(--coral);text-decoration:none;">Contact us</a> for a custom quote.</p>
-</section>
-
 <!-- CTA -->
 <section class="cta-sec">
   <div class="cta-i">
@@ -626,5 +575,28 @@ document.querySelectorAll('.scard,.pkg').forEach(function(el){
   obs.observe(el);
 });
 </script>
+
+<script>
+// Force all reveal elements visible — IntersectionObserver fallback
+(function() {
+  function forceReveal() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  }
+  // Try immediately on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceReveal);
+  } else {
+    forceReveal();
+  }
+  // Also fire after short delay as backup
+  setTimeout(forceReveal, 300);
+  setTimeout(forceReveal, 800);
+})();
+</script>
+
 </body>
 </html>
