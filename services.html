@@ -169,6 +169,238 @@ footer{background:var(--bs);padding:3rem 4rem;border-top:1px solid rgba(255,255,
   .fbot{flex-direction:column;gap:.5rem;text-align:center;}
   .cta-links{flex-direction:column;align-items:center;gap:1rem;}
 }
+
+/* ============================================
+   MOBILE RESPONSIVENESS FIX — All Pages
+   ============================================ */
+
+/* 1. Prevent horizontal overflow globally */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+* { box-sizing: border-box; }
+
+/* 2. Nav — hamburger fix */
+@media (max-width: 900px) {
+  nav { padding: 0.85rem 1.5rem !important; }
+  .nav-links, .nls { display: none !important; }
+  .nav-hamburger, .nhb { display: flex !important; align-items: center; justify-content: center; width: 36px; height: 36px; }
+  nav.open .nav-links,
+  nav.open .nls {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important; right: 0 !important;
+    background: #141414 !important;
+    padding: 1.25rem 1.5rem !important;
+    gap: 0.85rem !important;
+    border-bottom: 1px solid rgba(232,84,58,0.2) !important;
+    z-index: 9999 !important;
+  }
+  .nav-cta, .ncta { padding: 0.45rem 1rem !important; font-size: 0.8rem !important; }
+}
+
+/* 3. Hero section */
+@media (max-width: 768px) {
+  .hero, section.hero { padding: 5.5rem 1.25rem 3rem !important; }
+  h1 { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; line-height: 1.1 !important; }
+  .hero-sub, .hsub { font-size: 0.875rem !important; }
+  .hero-btns, .hbtns { flex-direction: column !important; gap: 0.75rem !important; }
+  .hero-btns a, .hbtns a { width: 100% !important; text-align: center !important; justify-content: center !important; }
+}
+
+/* 4. Stats bar */
+@media (max-width: 768px) {
+  .stats-bar, .sb {
+    padding: 1rem 1.25rem !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+  .stat-div, .sdv { display: none !important; }
+  .stat-item, .si { width: calc(50% - 0.5rem) !important; }
+  .stat-num, .sn { font-size: 1.1rem !important; }
+  .stat-desc, .sd { font-size: 0.7rem !important; }
+}
+
+/* 5. Logo/clients marquee */
+@media (max-width: 768px) {
+  .client-logo-item { width: 120px !important; height: 58px !important; padding: 0.4rem 0.75rem !important; }
+  .client-logo-item img { max-width: 95px !important; max-height: 42px !important; }
+}
+
+/* 6. All sections padding */
+@media (max-width: 768px) {
+  section, .cs, .ws, .why-sec, .services-sec,
+  .intro-sec, .content-sec, .faq-sec, .cta-sec,
+  .proc-strip, .pricing-sec, .nearby-sec,
+  .about-home-section, .contact-section,
+  .clients-section, .whyus-section,
+  .localities-section, .process-section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* 7. All grids → single column on mobile */
+@media (max-width: 768px) {
+  /* 2-col and 3-col grids */
+  .contact-grid, .intro-grid, .why-grid, .content-grid,
+  .about-home-inner, .about-grid, .cg, .wg,
+  .diff-grid, .team-grid, .values-grid,
+  .footer-grid, .fg, .pkg-grid,
+  .why-grid-2, .about-home-right { 
+    grid-template-columns: 1fr !important; 
+    gap: 1.5rem !important;
+  }
+  
+  /* Service cards grid */
+  .sgrid, .svc-grid, .why-grid,
+  .services-grid, .process-grid,
+  .loc-grid, .nearby-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Why card grid */
+  .why-grid { grid-template-columns: 1fr !important; }
+  
+  /* Process steps */
+  .proc-steps { grid-template-columns: 1fr 1fr !important; }
+  
+  /* Nearby grid */
+  .nearby-grid { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
+  
+  /* Stats grid */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  
+  /* About cards grid */
+  .about-home-right { grid-template-columns: 1fr 1fr !important; }
+  
+  /* Form rows */
+  .form-row { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+}
+
+/* 8. Filter pills wrapping */
+@media (max-width: 768px) {
+  .filter-nav { padding: 1.5rem 1.25rem 0 !important; gap: 0.4rem !important; }
+  .fpill { font-size: 0.72rem !important; padding: 0.35rem 0.75rem !important; }
+}
+
+/* 9. Cards padding on mobile */
+@media (max-width: 768px) {
+  .scard, .pkg, .why-card, .wc, .about-card,
+  .contact-card, .cc, .info-card, .hours-block,
+  .faq-item, .team-card { 
+    padding: 1.25rem !important; 
+  }
+  .contact-form-wrap, .ghl-form-wrap { padding: 1.25rem !important; }
+}
+
+/* 10. Typography scaling */
+@media (max-width: 768px) {
+  .sec-title, .wst, .about-home-title {
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    letter-spacing: -0.02em !important;
+  }
+  .sec-label, .wsl, .about-home-label {
+    font-size: 0.68rem !important;
+  }
+  .body-text, .about-home-desc, p {
+    font-size: 0.875rem !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* 11. CTA section */
+@media (max-width: 768px) {
+  .cta-sec, .cta-section, .ctasec { padding: 3.5rem 1.25rem !important; }
+  .cta-i h2, .cta-inner h2 { font-size: clamp(1.6rem, 5vw, 2.2rem) !important; }
+  .cta-links, .ctac, .cta-contacts { 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    gap: 0.75rem !important; 
+  }
+  .btn-w, .btn-white, .bw { 
+    display: block !important; 
+    width: 100% !important; 
+    text-align: center !important; 
+  }
+}
+
+/* 12. Footer */
+@media (max-width: 768px) {
+  footer { padding: 2rem 1.25rem !important; flex-direction: column !important; text-align: center !important; gap: 0.75rem !important; }
+  .footer-grid, .fg { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  .footer-bottom, .fbot { flex-direction: column !important; gap: 0.5rem !important; text-align: center !important; }
+}
+
+/* 13. Breadcrumb */
+@media (max-width: 768px) {
+  .breadcrumb, .bc { padding: 5rem 1.25rem 0 !important; }
+  .breadcrumb-inner, .bci { font-size: 0.7rem !important; gap: 0.35rem !important; }
+}
+
+/* 14. GHL iframe */
+@media (max-width: 768px) {
+  #ghl-iframe, #ghl-form-iframe { min-height: 950px !important; }
+}
+
+/* 15. Popup mobile */
+@media (max-width: 640px) {
+  #pg-popup { grid-template-columns: 1fr !important; max-height: 92vh !important; overflow-y: auto !important; }
+  #pg-popup-left { display: none !important; }
+  #pg-popup-right { padding: 1.5rem !important; }
+  .pp-field input, .pp-field select { font-size: 16px !important; } /* prevents zoom on iOS */
+}
+
+/* 16. Tablet (768-1024) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav { padding: 1rem 2rem !important; }
+  section, .cs, .ws, .why-sec, .services-sec,
+  .intro-sec, .cta-sec, footer { 
+    padding-left: 2rem !important; 
+    padding-right: 2rem !important; 
+  }
+  .sgrid { grid-template-columns: repeat(2, 1fr) !important; }
+  .proc-steps { grid-template-columns: repeat(3, 1fr) !important; }
+  .footer-grid, .fg { grid-template-columns: 1fr 1fr !important; }
+  .contact-grid, .cg { grid-template-columns: 1fr !important; }
+  .why-grid, .wg { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* 17. Prevent text overflow */
+@media (max-width: 768px) {
+  * { word-break: break-word !important; }
+  img { max-width: 100% !important; height: auto !important; }
+  .logo-track-wrap { 
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
+  }
+}
+
+/* 18. Input font-size 16px (prevent iOS zoom) */
+@media (max-width: 768px) {
+  input, select, textarea { font-size: 16px !important; }
+}
+
+/* 19. Team photo cards */
+@media (max-width: 768px) {
+  .team-photo-wrap { height: 220px !important; }
+  .team-grid { grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
+}
+
+/* 20. Location cards */
+@media (max-width: 768px) {
+  .loc-grid { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
+  .loc-card { padding: 1rem !important; }
+  .loc-name { font-size: 0.875rem !important; }
+}
+
 </style>
 </head>
 <body>
