@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Per4mance Guru | Digital Marketing Agency Delhi</title>
-<meta name="description" content="Per4mance Guru is Delhi's leading digital marketing agency offering SEO, Meta Ads, Google Ads, content marketing, and creative services across all Delhi localities.">
+<title>Per4mance Guru | Digital Marketing Agency and Ai Marketing Agency</title>
+<meta name="description" content="Per4mance Guru is Delhi's leading digital marketing agency offering SEO, Meta Ads, Google Ads, content marketing, and ai creative services across all Delhi localities.">
 <style>
 
 /* ── GLOBAL REVEAL FIX — force all visible ── */
@@ -600,8 +600,30 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 2rem;
+    margin-bottom: 0.9rem;
     animation: fadeInUp 0.6s ease both;
+  }
+
+  /* Hero sub-tag — sits between badge and h1 */
+  .hero-sub-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.38);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease 0.06s both;
+    line-height: 1;
+  }
+  .hero-sub-tag .hst-dot {
+    color: var(--coral);
+    opacity: 0.65;
+    font-size: 0.6rem;
+    line-height: 1;
+    flex-shrink: 0;
   }
 
   .hero-tag::before {
@@ -1286,6 +1308,178 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
 </head>
 <body>
 
+<!-- ============================================================
+  PRELOADER — Cinematic entry screen
+  Fades out after window.load (min 1.5s so animation is visible)
+  z-index: 9999999 (above popup's 99999)
+============================================================ -->
+<div id="pg-preloader" aria-hidden="true">
+  <div class="pgl-bg-glow"></div>
+  <div class="pgl-inner">
+    <div class="pgl-logo">Per<span>4</span>mance Guru</div>
+    <div class="pgl-tagline">Performance Marketing Agency</div>
+    <div class="pgl-track">
+      <div class="pgl-scan"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ── PRELOADER STYLES ── */
+
+/* 1. Lock body scroll while preloader is visible */
+body.pgl-loading {
+  overflow: hidden !important;
+}
+
+/* 2. Full-screen black container */
+#pg-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Entrance: instant — no fade-in delay */
+}
+
+/* 3. Subtle film grain / noise overlay */
+#pg-preloader::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+}
+
+/* 4. Radial glow — breathes behind the text */
+.pgl-bg-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 55% 35% at 50% 50%, rgba(232,84,58,0.08) 0%, transparent 68%);
+  animation: pglGlow 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pglGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1);   }
+  50%       { opacity: 1;   transform: scale(1.18); }
+}
+
+/* 5. Content stack */
+.pgl-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 6. Brand logo text */
+.pgl-logo {
+  font-family: 'Trebuchet MS', 'Calibri', Arial, sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.9rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  animation: pglLogoBreath 3.2s ease-in-out infinite;
+  will-change: letter-spacing, text-shadow, opacity;
+}
+
+.pgl-logo span {
+  color: #E8543A;
+}
+
+@keyframes pglLogoBreath {
+  0%, 100% {
+    letter-spacing: 0.04em;
+    opacity: 0.88;
+    text-shadow: none;
+  }
+  50% {
+    letter-spacing: 0.09em;
+    opacity: 1;
+    text-shadow:
+      0 0 30px rgba(232,84,58,0.3),
+      0 0 70px rgba(232,84,58,0.12),
+      0 0 120px rgba(232,84,58,0.06);
+  }
+}
+
+/* 7. Tagline under logo */
+.pgl-tagline {
+  font-family: 'Trebuchet MS', 'Calibri', Arial, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  animation: pglTagFade 3.2s ease-in-out infinite;
+}
+
+@keyframes pglTagFade {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.9; }
+}
+
+/* 8. Loading track — base line */
+.pgl-track {
+  position: relative;
+  width: clamp(140px, 20vw, 200px);
+  height: 1px;
+  background: rgba(232,84,58,0.12);
+  margin-top: 0.6rem;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+/* 9. Scanning shimmer — runs left-to-right continuously */
+.pgl-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70px;
+  background: linear-gradient(
+    90deg,
+    transparent          0%,
+    rgba(232,84,58,0.35) 25%,
+    rgba(232,84,58,0.9)  50%,
+    rgba(232,84,58,0.35) 75%,
+    transparent          100%
+  );
+  animation: pglScan 1.75s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  will-change: transform;
+}
+
+@keyframes pglScan {
+  0%   { transform: translateX(-70px);  }
+  100% { transform: translateX(calc(clamp(140px, 20vw, 200px) + 70px)); }
+}
+
+/* 10. Exit: smooth cinematic fade-out */
+#pg-preloader.pgl-exit {
+  opacity: 0;
+  transform: scale(1.015);
+  transition:
+    opacity   0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .pgl-logo      { font-size: 1.6rem; letter-spacing: 0.03em; }
+  .pgl-tagline   { font-size: 0.58rem; letter-spacing: 0.16em; }
+  .pgl-track     { width: 130px; }
+}
+</style>
+
 <!-- Custom Cursor -->
 <!-- NAV -->
 <nav id="sitenav">
@@ -1329,7 +1523,14 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
     <div class="hero-blob-2"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-tag">Delhi's Growth Marketing Experts</div>
+    <div class="hero-tag">India's First AI-Powered Agency</div>
+    <div class="hero-sub-tag">
+      AI-Powered Growth
+      <span class="hst-dot">●</span>
+      Creative Excellence
+      <span class="hst-dot">●</span>
+      Real Results
+    </div>
     <h1 class="hero-headline">
       <span class="line">We Don't</span>
       <span class="line">Run Ads.</span>
@@ -1337,7 +1538,7 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
       <span class="line">Results.</span>
     </h1>
     <p class="hero-sub">
-      Per4mance Guru is Delhi's data-first digital marketing agency — built to grow brands through paid performance, organic authority, and creative that actually converts.
+      Per4mance Guru is India's data-first digital marketing and AI marketing agency — built to grow brands through paid performance, organic authority, and creative that actually converts.
     </p>
     <div class="hero-actions">
       <a href="/contact.html" class="btn-primary">Start Growing Today →</a>
@@ -2452,6 +2653,48 @@ setTimeout(function() {
     el.style.transform = 'translateY(0)';
   });
 }, 800);
+
+<!-- ============================================================
+  PRELOADER LOGIC
+  - Locks body scroll while running
+  - Waits for window.load (all resources ready)
+  - Enforces minimum 1.5s so animation is always visible
+  - Cinematic scale+fade exit, then display:none
+  - Fallback: force-hides after 8s if load never fires
+============================================================ -->
+<script>
+(function () {
+  var preloader = document.getElementById('pg-preloader');
+  var startTime = Date.now();
+  var MIN_MS    = 1500;
+  var exited    = false;
+
+  // Lock scroll immediately
+  document.body.classList.add('pgl-loading');
+
+  function exitPreloader() {
+    if (exited) return;
+    exited = true;
+    document.body.classList.remove('pgl-loading');
+    preloader.classList.add('pgl-exit');
+    setTimeout(function () {
+      if (preloader && preloader.parentNode) {
+        preloader.style.display = 'none';
+      }
+    }, 720);
+  }
+
+  // Primary: window.load (fires when all resources ready)
+  window.addEventListener('load', function () {
+    var elapsed   = Date.now() - startTime;
+    var remaining = Math.max(0, MIN_MS - elapsed);
+    setTimeout(exitPreloader, remaining);
+  });
+
+  // Fallback: bail after 8 seconds no matter what
+  setTimeout(exitPreloader, 8000);
+})();
+</script>
 
 </body>
 </html>
