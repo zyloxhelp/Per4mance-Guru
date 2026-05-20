@@ -96,81 +96,102 @@ nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-
 /* duplicate dropdown CSS removed — see full version in main stylesheet */
 
 
-/* ── IMPROVED LOGO MARQUEE ── */
+/* ── PREMIUM LOGO MARQUEE ── */
 .clients-section {
-  background: var(--black-soft);
-  padding: 4rem 0;
+  background: linear-gradient(180deg, var(--black-soft) 0%, #0d0d0d 100%);
+  padding: 5rem 0 4rem;
   overflow: hidden;
+  position: relative;
+}
+.clients-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
 }
 .clients-label {
   text-align: center;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--coral);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
   padding: 0 2rem;
 }
 .clients-title {
   text-align: center;
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
   font-weight: 800;
   color: var(--white);
-  letter-spacing: -0.02em;
-  margin-bottom: 2.5rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 3rem;
   padding: 0 2rem;
+  line-height: 1.25;
 }
 .clients-title span { color: var(--coral); }
 .logo-track-wrap {
   overflow: hidden;
   width: 100%;
   position: relative;
-  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 7%, black 93%, transparent 100%);
 }
 .logo-track {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   width: max-content;
-  animation: logoScroll 35s linear infinite;
+  animation: logoScroll 42s linear infinite;
+  will-change: transform;
 }
 .logo-track:hover { animation-play-state: paused; }
 @keyframes logoScroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 .client-logo-item {
   flex-shrink: 0;
-  width: 150px;
-  height: 72px;
+  width: 160px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1rem;
+  padding: 0.75rem 1.1rem;
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  transition: background 0.3s, border-color 0.3s;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.07);
+  transition: transform 0.38s cubic-bezier(0.22,1,0.36,1),
+              box-shadow 0.38s ease,
+              border-color 0.38s ease,
+              background 0.38s ease;
 }
 .client-logo-item:hover {
-  background: rgba(255,255,255,0.09);
-  border-color: rgba(232,84,58,0.35);
+  transform: translateY(-5px) scale(1.06);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(232,84,58,0.45);
+  box-shadow: 0 12px 32px rgba(232,84,58,0.18), 0 4px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.12);
 }
 .client-logo-item img {
-  max-width: 120px;
-  max-height: 52px;
+  max-width: 128px;
+  max-height: 56px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0.9) saturate(0.8);
-  opacity: 0.8;
-  transition: all 0.3s;
+  filter: grayscale(100%) brightness(0.75) contrast(1.05);
+  opacity: 0.7;
+  transition: filter 0.4s ease, opacity 0.4s ease, transform 0.38s cubic-bezier(0.22,1,0.36,1);
 }
 .client-logo-item:hover img {
-  filter: brightness(1) saturate(1);
+  filter: grayscale(0%) brightness(1.05) contrast(1);
   opacity: 1;
+  transform: scale(1.04);
 }
 
 
@@ -1595,7 +1616,7 @@ body.pgl-loading {
 </section>
 
 <section class="clients-section">
-  <div class="clients-label reveal reveal-done">Trusted By</div>
+  <div class="clients-label reveal reveal-done">Trusted Across Industries</div>
   <h2 class="clients-title reveal reveal-done">Brands That <span>Trust Us</span></h2>
   <div class="logo-track-wrap">
     <div class="logo-track">
