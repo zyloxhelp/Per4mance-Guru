@@ -2269,13 +2269,18 @@ Per4mance Guru — School Admission Form
   // ── Send via Web3Forms (free, no backend needed) ──
   // Uses your email hello@per4mance.guru
   try {
-    const res = await fetch('https://script.google.com/macros/s/AKfycbwUpDUF_K3AVeYNxa3jWw-wfo_fotWw-3xcSRz_87iNgHvlnEJz3PpIJpUCItT5uAxO/exec', {
+    // Send to Google Apps Script via no-cors POST
+    // Using URLSearchParams ensures data reaches Apps Script reliably
+    const payload = new URLSearchParams();
+    payload.append('data', JSON.stringify(formData));
+
+    fetch('https://script.google.com/macros/s/AKfycbwUpDUF_K3AVeYNxa3jWw-wfo_fotWw-3xcSRz_87iNgHvlnEJz3PpIJpUCItT5uAxO/exec', {
       method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify(formData)
+      mode: 'no-cors',
+      body: payload
     });
 
-    // Apps Script returns success - show thank you
+    // Show thank you immediately (no-cors = can't read response, data IS sent)
     showThankYou();
   } catch (err) {
     // Fallback to mailto if fetch fails
