@@ -391,6 +391,58 @@ nav#sitenav.open .nav-hamburger span:nth-child(3){transform:translateY(-7px) rot
   flex-shrink:0;
 }
 
+/* ── SERVICE MULTI-SELECT CARDS ── */
+.hfc-svc-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:9px;
+  padding:.65rem .85rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:.8rem;
+  color:rgba(255,255,255,.6);
+  transition:background .18s,border-color .18s,color .18s,transform .15s;
+  user-select:none;
+  -webkit-user-select:none;
+  position:relative;
+  z-index:1;
+}
+.hfc-svc-card:hover{
+  background:rgba(59,130,246,.08);
+  border-color:rgba(59,130,246,.35);
+  color:rgba(255,255,255,.85);
+  transform:translateY(-1px);
+}
+.hfc-svc-card.active{
+  background:rgba(59,130,246,.12);
+  border-color:rgba(59,130,246,.55);
+  color:#fff;
+  box-shadow:0 0 0 1px rgba(59,130,246,.2),0 4px 16px rgba(59,130,246,.12);
+}
+.hfc-svc-check{
+  width:18px;height:18px;
+  border-radius:5px;
+  border:1.5px solid rgba(255,255,255,.2);
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .18s;
+  background:transparent;
+}
+.hfc-svc-card.active .hfc-svc-check{
+  background:#3b82f6;
+  border-color:#3b82f6;
+}
+.hfc-svc-card.active .hfc-svc-check::after{
+  content:'';
+  display:block;
+  width:5px;height:9px;
+  border:2px solid #fff;
+  border-top:none;border-left:none;
+  transform:rotate(45deg) translateY(-1px);
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   .hero-inner{grid-template-columns:1fr;gap:3.5rem}
@@ -1268,19 +1320,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <div class="hfc-field">
               <label class="hfc-label">Services you're interested in?</label>
-              <div class="hfc-radio-grid">
-                <label class="hfc-radio hfc-checkbox" onclick="hfcCheck(this)">
-                  <div class="hfc-radio-dot"></div><input type="checkbox" name="svc" value="seo">SEO (Rank on Google)
-                </label>
-                <label class="hfc-radio hfc-checkbox" onclick="hfcCheck(this)">
-                  <div class="hfc-radio-dot"></div><input type="checkbox" name="svc" value="ads">FB &amp; Google Ads
-                </label>
-                <label class="hfc-radio hfc-checkbox" onclick="hfcCheck(this)">
-                  <div class="hfc-radio-dot"></div><input type="checkbox" name="svc" value="social">Social Media Mgmt
-                </label>
-                <label class="hfc-radio hfc-checkbox" onclick="hfcCheck(this)">
-                  <div class="hfc-radio-dot"></div><input type="checkbox" name="svc" value="full">Complete Digital Mktg
-                </label>
+              <div class="hfc-radio-grid" id="svcGrid">
+                <div class="hfc-svc-card" data-val="seo" onclick="toggleSvc(this)">
+                  <div class="hfc-svc-check" aria-hidden="true"></div>
+                  <span>SEO (Rank on Google)</span>
+                </div>
+                <div class="hfc-svc-card" data-val="ads" onclick="toggleSvc(this)">
+                  <div class="hfc-svc-check" aria-hidden="true"></div>
+                  <span>FB &amp; Google Ads</span>
+                </div>
+                <div class="hfc-svc-card" data-val="social" onclick="toggleSvc(this)">
+                  <div class="hfc-svc-check" aria-hidden="true"></div>
+                  <span>Social Media Mgmt</span>
+                </div>
+                <div class="hfc-svc-card" data-val="full" onclick="toggleSvc(this)">
+                  <div class="hfc-svc-check" aria-hidden="true"></div>
+                  <span>Complete Digital Mktg</span>
+                </div>
               </div>
             </div>
 
@@ -2141,8 +2197,11 @@ function getRadioValue(name) {
 }
 
 function getCheckboxValues(name) {
-  return Array.from(document.querySelectorAll(`.hfc-checkbox.sel [name="${name}"]`))
-    .map(el => el.value);
+  if (name === 'svc') {
+    return Array.from(document.querySelectorAll('#svcGrid .hfc-svc-card.active'))
+      .map(el => el.getAttribute('data-val'));
+  }
+  return [];
 }
 
 // ══════════════════════════════════════════════════════════
@@ -2403,8 +2462,8 @@ function hfcRadio(el, name) {
   el.classList.add('sel');
 }
 
-function hfcCheck(el) {
-  el.classList.toggle('sel');
+function toggleSvc(card) {
+  card.classList.toggle('active');
 }
 
 // ══════════════════════════════════════════════════════════
@@ -2515,8 +2574,8 @@ function hfcRadio(el, name) {
   });
   el.classList.add('sel');
 }
-function hfcCheck(el) {
-  el.classList.toggle('sel');
+function toggleSvc(card) {
+  card.classList.toggle('active');
 }
 
 // ── NAV SCROLL ──
