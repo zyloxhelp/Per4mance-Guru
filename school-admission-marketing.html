@@ -2034,7 +2034,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 // CONFIG
 // ══════════════════════════════════════════════════════════
 const GHL_CONFIG = {
-  webhookUrl:  'https://script.google.com/macros/s/AKfycbwUpDUF_K3AVeYNxa3jWw-wfo_fotWw-3xcSRz_87iNgHvlnEJz3PpIJpUCItT5uAxO/exec',
+  webhookUrl:  'https://script.google.com/macros/s/AKfycbx-9YROjshuV6IPArvymgu3LFStCGDUYeHMvyM7RQe0ybvfpAn3dEKDWTKKuGevs9Tz/exec',
   calendarUrl: 'https://per4mance.guru/contact.html',
   fbPixelId:   'YOUR_PIXEL_ID',
   gAdsId:      'AW-XXXXXXXXXX',
@@ -2269,19 +2269,41 @@ Per4mance Guru — School Admission Form
   // ── Send via Web3Forms (free, no backend needed) ──
   // Uses your email hello@per4mance.guru
   try {
-    // Send via GET params — 100% works with Apps Script, no CORS issues
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwUpDUF_K3AVeYNxa3jWw-wfo_fotWw-3xcSRz_87iNgHvlnEJz3PpIJpUCItT5uAxO/exec';
-    const encoded = encodeURIComponent(JSON.stringify(formData));
-    const getUrl  = SCRIPT_URL + '?data=' + encoded;
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx-9YROjshuV6IPArvymgu3LFStCGDUYeHMvyM7RQe0ybvfpAn3dEKDWTKKuGevs9Tz/exec';
 
-    // Use hidden iframe — bypasses CORS completely
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = getUrl;
-    document.body.appendChild(iframe);
-    setTimeout(() => { if(iframe.parentNode) iframe.parentNode.removeChild(iframe); }, 5000);
+    // Method 1: sendBeacon (most reliable, fire-and-forget)
+    const blob = new Blob([JSON.stringify(formData)], {type: 'text/plain'});
+    navigator.sendBeacon(SCRIPT_URL, blob);
 
-    // Show thank you immediately
+    // Method 2: fetch no-cors as backup
+    try {
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(formData)
+      });
+    } catch(e) {}
+
+    // Method 3: Image pixel as final backup
+    const img = new Image();
+    img.src = SCRIPT_URL + '?data=' + encodeURIComponent(JSON.stringify({
+      fullName: formData.fullName,
+      phone: formData.phone,
+      email: formData.email,
+      schoolName: formData.schoolName,
+      schoolLocation: formData.schoolLocation,
+      role: formData.role,
+      enrollment: formData.enrollment,
+      budget: formData.budget,
+      timeline: formData.timeline,
+      currentMarketing: formData.currentMarketing,
+      interestedServices: formData.interestedServices,
+      utmSource: formData.utmSource,
+      utmCampaign: formData.utmCampaign,
+      landingUrl: window.location.href
+    }));
+
+    // Show thank you
     showThankYou();
   } catch (err) {
     // Fallback to mailto if fetch fails
