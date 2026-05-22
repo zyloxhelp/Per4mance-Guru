@@ -1975,16 +1975,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 // ══════════════════════════════════════════════════════════
-// EMAIL CONFIG
+// CONFIG
 // ══════════════════════════════════════════════════════════
 const GHL_CONFIG = {
-  // Web3Forms key — get FREE from https://web3forms.com (30 seconds)
-  // Enter hello@per4mance.guru there and copy the access key
-  webhookUrl: '', // not used — using Web3Forms email instead
-  calendarUrl: 'https://per4mance.guru/contact.html', // ← Replace with calendar link
-  fbPixelId: 'YOUR_PIXEL_ID',
-  gAdsId: 'AW-XXXXXXXXXX',
-  gAdsLabel: 'XXXXXXXXXXX',
+  webhookUrl:  'https://script.google.com/macros/s/AKfycbwUpDUF_K3AVeYNxa3jWw-wfo_fotWw-3xcSRz_87iNgHvlnEJz3PpIJpUCItT5uAxO/exec',
+  calendarUrl: 'https://per4mance.guru/contact.html',
+  fbPixelId:   'YOUR_PIXEL_ID',
+  gAdsId:      'AW-XXXXXXXXXX',
+  gAdsLabel:   'XXXXXXXXXXX',
 };
 
 // ══════════════════════════════════════════════════════════
@@ -2212,45 +2210,14 @@ Per4mance Guru — School Admission Form
   // ── Send via Web3Forms (free, no backend needed) ──
   // Uses your email hello@per4mance.guru
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {
+    const res = await fetch('https://script.google.com/macros/s/AKfycbwUpDUF_K3AVeYNxa3jWw-wfo_fotWw-3xcSRz_87iNgHvlnEJz3PpIJpUCItT5uAxO/exec', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: 'YOUR_WEB3FORMS_KEY', // ← Get free key from web3forms.com (takes 30 sec)
-        subject: 'New School Lead: ' + (formData.schoolName || formData.fullName) + ' — ' + formData.schoolLocation,
-        from_name: formData.fullName + ' (School Admission Form)',
-        replyto: formData.email || 'noreply@per4mance.guru',
-        to: 'hello@per4mance.guru',
-
-        // All lead fields
-        'Full Name':          formData.fullName,
-        'Phone':              formData.phone,
-        'Email':              formData.email || 'Not provided',
-        'School Role':        formData.role,
-        'School Name':        formData.schoolName,
-        'School Location':    formData.schoolLocation,
-        'Student Enrollment': formData.enrollment,
-        'Current Marketing':  formData.currentMarketing,
-        'Interested Services':services,
-        'Monthly Budget':     formData.budget,
-        'Start Timeline':     formData.timeline,
-        'Lead Source':        'School Admission Landing Page',
-        'UTM Source':         formData.utmSource || 'Direct',
-        'UTM Medium':         formData.utmMedium || '',
-        'UTM Campaign':       formData.utmCampaign || '',
-        'Landing URL':        formData.landingUrl || window.location.href,
-        'Submitted At':       formData.submittedAt,
-      })
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(formData)
     });
 
-    const data = await res.json();
-    if (data.success) {
-      showThankYou();
-    } else {
-      // Fallback to mailto
-      mailtoFallback(emailSubject, emailBodyEncoded);
-      showThankYou();
-    }
+    // Apps Script returns success - show thank you
+    showThankYou();
   } catch (err) {
     // Fallback to mailto if fetch fails
     mailtoFallback(emailSubject, emailBodyEncoded);
