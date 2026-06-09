@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Per4mance Guru – Digital Marketing Insights for India</title>
+<meta name="description" content="Expert insights on Meta Ads, Google Ads, SEO, content marketing, and digital growth strategies from Per4mance Guru — Delhi's performance marketing agency.">
+<style>
+:root{
+  --coral:#E8543A;--coral-dark:#C43F27;--coral-light:#FF6B52;
+  --cream:#F5EDE3;--black:#0A0A0A;--black-soft:#1A1A1A;--black-card:#141414;
+  --gray:#6B6B6B;--white:#FFFFFF;
+  --font:'Calibri','Trebuchet MS','Gill Sans',sans-serif;
+  --border:rgba(255,255,255,0.07);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);background:var(--black);color:var(--white);overflow-x:hidden;}
+
+
+
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;background:rgba(10,10,10,0.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(232,84,58,0.15);transition:padding 0.3s;}
+.nav-logo{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+.nav-logo img{width:44px;height:44px;border-radius:8px;object-fit:contain;}
+.nav-brand{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:-0.02em;}
+.nav-brand span{color:var(--coral);}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:0.875rem;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--coral);transition:width 0.3s;}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after,
+.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:var(--coral);}
+.nav-item{position:relative;}
+.dropdown{display:none;position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);background:#141414;border:1px solid rgba(232,84,58,0.2);border-radius:10px;min-width:240px;padding:0.6rem 0;z-index:2000;box-shadow:0 20px 60px rgba(0,0,0,0.6);}
+.dropdown::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:#141414;border-left:1px solid rgba(232,84,58,0.2);border-top:1px solid rgba(232,84,58,0.2);}
+.nav-item:hover .dropdown{display:block;animation:dropIn 0.2s ease;}
+@keyframes dropIn{from{opacity:0;transform:translateX(-50%) translateY(-8px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+.dropdown a{display:flex;align-items:center;gap:0.75rem;padding:0.65rem 1.25rem;font-size:0.85rem;color:rgba(255,255,255,0.65)!important;text-decoration:none;transition:background 0.15s,color 0.15s;white-space:nowrap;}
+.dropdown a::after{display:none!important;}
+.dropdown a:hover{background:rgba(232,84,58,0.1);color:var(--coral)!important;}
+.dd-icon{font-size:1rem;width:22px;text-align:center;}
+.dropdown-divider{height:1px;background:rgba(255,255,255,0.06);margin:0.4rem 0;}
+.nav-chevron{display:inline-block;font-size:0.6rem;margin-left:3px;vertical-align:middle;transition:transform 0.2s;}
+.nav-item:hover .nav-chevron{transform:rotate(180deg);}
+.nav-cta{background:var(--coral);color:var(--white);padding:0.6rem 1.5rem;border-radius:4px;text-decoration:none;font-size:0.875rem;font-weight:600;transition:background 0.2s,transform 0.2s;}
+.nav-cta:hover{background:var(--coral-light);transform:translateY(-1px);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* ── HERO ── */
+.blog-hero{min-height:55vh;display:flex;align-items:flex-end;padding:10rem 4rem 5rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,84,58,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(232,84,58,0.035) 1px,transparent 1px);background-size:60px 60px;}
+.hero-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,84,58,0.1) 0%,transparent 70%);top:-200px;right:-100px;animation:orbFloat 10s ease-in-out infinite;}
+@keyframes orbFloat{0%,100%{transform:translate(0,0);}50%{transform:translate(-30px,30px);}}
+.hero-content{position:relative;z-index:2;max-width:800px;}
+.hero-label{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(232,84,58,0.12);border:1px solid rgba(232,84,58,0.3);color:var(--coral);padding:0.4rem 1rem;border-radius:100px;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem;animation:fadeUp 0.6s ease both;}
+.hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
+.blog-hero h1{font-size:clamp(2.8rem,6.5vw,5.5rem);font-weight:800;line-height:0.95;letter-spacing:-0.03em;animation:fadeUp 0.6s ease 0.15s both;}
+.blog-hero h1 span{color:var(--coral);}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.45);line-height:1.7;max-width:560px;margin-top:1.5rem;font-weight:300;animation:fadeUp 0.6s ease 0.3s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+
+/* blog stats strip */
+.blog-stats-strip{background:var(--coral);padding:1rem 4rem;display:flex;gap:3rem;align-items:center;}
+.bstat{display:flex;align-items:center;gap:0.75rem;}
+.bstat-num{font-size:1.4rem;font-weight:800;color:var(--white);}
+.bstat-desc{font-size:0.78rem;color:rgba(255,255,255,0.75);font-weight:500;}
+.bstat-divider{width:1px;height:30px;background:rgba(255,255,255,0.25);}
+
+/* ── FILTERS + SEARCH ── */
+.blog-controls{padding:3rem 4rem 0;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;justify-content:space-between;}
+.filter-pills{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.fpill{background:rgba(255,255,255,0.05);border:1px solid var(--border);color:rgba(255,255,255,0.45);font-size:0.78rem;font-weight:600;padding:0.45rem 1.1rem;border-radius:100px;cursor:pointer;transition:all 0.2s;user-select:none;}
+.fpill:hover{border-color:rgba(232,84,58,0.4);color:rgba(255,255,255,0.7);}
+.fpill.active{background:rgba(232,84,58,0.12);border-color:var(--coral);color:var(--coral);}
+.blog-search{position:relative;}
+.blog-search input{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;color:var(--white);font-family:var(--font);font-size:0.875rem;padding:0.6rem 1rem 0.6rem 2.5rem;outline:none;width:240px;transition:border-color 0.2s;}
+.blog-search input::placeholder{color:rgba(255,255,255,0.2);}
+.blog-search input:focus{border-color:var(--coral);}
+.search-icon{position:absolute;left:0.85rem;top:50%;transform:translateY(-50%);font-size:0.9rem;opacity:0.35;pointer-events:none;}
+
+/* ── FEATURED POST ── */
+.featured-section{padding:3rem 4rem 0;}
+.featured-label{font-size:0.72rem;font-weight:700;color:var(--coral);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.5rem;}
+.featured-card{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--black-card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
+  text-decoration:none;
+  transition:border-color 0.3s,transform 0.3s;
+}
+.featured-card:hover{border-color:rgba(232,84,58,0.4);transform:translateY(-4px);}
+.featured-img{
+  background:linear-gradient(135deg,#1a0f0a 0%,#2d1408 40%,#1a0f0a 100%);
+  position:relative;
+  min-height:340px;
+  display:flex;align-items:flex-end;
+  padding:2rem;
+  overflow:hidden;
+}
+.featured-img::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(232,84,58,0.2) 0%,transparent 60%);}
+.featured-img-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8rem;opacity:0.08;user-select:none;}
+.featured-badge{
+  position:relative;z-index:2;
+  background:var(--coral);color:var(--white);
+  font-size:0.72rem;font-weight:700;
+  padding:0.35rem 0.85rem;border-radius:4px;
+  letter-spacing:0.06em;text-transform:uppercase;
+}
+.featured-content{padding:3rem;display:flex;flex-direction:column;justify-content:center;gap:1rem;}
+.featured-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.feat-cat{font-size:0.72rem;font-weight:700;color:var(--coral);letter-spacing:0.08em;text-transform:uppercase;}
+.feat-date{font-size:0.72rem;color:rgba(255,255,255,0.3);}
+.feat-read{font-size:0.72rem;color:rgba(255,255,255,0.3);}
+.featured-content h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--white);letter-spacing:-0.02em;line-height:1.15;}
+.featured-content p{font-size:0.9rem;color:rgba(255,255,255,0.45);line-height:1.7;font-weight:300;}
+.feat-tags{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.feat-tag{background:rgba(255,255,255,0.05);border:1px solid var(--border);font-size:0.7rem;color:rgba(255,255,255,0.35);padding:0.25rem 0.7rem;border-radius:4px;}
+.feat-cta{display:inline-flex;align-items:center;gap:0.5rem;color:var(--coral);font-size:0.85rem;font-weight:700;margin-top:0.5rem;transition:gap 0.2s;}
+.featured-card:hover .feat-cta{gap:0.75rem;}
+.feat-author{display:flex;align-items:center;gap:0.75rem;padding-top:1rem;border-top:1px solid var(--border);}
+.author-avatar{width:32px;height:32px;border-radius:50%;background:rgba(232,84,58,0.2);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--coral);}
+.author-info{font-size:0.75rem;}
+.author-info strong{display:block;color:rgba(255,255,255,0.6);font-weight:600;}
+.author-info span{color:rgba(255,255,255,0.25);}
+
+/* ── MONTH SECTIONS ── */
+.blog-body{padding:4rem 4rem;}
+.month-section{margin-bottom:4rem;}
+.month-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;}
+.month-label{font-size:0.72rem;font-weight:700;color:var(--coral);letter-spacing:0.12em;text-transform:uppercase;}
+.month-title{font-size:1.8rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;}
+.month-count{font-size:0.78rem;color:rgba(255,255,255,0.25);margin-left:auto;}
+.month-divider{flex:1;height:1px;background:var(--border);}
+
+/* Blog grid */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.blog-card{
+  background:var(--black-card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  display:flex;flex-direction:column;
+  transition:border-color 0.25s,transform 0.25s;
+}
+.blog-card:hover{border-color:rgba(232,84,58,0.35);transform:translateY(-4px);}
+.card-img{
+  height:160px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;
+  padding:1rem;
+}
+.card-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:5rem;opacity:0.1;user-select:none;}
+.card-cat-badge{position:relative;z-index:2;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.65rem;border-radius:4px;}
+.card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:0.75rem;}
+.card-meta{display:flex;gap:0.75rem;align-items:center;}
+.card-date{font-size:0.7rem;color:rgba(255,255,255,0.25);}
+.card-read{font-size:0.7rem;color:rgba(255,255,255,0.25);}
+.card-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.15);}
+.card-title{font-size:1rem;font-weight:700;color:var(--white);line-height:1.3;letter-spacing:-0.01em;flex:1;}
+.card-excerpt{font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:0.75rem;border-top:1px solid var(--border);margin-top:auto;}
+.card-author-name{font-size:0.72rem;color:rgba(255,255,255,0.35);font-weight:500;}
+.card-arrow{color:var(--coral);font-size:0.85rem;transition:transform 0.2s;}
+.blog-card:hover .card-arrow{transform:translate(3px,-3px);}
+
+/* card colour themes per category */
+.cat-seo{background:linear-gradient(135deg,#0a1a0f,#0d2614);}
+.cat-meta{background:linear-gradient(135deg,#1a0a0a,#2a0f08);}
+.cat-google{background:linear-gradient(135deg,#0a0f1a,#0d1426);}
+.cat-content{background:linear-gradient(135deg,#1a150a,#26200d);}
+.cat-social{background:linear-gradient(135deg,#150a1a,#200d26);}
+.cat-strategy{background:linear-gradient(135deg,#0a1a18,#0d2622);}
+.cat-creative{background:linear-gradient(135deg,#1a0a12,#2a0f1c);}
+.cat-ai{background:linear-gradient(135deg,#0f0a1a,#180d26);}
+
+.badge-seo{background:rgba(74,222,128,0.15);color:#4ade80;}
+.badge-meta{background:rgba(232,84,58,0.15);color:var(--coral);}
+.badge-google{background:rgba(56,182,255,0.15);color:#38b6ff;}
+.badge-content{background:rgba(250,189,47,0.15);color:#fabd2f;}
+.badge-social{background:rgba(192,132,252,0.15);color:#c084fc;}
+.badge-strategy{background:rgba(45,212,191,0.15);color:#2dd4bf;}
+.badge-creative{background:rgba(251,113,133,0.15);color:#fb7185;}
+.badge-ai{background:rgba(168,85,247,0.15);color:#a855f7;}
+
+/* ── NEWSLETTER ── */
+.newsletter-section{
+  background:var(--black-soft);
+  margin:0 4rem;
+  border-radius:16px;
+  padding:4rem;
+  border:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+  margin-bottom:4rem;
+}
+.nl-left h3{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--white);letter-spacing:-0.02em;margin-bottom:0.75rem;}
+.nl-left h3 span{color:var(--coral);}
+.nl-left p{font-size:0.9rem;color:rgba(255,255,255,0.4);line-height:1.7;}
+.nl-form{display:flex;flex-direction:column;gap:0.75rem;}
+.nl-row{display:flex;gap:0.75rem;}
+.nl-input{flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;color:var(--white);font-family:var(--font);font-size:0.875rem;padding:0.8rem 1rem;outline:none;transition:border-color 0.2s;}
+.nl-input::placeholder{color:rgba(255,255,255,0.2);}
+.nl-input:focus{border-color:var(--coral);}
+.nl-btn{background:var(--coral);color:var(--white);border:none;border-radius:8px;padding:0.8rem 1.5rem;font-family:var(--font);font-size:0.875rem;font-weight:700;cursor:pointer;transition:background 0.2s,transform 0.2s;white-space:nowrap;}
+.nl-btn:hover{background:var(--coral-light);transform:translateY(-1px);}
+.nl-topics{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.25rem;}
+.nl-topic{font-size:0.7rem;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:0.3rem;}
+.nl-topic::before{content:'✓';color:var(--coral);}
+
+/* ── FOOTER ── */
+footer{background:var(--black-soft);padding:5rem 4rem 2rem;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.footer-brand p{color:rgba(255,255,255,0.4);font-size:0.875rem;line-height:1.7;margin-top:1.5rem;max-width:280px;}
+.footer-logo-wrap{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;}
+.footer-logo-wrap img{width:40px;height:40px;border-radius:6px;}
+.footer-brand-name{font-size:1rem;font-weight:700;color:var(--white);}
+.footer-brand-name span{color:var(--coral);}
+.footer-col h5{font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:0.75rem;}
+.footer-col ul a{text-decoration:none;color:rgba(255,255,255,0.55);font-size:0.875rem;transition:color 0.2s;}
+.footer-col ul a:hover{color:var(--coral);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;}
+.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.25);}
+.footer-bottom span{color:var(--coral);}
+
+/* no results */
+.no-results{display:none;text-align:center;padding:4rem;color:rgba(255,255,255,0.3);font-size:1rem;}
+
+@media(max-width:1100px){
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .featured-card{grid-template-columns:1fr;}
+  .featured-img{min-height:220px;}
+  .newsletter-section{grid-template-columns:1fr;gap:2rem;margin:0 2rem;margin-bottom:3rem;}
+}
+@media(max-width:768px){
+  body{cursor:auto;}
+  
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .blog-hero{padding:7rem 1.5rem 3rem;}
+  .blog-controls,.featured-section,.blog-body{padding-left:1.5rem;padding-right:1.5rem;}
+  .blog-grid{grid-template-columns:1fr;}
+  .blog-stats-strip{padding:1rem 1.5rem;gap:1.5rem;flex-wrap:wrap;}
+  .newsletter-section{margin:0 1.5rem;padding:2rem;margin-bottom:2rem;}
+  .nl-row{flex-direction:column;}
+  footer{padding:4rem 1.5rem 2rem;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bottom{flex-direction:column;gap:1rem;text-align:center;}
+}
+
+nav#sitenav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(10,10,10,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(232,84,58,0.15);transition:padding .3s;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{width:40px;height:40px;border-radius:8px;object-fit:contain;}
+.nav-links{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0;}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,.65);font-size:.875rem;transition:color .2s;position:relative;padding-bottom:2px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:#E8543A;transition:width .3s;}
+.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:#E8543A;}
+.nav-cta{background:#E8543A;color:#fff;padding:.55rem 1.4rem;border-radius:4px;text-decoration:none;font-size:.875rem;font-weight:700;transition:background .2s;}
+.nav-cta:hover{background:#FF6B52;}
+.nav-hamburger{display:none;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;}
+@media(max-width:900px){.nav-links{display:none;}.nav-hamburger{display:block;}nav#sitenav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#141414;padding:1.5rem 2rem;gap:1rem;border-bottom:1px solid rgba(232,84,58,.2);}nav#sitenav{padding:1rem 1.5rem;}}
+
+
+/* ============================================
+   MOBILE RESPONSIVENESS FIX — All Pages
+   ============================================ */
+
+/* 1. Prevent horizontal overflow globally */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+* { box-sizing: border-box; }
+
+/* 2. Nav — hamburger fix */
+@media (max-width: 900px) {
+  nav { padding: 0.85rem 1.5rem !important; }
+  .nav-links, .nls { display: none !important; }
+  .nav-hamburger, .nhb { display: flex !important; align-items: center; justify-content: center; width: 36px; height: 36px; }
+  nav.open .nav-links,
+  nav.open .nls {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important; right: 0 !important;
+    background: #141414 !important;
+    padding: 1.25rem 1.5rem !important;
+    gap: 0.85rem !important;
+    border-bottom: 1px solid rgba(232,84,58,0.2) !important;
+    z-index: 9999 !important;
+  }
+  .nav-cta, .ncta { padding: 0.45rem 1rem !important; font-size: 0.8rem !important; }
+}
+
+/* 3. Hero section */
+@media (max-width: 768px) {
+  .hero, section.hero { padding: 5.5rem 1.25rem 3rem !important; }
+  h1 { font-size: clamp(1.8rem, 6vw, 2.8rem) !important; line-height: 1.1 !important; }
+  .hero-sub, .hsub { font-size: 0.875rem !important; }
+  .hero-btns, .hbtns { flex-direction: column !important; gap: 0.75rem !important; }
+  .hero-btns a, .hbtns a { width: 100% !important; text-align: center !important; justify-content: center !important; }
+}
+
+/* 4. Stats bar */
+@media (max-width: 768px) {
+  .stats-bar, .sb {
+    padding: 1rem 1.25rem !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+  .stat-div, .sdv { display: none !important; }
+  .stat-item, .si { width: calc(50% - 0.5rem) !important; }
+  .stat-num, .sn { font-size: 1.1rem !important; }
+  .stat-desc, .sd { font-size: 0.7rem !important; }
+}
+
+/* 5. Logo/clients marquee */
+@media (max-width: 768px) {
+  .client-logo-item { width: 120px !important; height: 58px !important; padding: 0.4rem 0.75rem !important; }
+  .client-logo-item img { max-width: 95px !important; max-height: 42px !important; }
+}
+
+/* 6. All sections padding */
+@media (max-width: 768px) {
+  section, .cs, .ws, .why-sec, .services-sec,
+  .intro-sec, .content-sec, .faq-sec, .cta-sec,
+  .proc-strip, .pricing-sec, .nearby-sec,
+  .about-home-section, .contact-section,
+  .clients-section, .whyus-section,
+  .localities-section, .process-section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* 7. All grids → single column on mobile */
+@media (max-width: 768px) {
+  /* 2-col and 3-col grids */
+  .contact-grid, .intro-grid, .why-grid, .content-grid,
+  .about-home-inner, .about-grid, .cg, .wg,
+  .diff-grid, .team-grid, .values-grid,
+  .footer-grid, .fg, .pkg-grid,
+  .why-grid-2, .about-home-right { 
+    grid-template-columns: 1fr !important; 
+    gap: 1.5rem !important;
+  }
+  
+  /* Service cards grid */
+  .sgrid, .svc-grid, .why-grid,
+  .services-grid, .process-grid,
+  .loc-grid, .nearby-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Why card grid */
+  .why-grid { grid-template-columns: 1fr !important; }
+  
+  /* Process steps */
+  .proc-steps { grid-template-columns: 1fr 1fr !important; }
+  
+  /* Nearby grid */
+  .nearby-grid { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
+  
+  /* Stats grid */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  
+  /* About cards grid */
+  .about-home-right { grid-template-columns: 1fr 1fr !important; }
+  
+  /* Form rows */
+  .form-row { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+}
+
+/* 8. Filter pills wrapping */
+@media (max-width: 768px) {
+  .filter-nav { padding: 1.5rem 1.25rem 0 !important; gap: 0.4rem !important; }
+  .fpill { font-size: 0.72rem !important; padding: 0.35rem 0.75rem !important; }
+}
+
+/* 9. Cards padding on mobile */
+@media (max-width: 768px) {
+  .scard, .pkg, .why-card, .wc, .about-card,
+  .contact-card, .cc, .info-card, .hours-block,
+  .faq-item, .team-card { 
+    padding: 1.25rem !important; 
+  }
+  .contact-form-wrap, .ghl-form-wrap { padding: 1.25rem !important; }
+}
+
+/* 10. Typography scaling */
+@media (max-width: 768px) {
+  .sec-title, .wst, .about-home-title {
+    font-size: clamp(1.4rem, 5vw, 2rem) !important;
+    letter-spacing: -0.02em !important;
+  }
+  .sec-label, .wsl, .about-home-label {
+    font-size: 0.68rem !important;
+  }
+  .body-text, .about-home-desc, p {
+    font-size: 0.875rem !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* 11. CTA section */
+@media (max-width: 768px) {
+  .cta-sec, .cta-section, .ctasec { padding: 3.5rem 1.25rem !important; }
+  .cta-i h2, .cta-inner h2 { font-size: clamp(1.6rem, 5vw, 2.2rem) !important; }
+  .cta-links, .ctac, .cta-contacts { 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    gap: 0.75rem !important; 
+  }
+  .btn-w, .btn-white, .bw { 
+    display: block !important; 
+    width: 100% !important; 
+    text-align: center !important; 
+  }
+}
+
+/* 12. Footer */
+@media (max-width: 768px) {
+  footer { padding: 2rem 1.25rem !important; flex-direction: column !important; text-align: center !important; gap: 0.75rem !important; }
+  .footer-grid, .fg { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+  .footer-bottom, .fbot { flex-direction: column !important; gap: 0.5rem !important; text-align: center !important; }
+}
+
+/* 13. Breadcrumb */
+@media (max-width: 768px) {
+  .breadcrumb, .bc { padding: 5rem 1.25rem 0 !important; }
+  .breadcrumb-inner, .bci { font-size: 0.7rem !important; gap: 0.35rem !important; }
+}
+
+/* 14. GHL iframe */
+@media (max-width: 768px) {
+  #ghl-iframe, #ghl-form-iframe { min-height: 950px !important; }
+}
+
+/* 15. Popup mobile */
+@media (max-width: 640px) {
+  #pg-popup { grid-template-columns: 1fr !important; max-height: 92vh !important; overflow-y: auto !important; }
+  #pg-popup-left { display: none !important; }
+  #pg-popup-right { padding: 1.5rem !important; }
+  .pp-field input, .pp-field select { font-size: 16px !important; } /* prevents zoom on iOS */
+}
+
+/* 16. Tablet (768-1024) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav { padding: 1rem 2rem !important; }
+  section, .cs, .ws, .why-sec, .services-sec,
+  .intro-sec, .cta-sec, footer { 
+    padding-left: 2rem !important; 
+    padding-right: 2rem !important; 
+  }
+  .sgrid { grid-template-columns: repeat(2, 1fr) !important; }
+  .proc-steps { grid-template-columns: repeat(3, 1fr) !important; }
+  .footer-grid, .fg { grid-template-columns: 1fr 1fr !important; }
+  .contact-grid, .cg { grid-template-columns: 1fr !important; }
+  .why-grid, .wg { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* 17. Prevent text overflow */
+@media (max-width: 768px) {
+  * { word-break: break-word !important; }
+  img { max-width: 100% !important; height: auto !important; }
+  .logo-track-wrap { 
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
+  }
+}
+
+/* 18. Input font-size 16px (prevent iOS zoom) */
+@media (max-width: 768px) {
+  input, select, textarea { font-size: 16px !important; }
+}
+
+/* 19. Team photo cards */
+@media (max-width: 768px) {
+  .team-photo-wrap { height: 220px !important; }
+  .team-grid { grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
+}
+
+/* 20. Location cards */
+@media (max-width: 768px) {
+  .loc-grid { grid-template-columns: 1fr 1fr !important; gap: 1px !important; }
+  .loc-card { padding: 1rem !important; }
+  .loc-name { font-size: 0.875rem !important; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="sitenav">
+  <a href="/" class="nav-logo">
+    <img src="data:image/png;base64,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" alt="Per4mance Guru" width="40" height="40">
+  </a>
+  <ul class="nav-links"><li><a href="/about.html">About Us</a></li>
+<li><a href="/process.html">Our Process</a></li>
+    <li class="nav-item">
+      <a href="/services.html">Services <span class="nav-chevron">▾</span></a>
+      <div class="dropdown">
+        <a href="/services.html#seo"><span class="dd-icon">🔍</span>SEO Services</a>
+        <a href="/services.html#meta-ads"><span class="dd-icon">📊</span>Meta Ads</a>
+        <a href="/services.html#google-ads"><span class="dd-icon">📈</span>Google Ads</a>
+        <a href="/services.html#social-media"><span class="dd-icon">📱</span>Social Media</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#creative"><span class="dd-icon">🎨</span>Creative Services</a>
+        <a href="/services.html#content"><span class="dd-icon">✍️</span>Content Marketing</a>
+        <a href="/services.html#email-crm"><span class="dd-icon">📧</span>Email & CRM</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#analytics"><span class="dd-icon">📉</span>Analytics</a>
+        <a href="/services.html#strategy"><span class="dd-icon">🎯</span>Strategy</a>
+      </div>
+    </li>
+<li><a href="/locations.html">Locations</a></li>
+<li><a href="/blog.html" class="active">Blog</a></li>
+<li><a href="/team.html">Team</a></li>
+<li><a href="/contact.html">Contact</a></li>
+</ul>
+  <a href="/contact.html" class="nav-cta">Free Audit →</a>
+  <button class="nav-hamburger" aria-label="Menu" onclick="this.closest('nav').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="hero-label">Insights & Strategy</div>
+    <h1>Marketing That<br><span>Actually Works.</span></h1>
+    <p class="hero-sub">No fluff, no vanity metrics — just real, tested insights on performance marketing, SEO, creative strategy, and digital growth for Indian businesses.</p>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="blog-stats-strip">
+  <div class="bstat"><span class="bstat-num">21+</span><span class="bstat-desc">Articles Published in 2026</span></div>
+  <div class="bstat-divider"></div>
+  <div class="bstat"><span class="bstat-num">8</span><span class="bstat-desc">Topics Covered</span></div>
+  <div class="bstat-divider"></div>
+  <div class="bstat"><span class="bstat-num">5 min</span><span class="bstat-desc">Average Read Time</span></div>
+  <div class="bstat-divider"></div>
+  <div class="bstat"><span class="bstat-num">Weekly</span><span class="bstat-desc">New Articles</span></div>
+</div>
+
+<!-- FILTERS + SEARCH -->
+<div class="blog-controls reveal">
+  <div class="filter-pills" id="filterPills">
+    <div class="fpill active" data-cat="all">All Posts</div>
+    <div class="fpill" data-cat="seo">🔍 SEO</div>
+    <div class="fpill" data-cat="meta">📊 Meta Ads</div>
+    <div class="fpill" data-cat="google">📈 Google Ads</div>
+    <div class="fpill" data-cat="content">✍️ Content</div>
+    <div class="fpill" data-cat="social">📱 Social Media</div>
+    <div class="fpill" data-cat="strategy">🎯 Strategy</div>
+    <div class="fpill" data-cat="ai">🤖 AI & Tools</div>
+    <div class="fpill" data-cat="creative">🎨 Creative</div>
+  </div>
+  <div class="blog-search">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search articles…">
+  </div>
+</div>
+
+<!-- FEATURED POST (May 2026) -->
+<div class="featured-section reveal">
+  <div class="featured-label">⭐ Featured Article — June 2026</div>
+  <a href="blog/ai-in-digital-marketing.html" class="featured-card" data-cat="ai">
+    <div class="featured-img cat-ai">
+      <div class="featured-img-deco">🤖</div>
+      <span class="featured-badge">AI &amp; Tools</span>
+    </div>
+    <div class="featured-content">
+      <div class="featured-meta">
+        <span class="feat-cat">AI &amp; Tools</span>
+        <span class="feat-date">Jun 9, 2026</span>
+        <span class="feat-read">· 12 min read</span>
+      </div>
+      <h2>AI in Digital Marketing: How Artificial Intelligence is Transforming Business Growth</h2>
+      <p>After seven years managing campaigns across India, UAE, Sri Lanka, and Canada — here's what we know: the problem is almost never the product. Nine times out of ten, the campaign setup is quietly working against the very AI systems the platforms use to find buyers. Here's the fix.</p>
+      <div class="feat-tags">
+        <span class="feat-tag">AI Marketing</span>
+        <span class="feat-tag">Meta Ads</span>
+        <span class="feat-tag">Google Ads</span>
+        <span class="feat-tag">ROAS</span>
+        <span class="feat-tag">Campaign Structure</span>
+      </div>
+      <span class="feat-cta">Read Full Article →</span>
+      <div class="feat-author">
+        <div class="author-avatar">PG</div>
+        <div class="author-info">
+          <strong>Per4mance Guru Team</strong>
+          <span>Performance Marketing · Delhi</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- BLOG BODY -->
+<div class="blog-body" id="blogBody">
+
+  <!-- ── JUNE 2026 ── -->
+  <div class="month-section reveal" data-month="jun-2026">
+    <div class="month-header">
+      <span class="month-label">2026</span>
+      <h3 class="month-title">June</h3>
+      <div class="month-divider"></div>
+      <span class="month-count">1 article</span>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog/ai-in-digital-marketing.html" class="blog-card" data-cat="ai" data-title="AI in Digital Marketing: How Artificial Intelligence is Transforming Business Growth" data-search="ai digital marketing artificial intelligence business growth meta ads google ads roas india 2026">
+        <div class="card-img cat-ai"><div class="card-deco">🤖</div><span class="card-cat-badge badge-ai">AI &amp; Tools</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Jun 9, 2026</span><div class="card-dot"></div><span class="card-read">12 min</span></div>
+          <div class="card-title">AI in Digital Marketing: How Artificial Intelligence is Transforming Business Growth</div>
+          <div class="card-excerpt">Your campaign setup is quietly working against the AI systems that find buyers. After 7 years across India, UAE & Canada — here's exactly why ROAS won't budge, and how to fix it.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+    <!-- ── MAY 2026 ── -->
+  <div class="month-section reveal" data-month="may-2026">
+    <div class="month-header">
+      <span class="month-label">2026</span>
+      <h3 class="month-title">May</h3>
+      <div class="month-divider"></div>
+      <span class="month-count">4 articles</span>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog/meta-advantage-plus-india-2026.html" class="blog-card" data-cat="meta" data-title="Meta Advantage+ in 2026: Why Indian D2C Brands Are Finally Seeing 4x ROAS" data-search="meta advantage plus indian d2c roas 2026 campaign">
+        <div class="card-img cat-meta"><div class="card-deco">📊</div><span class="card-cat-badge badge-meta">Meta Ads</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">May 5, 2026</span><div class="card-dot"></div><span class="card-read">8 min</span></div>
+          <div class="card-title">Meta Advantage+ in 2026: Why Indian D2C Brands Are Finally Seeing 4x ROAS</div>
+          <div class="card-excerpt">We spent ₹2.4 crore testing Advantage+ across 12 brands. Here's exactly what works, what doesn't, and how to configure it for Indian audiences.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/google-ai-overviews-seo-india.html" class="blog-card" data-cat="seo" data-title="Google AI Overviews Are Eating Your Traffic: What Indian Brands Must Do Right Now" data-search="google ai overviews seo india traffic organic 2026">
+        <div class="card-img cat-seo"><div class="card-deco">🔍</div><span class="card-cat-badge badge-seo">SEO</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">May 12, 2026</span><div class="card-dot"></div><span class="card-read">6 min</span></div>
+          <div class="card-title">Google AI Overviews Are Eating Your Traffic: What Indian Brands Must Do Right Now</div>
+          <div class="card-excerpt">AI Overviews are reducing click-through rates by up to 35% on informational queries. Here's our tested playbook for protecting your organic traffic in 2026.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/instagram-reels-algorithm-2026.html" class="blog-card" data-cat="social" data-title="The Instagram Reels Algorithm in 2026: What's Actually Driving Reach" data-search="instagram reels algorithm reach 2026 social media india">
+        <div class="card-img cat-social"><div class="card-deco">📱</div><span class="card-cat-badge badge-social">Social Media</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">May 19, 2026</span><div class="card-dot"></div><span class="card-read">5 min</span></div>
+          <div class="card-title">The Instagram Reels Algorithm in 2026: What's Actually Driving Reach for Indian Brands</div>
+          <div class="card-excerpt">Instagram's algorithm has shifted significantly. We analysed 200+ Reels across our client accounts to decode what's driving reach in 2026 — and it's not what most gurus are saying.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/ai-ad-creative-tools-comparison-2026.html" class="blog-card" data-cat="ai" data-title="Kling vs Runway vs Sora: Which AI Video Tool Is Best for Indian Ad Creative?" data-search="kling runway sora ai video ad creative tools comparison 2026">
+        <div class="card-img cat-ai"><div class="card-deco">🤖</div><span class="card-cat-badge badge-ai">AI & Tools</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">May 26, 2026</span><div class="card-dot"></div><span class="card-read">7 min</span></div>
+          <div class="card-title">Kling vs Runway vs Sora: Which AI Video Tool Is Best for Indian Ad Creative in 2026?</div>
+          <div class="card-excerpt">We tested all three on actual client briefs — D2C skincare, fashion, and food — and measured output quality, cost per creative, and conversion performance. The results surprised us.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── APRIL 2026 ── -->
+  <div class="month-section reveal" data-month="apr-2026">
+    <div class="month-header">
+      <span class="month-label">2026</span>
+      <h3 class="month-title">April</h3>
+      <div class="month-divider"></div>
+      <span class="month-count">4 articles</span>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog/local-seo-delhi-2026-guide.html" class="blog-card" data-cat="seo" data-title="Delhi Local SEO 2026: The Complete Guide for Small Businesses" data-search="delhi local seo 2026 small business google maps gmb ranking">
+        <div class="card-img cat-seo"><div class="card-deco">🏙️</div><span class="card-cat-badge badge-seo">SEO</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Apr 7, 2026</span><div class="card-dot"></div><span class="card-read">9 min</span></div>
+          <div class="card-title">Delhi Local SEO 2026: The Complete Neighbourhood-by-Neighbourhood Guide for Small Businesses</div>
+          <div class="card-excerpt">Why ranking for "digital marketing agency Delhi" isn't enough anymore — and why brands targeting Rohini, Dwarka, and Lajpat Nagar separately are winning 3x more local leads.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/performance-max-google-ads-india.html" class="blog-card" data-cat="google" data-title="Performance Max in India: Should You Use It or Avoid It in 2026?" data-search="performance max google ads india 2026 pmax campaign">
+        <div class="card-img cat-google"><div class="card-deco">📈</div><span class="card-cat-badge badge-google">Google Ads</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Apr 14, 2026</span><div class="card-dot"></div><span class="card-read">6 min</span></div>
+          <div class="card-title">Performance Max in India: Should You Use It or Avoid It in 2026?</div>
+          <div class="card-excerpt">PMax campaigns promised everything. The reality for Indian SMEs has been more complicated. We've run 30+ PMax campaigns and here's the unfiltered verdict on when it helps and when it hurts.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/d2c-brand-content-strategy-india.html" class="blog-card" data-cat="content" data-title="Content Strategy for D2C Brands in India: What's Working in 2026" data-search="d2c content strategy india 2026 brand awareness seo blog">
+        <div class="card-img cat-content"><div class="card-deco">✍️</div><span class="card-cat-badge badge-content">Content</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Apr 21, 2026</span><div class="card-dot"></div><span class="card-read">7 min</span></div>
+          <div class="card-title">Content Strategy for D2C Brands in India: What's Actually Working in 2026</div>
+          <div class="card-excerpt">Long-form blog posts are making a surprising comeback. So are founder-led video series. We break down the content formats giving D2C brands the highest ROI this year.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/whatsapp-marketing-india-business-2026.html" class="blog-card" data-cat="strategy" data-title="WhatsApp Marketing for Indian Businesses in 2026: Beyond Broadcast Lists" data-search="whatsapp marketing india business 2026 automation crm">
+        <div class="card-img cat-strategy"><div class="card-deco">💬</div><span class="card-cat-badge badge-strategy">Strategy</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Apr 28, 2026</span><div class="card-dot"></div><span class="card-read">5 min</span></div>
+          <div class="card-title">WhatsApp Marketing for Indian Businesses in 2026: Beyond Broadcast Lists</div>
+          <div class="card-excerpt">WhatsApp's API has opened up serious automation possibilities. Indian brands using it right are seeing 40-60% open rates and 8x better conversion than email. Here's how.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── MARCH 2026 ── -->
+  <div class="month-section reveal" data-month="mar-2026">
+    <div class="month-header">
+      <span class="month-label">2026</span>
+      <h3 class="month-title">March</h3>
+      <div class="month-divider"></div>
+      <span class="month-count">4 articles</span>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog/meta-ads-creative-fatigue-signs.html" class="blog-card" data-cat="meta" data-title="7 Signs Your Meta Ad Creative Is Fatigued (And How to Fix It Fast)" data-search="meta ads creative fatigue frequency ctr drop fix 2026">
+        <div class="card-img cat-meta"><div class="card-deco">😴</div><span class="card-cat-badge badge-meta">Meta Ads</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Mar 3, 2026</span><div class="card-dot"></div><span class="card-read">5 min</span></div>
+          <div class="card-title">7 Signs Your Meta Ad Creative Is Fatigued (And How to Fix It in 48 Hours)</div>
+          <div class="card-excerpt">Creative fatigue is the silent ROAS killer. Most brands don't notice until their CPAs have doubled. Here are the early warning signs and exactly what to do when you spot them.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/seo-vs-paid-ads-india-startup.html" class="blog-card" data-cat="strategy" data-title="SEO vs Paid Ads for Indian Startups: Where Should You Put Your First ₹1 Lakh?" data-search="seo vs paid ads india startup budget first 1 lakh decision">
+        <div class="card-img cat-strategy"><div class="card-deco">⚖️</div><span class="card-cat-badge badge-strategy">Strategy</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Mar 10, 2026</span><div class="card-dot"></div><span class="card-read">8 min</span></div>
+          <div class="card-title">SEO vs Paid Ads for Indian Startups: Where Should You Put Your First ₹1 Lakh?</div>
+          <div class="card-excerpt">The age-old debate — but with actual data from Indian market conditions in 2026. We lay out exactly when to choose paid, when to choose organic, and when to split the budget.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/hook-writing-indian-consumer-ads.html" class="blog-card" data-cat="creative" data-title="How to Write Hooks That Stop Indian Consumers Mid-Scroll in 2026" data-search="hook writing indian consumer ads reels scroll stop creative 2026">
+        <div class="card-img cat-creative"><div class="card-deco">🎨</div><span class="card-cat-badge badge-creative">Creative</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Mar 17, 2026</span><div class="card-dot"></div><span class="card-read">6 min</span></div>
+          <div class="card-title">How to Write Hooks That Stop Indian Consumers Mid-Scroll in 2026</div>
+          <div class="card-excerpt">Indian audiences have unique scroll behaviour, cultural reference points, and language switching habits that completely change how effective hooks are written. Here's our tested framework.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/ga4-setup-ecommerce-india.html" class="blog-card" data-cat="strategy" data-title="GA4 Setup for Indian E-commerce: The 12 Events You Must Track Before Spending on Ads" data-search="ga4 setup ecommerce india events tracking meta pixel 2026">
+        <div class="card-img cat-strategy"><div class="card-deco">📊</div><span class="card-cat-badge badge-strategy">Strategy</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Mar 24, 2026</span><div class="card-dot"></div><span class="card-read">7 min</span></div>
+          <div class="card-title">GA4 Setup for Indian E-commerce: The 12 Events You Must Track Before Spending on Ads</div>
+          <div class="card-excerpt">Most Indian brands are running ads on broken attribution. This is the exact GA4 event setup we implement for every new client before we touch their ad account.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── FEBRUARY 2026 ── -->
+  <div class="month-section reveal" data-month="feb-2026">
+    <div class="month-header">
+      <span class="month-label">2026</span>
+      <h3 class="month-title">February</h3>
+      <div class="month-divider"></div>
+      <span class="month-count">4 articles</span>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog/content-cluster-seo-india-2026.html" class="blog-card" data-cat="seo" data-title="Content Clusters for Indian Businesses: The SEO Strategy That's Beating AI Overviews" data-search="content cluster seo india 2026 topical authority pillar page">
+        <div class="card-img cat-seo"><div class="card-deco">🕸️</div><span class="card-cat-badge badge-seo">SEO</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Feb 2, 2026</span><div class="card-dot"></div><span class="card-read">8 min</span></div>
+          <div class="card-title">Content Clusters for Indian Businesses: The SEO Strategy That's Beating AI Overviews</div>
+          <div class="card-excerpt">Topical authority is the most reliable way to survive Google's AI-powered search updates. Here's the exact content cluster architecture we build for Indian SMEs and D2C brands.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/meta-ads-budget-scaling-india.html" class="blog-card" data-cat="meta" data-title="The Right Way to Scale a Meta Ads Budget in India Without Killing Your ROAS" data-search="meta ads budget scaling india roas efficiency 2026">
+        <div class="card-img cat-meta"><div class="card-deco">💰</div><span class="card-cat-badge badge-meta">Meta Ads</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Feb 9, 2026</span><div class="card-dot"></div><span class="card-read">6 min</span></div>
+          <div class="card-title">The Right Way to Scale a Meta Ads Budget in India Without Killing Your ROAS</div>
+          <div class="card-excerpt">Scaling Meta budgets is part art, part science. We've learned from expensive mistakes so you don't have to. The 20% rule, horizontal scaling, and why campaign cloning is usually wrong.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/valentine-day-campaign-india-brands.html" class="blog-card" data-cat="strategy" data-title="Valentine's Day 2026: What Indian Brands Got Right (And What Flopped)" data-search="valentines day 2026 india campaign digital marketing brands performance">
+        <div class="card-img cat-strategy"><div class="card-deco">❤️</div><span class="card-cat-badge badge-strategy">Strategy</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Feb 16, 2026</span><div class="card-dot"></div><span class="card-read">5 min</span></div>
+          <div class="card-title">Valentine's Day 2026 Campaigns: What Indian Brands Got Right (And What Flopped)</div>
+          <div class="card-excerpt">We analysed 50+ Valentine's Day campaigns from Indian brands. The winning ones had one thing in common that almost nobody talks about. Here's the breakdown with real ad examples.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/google-ads-smart-bidding-india-2026.html" class="blog-card" data-cat="google" data-title="Google Smart Bidding in India 2026: Which Strategy Works Best for Your Goal?" data-search="google ads smart bidding target cpa roas india 2026 strategy">
+        <div class="card-img cat-google"><div class="card-deco">🤖</div><span class="card-cat-badge badge-google">Google Ads</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Feb 23, 2026</span><div class="card-dot"></div><span class="card-read">6 min</span></div>
+          <div class="card-title">Google Smart Bidding in India 2026: Target CPA vs Target ROAS vs Maximise Conversions — Which Wins?</div>
+          <div class="card-excerpt">We ran controlled experiments across 15 Indian e-commerce accounts testing every major bidding strategy. The winner depends on your data volume — and most brands pick the wrong one.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── JANUARY 2026 ── -->
+  <div class="month-section reveal" data-month="jan-2026">
+    <div class="month-header">
+      <span class="month-label">2026</span>
+      <h3 class="month-title">January</h3>
+      <div class="month-divider"></div>
+      <span class="month-count">5 articles</span>
+    </div>
+    <div class="blog-grid">
+
+      <a href="blog/digital-marketing-trends-india-2026.html" class="blog-card" data-cat="strategy" data-title="Digital Marketing in India 2026: 10 Trends That Will Define the Year" data-search="digital marketing trends india 2026 predictions seo meta ai">
+        <div class="card-img cat-strategy" style="background:linear-gradient(135deg,#0a1218,#0d1e26);"><div class="card-deco">🔮</div><span class="card-cat-badge badge-strategy">Strategy</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Jan 5, 2026</span><div class="card-dot"></div><span class="card-read">10 min</span></div>
+          <div class="card-title">Digital Marketing in India 2026: 10 Trends That Will Define the Year</div>
+          <div class="card-excerpt">AI search disruption, Meta's automation push, the rise of micro-influencers in Tier 2 cities, and the death of third-party cookies — our comprehensive 2026 trend forecast for Indian marketers.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/meta-ad-account-structure-2026.html" class="blog-card" data-cat="meta" data-title="The Ideal Meta Ad Account Structure for Indian Brands in 2026" data-search="meta ad account structure campaign adset 2026 india best practice">
+        <div class="card-img cat-meta"><div class="card-deco">🏗️</div><span class="card-cat-badge badge-meta">Meta Ads</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Jan 12, 2026</span><div class="card-dot"></div><span class="card-read">7 min</span></div>
+          <div class="card-title">The Ideal Meta Ad Account Structure for Indian Brands in 2026</div>
+          <div class="card-excerpt">With Meta's AI handling more of the heavy lifting, account structure has become more important than ever — not less. Here's the exact campaign structure we set up for Indian brands today.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/seo-audit-checklist-india-2026.html" class="blog-card" data-cat="seo" data-title="The 2026 SEO Audit Checklist for Indian Websites: 40 Points That Actually Matter" data-search="seo audit checklist india 2026 technical on-page content">
+        <div class="card-img cat-seo"><div class="card-deco">✅</div><span class="card-cat-badge badge-seo">SEO</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Jan 19, 2026</span><div class="card-dot"></div><span class="card-read">11 min</span></div>
+          <div class="card-title">The 2026 SEO Audit Checklist for Indian Websites: 40 Points That Actually Matter</div>
+          <div class="card-excerpt">Most SEO audit checklists are bloated with irrelevant metrics. This is the lean, focused checklist we use for every new client — covering technical, on-page, content, and local SEO for the Indian market.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/ai-content-seo-google-india.html" class="blog-card" data-cat="ai" data-title="AI-Generated Content and Google in 2026: What's Safe, What's Risky for Indian Sites" data-search="ai content seo google india 2026 helpful content policy rank">
+        <div class="card-img cat-ai"><div class="card-deco">🤖</div><span class="card-cat-badge badge-ai">AI & Tools</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Jan 26, 2026</span><div class="card-dot"></div><span class="card-read">6 min</span></div>
+          <div class="card-title">AI-Generated Content and Google in 2026: What's Safe, What's Risky for Indian Sites?</div>
+          <div class="card-excerpt">The helpful content debate is over — Google has spoken. But the nuances for Indian language content, local business pages, and e-commerce sites are very different from the global playbook.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+      <a href="blog/marketing-budget-planning-india-2026.html" class="blog-card" data-cat="strategy" data-title="How to Plan Your Digital Marketing Budget for 2026: A Practical Guide for Indian SMEs" data-search="marketing budget planning india 2026 sme allocation channels">
+        <div class="card-img cat-strategy"><div class="card-deco">💼</div><span class="card-cat-badge badge-strategy">Strategy</span></div>
+        <div class="card-body">
+          <div class="card-meta"><span class="card-date">Jan 29, 2026</span><div class="card-dot"></div><span class="card-read">8 min</span></div>
+          <div class="card-title">How to Plan Your Digital Marketing Budget for 2026: A Practical Guide for Indian SMEs</div>
+          <div class="card-excerpt">What percentage of revenue should Indian SMEs spend on marketing in 2026? How should that split between paid, organic, and creative? We share the exact frameworks we use with our clients.</div>
+          <div class="card-footer"><span class="card-author-name">Per4mance Guru</span><span class="card-arrow">↗</span></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="no-results" id="noResults">No articles found for your search. Try a different keyword or category.</div>
+
+</div><!-- /blog-body -->
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section reveal">
+  <div class="nl-left">
+    <div style="font-size:0.72rem;font-weight:700;color:var(--coral);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem;">Stay Sharp</div>
+    <h3>Get Weekly Marketing<br><span>Insights in Your Inbox.</span></h3>
+    <p>Every Monday, we send one actionable insight from our active campaigns — real data, real results, no fluff. Join 2,000+ Indian marketers who read it.</p>
+  </div>
+  <div class="nl-right">
+    <div class="nl-form">
+      <input class="nl-input" type="text" placeholder="Your name">
+      <div class="nl-row">
+        <input class="nl-input" type="email" placeholder="your@email.com">
+        <button class="nl-btn" id="nlBtn">Subscribe →</button>
+      </div>
+      <div class="nl-topics">
+        <span class="nl-topic">Meta Ads</span>
+        <span class="nl-topic">SEO Updates</span>
+        <span class="nl-topic">Creative Strategy</span>
+        <span class="nl-topic">Google Ads</span>
+        <span class="nl-topic">Case Studies</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img src="data:image/png;base64,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" alt="Per4mance Guru">
+        <div class="footer-brand-name">Per<span>4</span>mance Guru</div>
+      </div>
+      <p>Delhi's performance marketing agency. We grow brands through data-driven digital strategy, creative excellence, and relentless optimisation.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="/contact.html">Paid Advertising</a></li>
+        <li><a href="/contact.html">SEO</a></li>
+        <li><a href="/contact.html">Content Marketing</a></li>
+        <li><a href="/contact.html">Social Media</a></li>
+        <li><a href="/contact.html">Creative Services</a></li>
+        <li><a href="/contact.html">Email & CRM</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/process.html">Our Process</a></li>
+    <li class="nav-item">
+      <a href="/services.html">Services <span class="nav-chevron">▾</span></a>
+      <div class="dropdown">
+        <a href="/services.html#seo"><span class="dd-icon">🔍</span>SEO Services</a>
+        <a href="/services.html#meta-ads"><span class="dd-icon">📊</span>Meta Ads</a>
+        <a href="/services.html#google-ads"><span class="dd-icon">📈</span>Google Ads</a>
+        <a href="/services.html#social-media"><span class="dd-icon">📱</span>Social Media</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#creative"><span class="dd-icon">🎨</span>Creative Services</a>
+        <a href="/services.html#content"><span class="dd-icon">✍️</span>Content Marketing</a>
+        <a href="/services.html#email-crm"><span class="dd-icon">📧</span>Email & CRM</a>
+        <div class="dropdown-divider"></div>
+        <a href="/services.html#analytics"><span class="dd-icon">📉</span>Analytics</a>
+        <a href="/services.html#strategy"><span class="dd-icon">🎯</span>Strategy</a>
+      </div>
+    </li>
+        <li><a href="/team.html">Team</a></li>
+        <li><a href="/blog.html" class="active">Blog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+919811096907">+91 98110 96907</a></li>
+        <li><a href="mailto:hello@per4mance.guru">hello@per4mance.guru</a></li>
+        <li><a>A-10 Gujaranwala Town, Delhi</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>Per4mance Guru</span>. All rights reserved.</p>
+    <p>Made with <span>♥</span> in Delhi</p>
+  </div>
+</footer>
+
+<script>
+// Cursor
+
+my=0,fx=0,fy=0;
+
+// Navbar scroll
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.padding=window.scrollY>60?'1rem 4rem':'1.5rem 4rem';});
+
+// Reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}});},{threshold:0.06,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Filter + Search
+const allCards=Array.from(document.querySelectorAll('.blog-card'));
+const monthSections=Array.from(document.querySelectorAll('.month-section'));
+
+function filterAndSearch(){
+  const activeCat=document.querySelector('.fpill.active').dataset.cat;
+  const query=document.getElementById('searchInput').value.toLowerCase().trim();
+  let anyVisible=false;
+
+  allCards.forEach(card=>{
+    const catMatch=activeCat==='all'||card.dataset.cat===activeCat;
+    const searchStr=(card.dataset.title||'')+(card.dataset.search||'');
+    const searchMatch=!query||searchStr.toLowerCase().includes(query);
+    const show=catMatch&&searchMatch;
+    card.style.display=show?'flex':'none';
+    if(show)anyVisible=true;
+  });
+
+  // hide empty month sections
+  monthSections.forEach(sec=>{
+    const visible=Array.from(sec.querySelectorAll('.blog-card')).some(c=>c.style.display!=='none');
+    sec.style.display=visible?'block':'none';
+  });
+
+  document.getElementById('noResults').style.display=anyVisible?'none':'block';
+}
+
+document.querySelectorAll('.fpill').forEach(pill=>{
+  pill.addEventListener('click',()=>{
+    document.querySelectorAll('.fpill').forEach(p=>p.classList.remove('active'));
+    pill.classList.add('active');
+    filterAndSearch();
+  });
+});
+document.getElementById('searchInput').addEventListener('input',filterAndSearch);
+
+// Newsletter btn
+document.getElementById('nlBtn').addEventListener('click',function(){
+  this.textContent='Subscribed ✓';
+  this.style.background='#4ade80';
+  this.disabled=true;
+});
+</script>
+<script>
+window.addEventListener('scroll',function(){
+  var n=document.getElementById('sitenav');
+  if(n) n.style.padding=window.scrollY>50?'.7rem 4rem':'1.1rem 4rem';
+});
+</script>
+
+<script>
+// Force all reveal elements visible — IntersectionObserver fallback
+(function() {
+  function forceReveal() {
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      el.classList.add('visible');
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  }
+  // Try immediately on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forceReveal);
+  } else {
+    forceReveal();
+  }
+  // Also fire after short delay as backup
+  setTimeout(forceReveal, 300);
+  setTimeout(forceReveal, 800);
+})();
+</script>
+
+</body>
+</html>
