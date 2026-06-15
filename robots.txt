@@ -1,0 +1,51 @@
+# Per4mance Guru — robots.txt
+# https://per4mance.guru
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Google AI (Gemini + AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft Copilot (via Bing)
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Block AI training scrapers (not search/citation bots)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Common Crawl
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://per4mance.guru/sitemap.xml
