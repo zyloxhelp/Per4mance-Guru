@@ -2140,8 +2140,8 @@ body.pgl-loading {
       <!-- ── Video 1 ── -->
       <div class="vid-card" data-vid="0">
         <video
-          data-src="./client-video-1.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-1.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2150,8 +2150,8 @@ body.pgl-loading {
       <!-- ── Video 2 ── -->
       <div class="vid-card" data-vid="1">
         <video
-          data-src="./client-video-2.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-2.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2160,8 +2160,8 @@ body.pgl-loading {
       <!-- ── Video 3 ── -->
       <div class="vid-card" data-vid="2">
         <video
-          data-src="./client-video-3.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-3.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2170,8 +2170,8 @@ body.pgl-loading {
       <!-- ── Video 4 ── -->
       <div class="vid-card" data-vid="3">
         <video
-          data-src="./client-video-4.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-4.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2180,8 +2180,8 @@ body.pgl-loading {
       <!-- ── Video 5 ── -->
       <div class="vid-card" data-vid="4">
         <video
-          data-src="./client-video-5.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-5.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2190,8 +2190,8 @@ body.pgl-loading {
       <!-- ── Video 6 ── -->
       <div class="vid-card" data-vid="5">
         <video
-          data-src="./client-video-6.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-6.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2200,8 +2200,8 @@ body.pgl-loading {
       <!-- ── Video 7 ── -->
       <div class="vid-card" data-vid="6">
         <video
-          data-src="./client-video-7.mp4" src=""
-          data-autoplay muted loop playsinline
+          data-src="./client-video-7.mp4"
+          muted loop playsinline
           preload="none"
           tabindex="-1"
         ></video>
@@ -2209,25 +2209,25 @@ body.pgl-loading {
 
       <!-- ── Duplicate set for seamless infinite loop ── -->
       <div class="vid-card" data-vid="0">
-        <video data-src="./client-video-1.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-1.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="vid-card" data-vid="1">
-        <video data-src="./client-video-2.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-2.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="vid-card" data-vid="2">
-        <video data-src="./client-video-3.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-3.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="vid-card" data-vid="3">
-        <video data-src="./client-video-4.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-4.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="vid-card" data-vid="4">
-        <video data-src="./client-video-5.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-5.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="vid-card" data-vid="5">
-        <video data-src="./client-video-6.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-6.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
       <div class="vid-card" data-vid="6">
-        <video data-src="./client-video-7.mp4" src="" data-autoplay muted loop playsinline preload="none" tabindex="-1"></video>
+        <video data-src="./client-video-7.mp4" muted loop playsinline preload="none" tabindex="-1"></video>
       </div>
 
     </div>
@@ -2277,7 +2277,7 @@ body.pgl-loading {
         var vid = entry.target.querySelector('video');
         if (!vid) return;
         if (entry.isIntersecting) {
-          if (!vid.src && vid.dataset.src) vid.src = vid.dataset.src;
+          if (!vid.getAttribute('src') && vid.dataset.src) { vid.setAttribute('src', vid.dataset.src); vid.load(); }
           vid.play().catch(function(){});
         } else {
           vid.pause();
@@ -3014,28 +3014,5 @@ setTimeout(function() {
 })();
 </script>
 
-
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)) return;
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting) return;
-      var v = e.target;
-      if(v.dataset.src && !v.src){
-        v.src = v.dataset.src;
-        v.load();
-      }
-      if(v.dataset.autoplay !== undefined){
-        v.play().catch(function(){});
-      }
-      obs.unobserve(v);
-    });
-  }, {rootMargin:'200px'});
-  document.querySelectorAll('video[data-src]').forEach(function(v){
-    obs.observe(v);
-  });
-})();
-</script>
 </body>
 </html>
