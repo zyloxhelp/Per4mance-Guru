@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Meta Ads & Google Ads ROAS Calculator India 2026 | Per4mance Guru</title>
+<meta name="description" content="Free ROAS calculator for Indian brands running Meta Ads and Google Ads. Calculate true ROAS, break-even ROAS, and monthly ad budget based on your margins. Built by Per4mance Guru.">
+<meta property="og:title" content="Free Meta Ads ROAS Calculator — Per4mance Guru">
+<meta property="og:description" content="Calculate true ROAS, break-even ROAS, and ideal ad budget for your Indian D2C brand. Free tool by Per4mance Guru.">
+<link rel="canonical" href="https://per4mance.guru/roas-calculator.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Meta Ads & Google Ads ROAS Calculator India",
+  "description": "Free ROAS calculator for Indian brands. Calculate true ROAS, break-even ROAS, and monthly ad budget.",
+  "url": "https://per4mance.guru/roas-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"},
+  "creator": {"@type": "Organization", "name": "Per4mance Guru", "url": "https://per4mance.guru"}
+}
+</script>
+<style>
+  :root {
+    --black: #0A0A0A; --white: #FFFFFF; --coral: #E8543A;
+    --cream: #F5EDE3; --grey: #6B6B6B; --border: #E0D8CF;
+    --green: #22C55E; --yellow: #F59E0B; --red: #EF4444;
+    --max: 860px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f5f0; color: var(--black); }
+
+  /* NAV */
+  nav { background: var(--black); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { color: var(--coral); font-weight: 800; font-size: 1.1rem; text-decoration: none; letter-spacing: -.02em; }
+  .nav-link { color: rgba(255,255,255,.7); font-size: .85rem; text-decoration: none; }
+  .nav-link:hover { color: #fff; }
+
+  /* HERO */
+  .hero { background: var(--black); color: #fff; padding: 4rem 2rem 3rem; text-align: center; }
+  .hero-tag { display: inline-block; background: var(--coral); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .35rem .9rem; border-radius: 2rem; margin-bottom: 1.2rem; }
+  .hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.05; margin-bottom: 1rem; }
+  .hero h1 em { color: var(--coral); font-style: normal; }
+  .hero p { color: rgba(255,255,255,.6); font-size: .95rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+  /* CALC WRAP */
+  .calc-wrap { max-width: var(--max); margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  /* TABS */
+  .tabs { display: flex; gap: .5rem; margin-bottom: 2rem; }
+  .tab { padding: .6rem 1.4rem; border-radius: 2rem; font-size: .85rem; font-weight: 600; cursor: pointer; border: 1.5px solid var(--border); background: #fff; color: var(--grey); transition: all .2s; }
+  .tab.active { background: var(--coral); color: #fff; border-color: var(--coral); }
+
+  /* GRID */
+  .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media(max-width:640px){ .calc-grid { grid-template-columns: 1fr; } }
+
+  /* CARD */
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+  .card-title { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--grey); margin-bottom: 1.5rem; }
+
+  /* INPUTS */
+  .field { margin-bottom: 1.2rem; }
+  .field label { display: block; font-size: .8rem; font-weight: 600; color: var(--grey); margin-bottom: .4rem; }
+  .field-row { display: flex; align-items: center; }
+  .field-prefix, .field-suffix { background: var(--cream); border: 1px solid var(--border); padding: .55rem .75rem; font-size: .9rem; color: var(--grey); font-weight: 600; }
+  .field-prefix { border-right: none; border-radius: 8px 0 0 8px; }
+  .field-suffix { border-left: none; border-radius: 0 8px 8px 0; }
+  input[type="number"] {
+    flex: 1; border: 1px solid var(--border); padding: .55rem .75rem;
+    font-size: .95rem; font-weight: 600; color: var(--black);
+    outline: none; background: #fff;
+    -moz-appearance: textfield;
+  }
+  input[type="number"]:focus { border-color: var(--coral); }
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+  .solo input { border-radius: 8px; }
+  .prefix-input input { border-radius: 0; }
+  .suffix-input input { border-radius: 0; }
+
+  /* SLIDER */
+  .slider-wrap { margin-bottom: 1.2rem; }
+  .slider-label { display: flex; justify-content: space-between; font-size: .8rem; font-weight: 600; color: var(--grey); margin-bottom: .5rem; }
+  .slider-val { color: var(--black); }
+  input[type="range"] { width: 100%; accent-color: var(--coral); cursor: pointer; }
+
+  /* RESULTS CARD */
+  .results-card { background: var(--black); color: #fff; border-radius: 16px; padding: 1.75rem; }
+  .results-card .card-title { color: rgba(255,255,255,.5); }
+  .result-row { display: flex; justify-content: space-between; align-items: center; padding: .85rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .result-row:last-child { border-bottom: none; }
+  .result-label { font-size: .85rem; color: rgba(255,255,255,.6); }
+  .result-value { font-size: 1.15rem; font-weight: 800; }
+  .result-value.green { color: #4ADE80; }
+  .result-value.yellow { color: #FCD34D; }
+  .result-value.red { color: #F87171; }
+  .result-value.coral { color: var(--coral); }
+  .result-value.white { color: #fff; }
+
+  /* STATUS BAR */
+  .status-bar { margin-top: 1.5rem; padding: 1rem 1.25rem; border-radius: 10px; }
+  .status-bar.good { background: rgba(74,222,128,.1); border: 1px solid rgba(74,222,128,.3); }
+  .status-bar.warn { background: rgba(252,211,77,.1); border: 1px solid rgba(252,211,77,.3); }
+  .status-bar.bad  { background: rgba(248,113,113,.1); border: 1px solid rgba(248,113,113,.3); }
+  .status-title { font-size: .8rem; font-weight: 700; margin-bottom: .3rem; }
+  .status-bar.good .status-title { color: #4ADE80; }
+  .status-bar.warn .status-title { color: #FCD34D; }
+  .status-bar.bad  .status-title { color: #F87171; }
+  .status-body { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.55; }
+
+  /* BENCHMARK */
+  .bench-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-top: 1.5rem; }
+  .bench-item { background: rgba(255,255,255,.05); border-radius: 10px; padding: .9rem 1rem; }
+  .bench-cat { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .3rem; }
+  .bench-val { font-size: 1rem; font-weight: 800; color: var(--coral); }
+  .bench-lbl { font-size: .72rem; color: rgba(255,255,255,.4); margin-top: .15rem; }
+
+  /* CTA */
+  .cta-section { background: var(--black); color: #fff; text-align: center; padding: 4rem 2rem; margin-top: 3rem; }
+  .cta-section h2 { font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 800; letter-spacing: -.03em; margin-bottom: .75rem; }
+  .cta-section p { color: rgba(255,255,255,.6); font-size: .9rem; margin-bottom: 2rem; }
+  .cta-btn { display: inline-block; background: var(--coral); color: #fff; font-weight: 700; padding: .9rem 2.5rem; border-radius: 3rem; text-decoration: none; font-size: .95rem; margin: .4rem; }
+  .cta-btn.outline { background: transparent; border: 1.5px solid rgba(255,255,255,.3); }
+
+  /* EXPLAIN */
+  .explain { max-width: var(--max); margin: 0 auto 3rem; padding: 0 1.5rem; }
+  .explain h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: 1rem; }
+  .explain p { font-size: .9rem; color: var(--grey); line-height: 1.75; margin-bottom: .9rem; }
+  .faq-item { border-top: 1px solid var(--border); padding: 1.2rem 0; }
+  .faq-q { font-weight: 700; font-size: .9rem; margin-bottom: .5rem; cursor: pointer; }
+  .faq-a { font-size: .85rem; color: var(--grey); line-height: 1.7; display: none; }
+  .faq-item.open .faq-a { display: block; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://per4mance.guru/" class="nav-logo">per4mance.guru</a>
+  <a href="https://per4mance.guru/contact.html" class="nav-link">Free Audit →</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Free Tool — No Signup Required</div>
+  <h1>Meta Ads & Google Ads<br><em>ROAS Calculator</em> India</h1>
+  <p>Calculate your true ROAS, break-even point, and ideal monthly ad budget. Built for Indian D2C brands by Per4mance Guru.</p>
+</div>
+
+<div class="calc-wrap">
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('meta')">Meta Ads</div>
+    <div class="tab" onclick="switchTab('google')">Google Ads</div>
+    <div class="tab" onclick="switchTab('budget')">Budget Planner</div>
+  </div>
+
+  <!-- META TAB -->
+  <div id="tab-meta">
+    <div class="calc-grid">
+      <div>
+        <div class="card">
+          <div class="card-title">Your Numbers</div>
+
+          <div class="field">
+            <label>Monthly Ad Spend (₹)</label>
+            <div class="field-row prefix-input">
+              <div class="field-prefix">₹</div>
+              <input type="number" id="m-spend" value="100000" oninput="calcMeta()">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Revenue From Ads (₹)</label>
+            <div class="field-row prefix-input">
+              <div class="field-prefix">₹</div>
+              <input type="number" id="m-revenue" value="380000" oninput="calcMeta()">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Product Cost of Goods (%)</label>
+            <div class="field-row suffix-input">
+              <input type="number" id="m-cogs" value="35" min="1" max="99" oninput="calcMeta()">
+              <div class="field-suffix">%</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Shipping + Returns Cost (%)</label>
+            <div class="field-row suffix-input">
+              <input type="number" id="m-ship" value="8" min="0" max="50" oninput="calcMeta()">
+              <div class="field-suffix">%</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Agency / Management Fee (₹)</label>
+            <div class="field-row prefix-input">
+              <div class="field-prefix">₹</div>
+              <input type="number" id="m-mgmt" value="15000" oninput="calcMeta()">
+            </div>
+          </div>
+
+          <div class="slider-wrap">
+            <div class="slider-label">
+              <span>View-Through Attribution Inflation</span>
+              <span class="slider-val" id="vt-label">30%</span>
+            </div>
+            <input type="range" id="m-vt" min="0" max="60" value="30" oninput="updateVT();calcMeta()">
+            <div style="font-size:.72rem;color:var(--grey);margin-top:.4rem;">How much of your reported conversions may be view-through (not real clicks). Typical for Indian D2C: 25–40%.</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="results-card">
+          <div class="card-title">Your Results</div>
+
+          <div class="result-row">
+            <span class="result-label">Reported ROAS</span>
+            <span class="result-value white" id="m-roas-reported">3.8x</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">True ROAS (adjusted)</span>
+            <span class="result-value coral" id="m-roas-true">2.7x</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Break-even ROAS</span>
+            <span class="result-value white" id="m-roas-be">2.2x</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Gross Profit From Ads</span>
+            <span class="result-value green" id="m-profit">₹1,12,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Net Profit After Fees</span>
+            <span class="result-value green" id="m-net">₹97,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Effective Margin on Ad Revenue</span>
+            <span class="result-value coral" id="m-margin">25.5%</span>
+          </div>
+
+          <div class="status-bar good" id="m-status">
+            <div class="status-title">✅ Profitable — Room to Scale</div>
+            <div class="status-body">Your true ROAS is above break-even. You can scale spend, but fix attribution first to measure scaling accurately.</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1rem;">
+          <div class="card-title">Indian D2C Benchmarks (2026)</div>
+          <div class="bench-grid">
+            <div class="bench-item">
+              <div class="bench-cat">Fashion / Apparel</div>
+              <div class="bench-val">2.8–4.5x</div>
+              <div class="bench-lbl">Avg ROAS range</div>
+            </div>
+            <div class="bench-item">
+              <div class="bench-cat">Beauty / Skincare</div>
+              <div class="bench-val">3.2–5.5x</div>
+              <div class="bench-lbl">Avg ROAS range</div>
+            </div>
+            <div class="bench-item">
+              <div class="bench-cat">Health / Wellness</div>
+              <div class="bench-val">2.5–4.2x</div>
+              <div class="bench-lbl">Avg ROAS range</div>
+            </div>
+            <div class="bench-item">
+              <div class="bench-cat">Home / Lifestyle</div>
+              <div class="bench-val">2.2–3.8x</div>
+              <div class="bench-lbl">Avg ROAS range</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GOOGLE TAB -->
+  <div id="tab-google" style="display:none;">
+    <div class="calc-grid">
+      <div>
+        <div class="card">
+          <div class="card-title">Your Numbers</div>
+          <div class="field">
+            <label>Monthly Ad Spend (₹)</label>
+            <div class="field-row prefix-input">
+              <div class="field-prefix">₹</div>
+              <input type="number" id="g-spend" value="75000" oninput="calcGoogle()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Monthly Leads Generated</label>
+            <div class="field-row solo">
+              <input type="number" id="g-leads" value="45" oninput="calcGoogle()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Lead-to-Sale Conversion Rate (%)</label>
+            <div class="field-row suffix-input">
+              <input type="number" id="g-cvr" value="20" min="1" max="100" oninput="calcGoogle()">
+              <div class="field-suffix">%</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Average Deal Value (₹)</label>
+            <div class="field-row prefix-input">
+              <div class="field-prefix">₹</div>
+              <input type="number" id="g-deal" value="25000" oninput="calcGoogle()">
+            </div>
+          </div>
+          <div class="field">
+            <label>Gross Margin on Sale (%)</label>
+            <div class="field-row suffix-input">
+              <input type="number" id="g-margin" value="55" min="1" max="100" oninput="calcGoogle()">
+              <div class="field-suffix">%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="results-card">
+          <div class="card-title">Your Results</div>
+          <div class="result-row">
+            <span class="result-label">Cost Per Lead (CPL)</span>
+            <span class="result-value white" id="g-cpl">₹1,667</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Cost Per Acquisition (CPA)</span>
+            <span class="result-value coral" id="g-cpa">₹8,333</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Monthly Sales Closed</span>
+            <span class="result-value white" id="g-sales">9</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Monthly Revenue from Ads</span>
+            <span class="result-value white" id="g-rev">₹2,25,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">ROAS</span>
+            <span class="result-value coral" id="g-roas">3.0x</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Net Profit After Ad Spend</span>
+            <span class="result-value green" id="g-profit">₹48,750</span>
+          </div>
+          <div class="status-bar good" id="g-status">
+            <div class="status-title">✅ Strong Performance</div>
+            <div class="status-body">Your CPA is well within profitable range. Focus on improving lead quality to increase close rate.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUDGET TAB -->
+  <div id="tab-budget" style="display:none;">
+    <div class="calc-grid">
+      <div>
+        <div class="card">
+          <div class="card-title">Revenue Target Planner</div>
+          <div class="field">
+            <label>Monthly Revenue Target (₹)</label>
+            <div class="field-row prefix-input">
+              <div class="field-prefix">₹</div>
+              <input type="number" id="b-target" value="1000000" oninput="calcBudget()">
+            </div>
+          </div>
+          <div class="field">
+            <label>% Revenue From Paid Ads</label>
+            <div class="field-row suffix-input">
+              <input type="number" id="b-paid-pct" value="40" min="1" max="100" oninput="calcBudget()">
+              <div class="field-suffix">%</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Expected ROAS</label>
+            <div class="field-row suffix-input">
+              <input type="number" id="b-roas" value="3.5" step="0.1" min="1" oninput="calcBudget()">
+              <div class="field-suffix">x</div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Meta vs Google Split</label>
+            <div class="slider-wrap" style="margin:0;">
+              <div class="slider-label">
+                <span>Meta <span id="b-meta-pct">70</span>%</span>
+                <span>Google <span id="b-google-pct">30</span>%</span>
+              </div>
+              <input type="range" id="b-split" min="0" max="100" value="70" oninput="updateSplit();calcBudget()">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="results-card">
+          <div class="card-title">Recommended Budget</div>
+          <div class="result-row">
+            <span class="result-label">Revenue Target</span>
+            <span class="result-value white" id="b-rev-target">₹10,00,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Paid Ads Revenue Goal</span>
+            <span class="result-value white" id="b-paid-rev">₹4,00,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Total Ad Budget Needed</span>
+            <span class="result-value coral" id="b-total">₹1,14,286</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Meta Ads Budget</span>
+            <span class="result-value white" id="b-meta">₹80,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Google Ads Budget</span>
+            <span class="result-value white" id="b-google">₹34,286</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">% of Revenue as Ad Spend</span>
+            <span class="result-value coral" id="b-pct-rev">11.4%</span>
+          </div>
+          <div class="status-bar good" id="b-status">
+            <div class="status-title">✅ Healthy Budget Ratio</div>
+            <div class="status-body">Ad spend below 15% of revenue is generally sustainable for D2C brands with margins above 40%.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPLAIN SECTION -->
+<div class="explain">
+  <h2>How to Use This ROAS Calculator</h2>
+  <p>This free tool is built for Indian D2C brands and marketing managers running Meta Ads (Facebook/Instagram) and Google Ads. Enter your actual spend and revenue numbers to see your true ROAS — adjusted for view-through attribution inflation — and whether your campaigns are genuinely profitable after COGS, shipping, and management fees.</p>
+  <p>Built by Per4mance Guru — Delhi's AI-powered performance marketing agency managing ₹100Cr+ in ad spend for Indian brands including Tata Play Fiber, HRX, JJ Valaya, and Mackly.</p>
+
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What is a good ROAS for Indian D2C brands in 2026?</div>
+    <div class="faq-a">A "good" ROAS depends entirely on your gross margins. A brand with 60% gross margin can be profitable at 1.8x ROAS. A brand with 30% gross margin needs 4x+ ROAS to cover costs. Use this calculator with your actual COGS to find your break-even ROAS — that number matters more than any industry benchmark.</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Why is my "true ROAS" lower than my reported ROAS?</div>
+    <div class="faq-a">Meta's default attribution includes view-through conversions — sales where the customer saw your ad but did not click it. These are often organic conversions that Meta is taking credit for. The view-through inflation slider adjusts for this. To fix it properly, change your attribution window in Meta Ads Manager from "7-day click + 1-day view" to "7-day click only."</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">What is break-even ROAS and how is it calculated?</div>
+    <div class="faq-a">Break-even ROAS is the ROAS at which your ad revenue exactly covers your total costs (COGS + shipping + ad spend + management fees). Formula: Break-even ROAS = 1 ÷ (1 - COGS% - Shipping%). If your COGS is 35% and shipping is 8%, your break-even ROAS = 1 ÷ (1 - 0.35 - 0.08) = 1 ÷ 0.57 = 1.75x. Any ROAS above this is profitable; any below it loses money.</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">How much should I spend on Meta Ads vs Google Ads?</div>
+    <div class="faq-a">For most Indian D2C brands, a 60-70% Meta / 30-40% Google split works well. Meta is better for awareness, discovery, and upper-funnel demand generation. Google captures existing demand from users actively searching. Brands with strong brand awareness should shift more budget to Google; new brands should weight Meta more heavily initially.</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="faq-q">Is this calculator free? Do I need to sign up?</div>
+    <div class="faq-a">Completely free, no signup required. Per4mance Guru built this tool to help Indian brands make better advertising decisions. If you want a deeper audit of your actual Meta or Google Ads account, book a free consultation with our team.</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Want to Know Your Real ROAS?</h2>
+  <p>Our team audits Meta and Google Ads accounts at no cost — we show you exactly where your budget is going and what your true ROAS is after fixing attribution.</p>
+  <a href="https://per4mance.guru/contact.html" class="cta-btn">Book Free Audit</a>
+  <a href="https://wa.me/919811096907" class="cta-btn outline">WhatsApp Us</a>
+</div>
+
+<script>
+function switchTab(t){
+  ['meta','google','budget'].forEach(id=>{
+    document.getElementById('tab-'+id).style.display = id===t?'block':'none';
+  });
+  document.querySelectorAll('.tab').forEach((el,i)=>{
+    el.classList.toggle('active', ['meta','google','budget'][i]===t);
+  });
+}
+
+function fmt(n){ return '₹'+Math.round(n).toLocaleString('en-IN'); }
+function fmtX(n){ return Math.round(n*10)/10+'x'; }
+function fmtP(n){ return Math.round(n*10)/10+'%'; }
+
+function updateVT(){
+  var v=document.getElementById('m-vt').value;
+  document.getElementById('vt-label').textContent=v+'%';
+}
+function updateSplit(){
+  var v=parseInt(document.getElementById('b-split').value);
+  document.getElementById('b-meta-pct').textContent=v;
+  document.getElementById('b-google-pct').textContent=100-v;
+}
+
+function calcMeta(){
+  var spend=+document.getElementById('m-spend').value||0;
+  var rev=+document.getElementById('m-revenue').value||0;
+  var cogs=+document.getElementById('m-cogs').value/100||0;
+  var ship=+document.getElementById('m-ship').value/100||0;
+  var mgmt=+document.getElementById('m-mgmt').value||0;
+  var vt=+document.getElementById('m-vt').value/100||0;
+
+  var roasRep = spend>0 ? rev/spend : 0;
+  var trueRev = rev*(1-vt);
+  var roasTrue = spend>0 ? trueRev/spend : 0;
+  var beRoas = 1/(1-cogs-ship);
+  var grossProfit = trueRev*(1-cogs-ship) - spend;
+  var netProfit = grossProfit - mgmt;
+  var margin = trueRev>0 ? (netProfit/trueRev)*100 : 0;
+
+  document.getElementById('m-roas-reported').textContent=fmtX(roasRep);
+  document.getElementById('m-roas-true').textContent=fmtX(roasTrue);
+  document.getElementById('m-roas-be').textContent=fmtX(beRoas);
+  document.getElementById('m-profit').textContent=fmt(grossProfit);
+  document.getElementById('m-net').textContent=fmt(netProfit);
+  document.getElementById('m-margin').textContent=fmtP(margin);
+
+  var sb=document.getElementById('m-status');
+  if(roasTrue>=beRoas*1.2){
+    sb.className='status-bar good';
+    sb.innerHTML='<div class="status-title">✅ Profitable — Room to Scale</div><div class="status-body">Your true ROAS is well above break-even. Consider scaling spend by 20-30% while monitoring CPA.</div>';
+  } else if(roasTrue>=beRoas){
+    sb.className='status-bar warn';
+    sb.innerHTML='<div class="status-title">⚠️ Profitable — Thin Margins</div><div class="status-body">Just above break-even. Fix attribution and reduce view-through inflation before scaling spend.</div>';
+  } else {
+    sb.className='status-bar bad';
+    sb.innerHTML='<div class="status-title">❌ Below Break-even</div><div class="status-body">True ROAS is below break-even. Pause scaling, audit creative, and fix attribution tracking first.</div>';
+  }
+}
+
+function calcGoogle(){
+  var spend=+document.getElementById('g-spend').value||0;
+  var leads=+document.getElementById('g-leads').value||0;
+  var cvr=+document.getElementById('g-cvr').value/100||0;
+  var deal=+document.getElementById('g-deal').value||0;
+  var margin=+document.getElementById('g-margin').value/100||0;
+
+  var cpl = leads>0 ? spend/leads : 0;
+  var sales = Math.round(leads*cvr);
+  var cpa = sales>0 ? spend/sales : 0;
+  var rev = sales*deal;
+  var roas = spend>0 ? rev/spend : 0;
+  var profit = rev*margin - spend;
+
+  document.getElementById('g-cpl').textContent=fmt(cpl);
+  document.getElementById('g-cpa').textContent=fmt(cpa);
+  document.getElementById('g-sales').textContent=sales;
+  document.getElementById('g-rev').textContent=fmt(rev);
+  document.getElementById('g-roas').textContent=fmtX(roas);
+  document.getElementById('g-profit').textContent=fmt(profit);
+
+  var beRoas = 1/margin;
+  var sb=document.getElementById('g-status');
+  if(roas>=beRoas*1.3){
+    sb.className='status-bar good';
+    sb.innerHTML='<div class="status-title">✅ Strong Performance</div><div class="status-body">ROAS well above break-even. Scale spend and focus on improving lead quality to increase close rate.</div>';
+  } else if(roas>=beRoas){
+    sb.className='status-bar warn';
+    sb.innerHTML='<div class="status-title">⚠️ Marginally Profitable</div><div class="status-body">Just above break-even. Audit search terms, cut wasted spend, and improve landing page CVR.</div>';
+  } else {
+    sb.className='status-bar bad';
+    sb.innerHTML='<div class="status-title">❌ Unprofitable</div><div class="status-body">Below break-even. Run a full search term audit to cut irrelevant traffic, and test new landing pages.</div>';
+  }
+}
+
+function calcBudget(){
+  var target=+document.getElementById('b-target').value||0;
+  var paidPct=+document.getElementById('b-paid-pct').value/100||0;
+  var roas=+document.getElementById('b-roas').value||1;
+  var split=+document.getElementById('b-split').value/100;
+
+  var paidRev=target*paidPct;
+  var totalBudget=roas>0?paidRev/roas:0;
+  var metaBudget=totalBudget*split;
+  var googleBudget=totalBudget*(1-split);
+  var pctRev=target>0?(totalBudget/target)*100:0;
+
+  document.getElementById('b-rev-target').textContent=fmt(target);
+  document.getElementById('b-paid-rev').textContent=fmt(paidRev);
+  document.getElementById('b-total').textContent=fmt(totalBudget);
+  document.getElementById('b-meta').textContent=fmt(metaBudget);
+  document.getElementById('b-google').textContent=fmt(googleBudget);
+  document.getElementById('b-pct-rev').textContent=fmtP(pctRev);
+
+  var sb=document.getElementById('b-status');
+  if(pctRev<=15){
+    sb.className='status-bar good';
+    sb.innerHTML='<div class="status-title">✅ Healthy Budget Ratio</div><div class="status-body">Ad spend below 15% of revenue is sustainable for most D2C brands. Good foundation to scale from.</div>';
+  } else if(pctRev<=25){
+    sb.className='status-bar warn';
+    sb.innerHTML='<div class="status-title">⚠️ High Budget Ratio</div><div class="status-body">Above 15% is aggressive — sustainable only if LTV is high or you\'re in an investment-phase. Monitor closely.</div>';
+  } else {
+    sb.className='status-bar bad';
+    sb.innerHTML='<div class="status-title">❌ Unsustainable Ratio</div><div class="status-body">Above 25% of revenue as ad spend is generally unsustainable. Raise target ROAS or reduce paid dependency.</div>';
+  }
+}
+
+calcMeta(); calcGoogle(); calcBudget();
+</script>
+</body>
+</html>
