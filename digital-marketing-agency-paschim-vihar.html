@@ -129,6 +129,22 @@ footer span{color:var(--coral);}
 footer a{color:var(--coral);text-decoration:none;font-size:0.78rem;}
 @media(max-width:1024px){nav{padding:1rem 2rem;}.breadcrumb,.hero,section,.stats-bar,.services-strip,.nearby-section{padding-left:2rem;padding-right:2rem;}.intro-grid{grid-template-columns:1fr;gap:3rem;}.why-grid{grid-template-columns:1fr 1fr;}.nearby-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links{display:none;}.breadcrumb,.hero,section,.stats-bar,.services-strip,.nearby-section,.cta-section{padding-left:1.5rem;padding-right:1.5rem;}.why-grid,.nearby-grid{grid-template-columns:1fr;}footer{padding:1.5rem;flex-direction:column;text-align:center;}}
+
+.process-sec{background:#0f0f0f;}
+.process-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:1px;background:var(--border);
+  margin-top:3rem;border-radius:var(--radius);overflow:hidden;
+}
+.p-step{background:var(--card);padding:2rem 1.5rem;position:relative;}
+.p-step-num{
+  font-size:2rem;font-weight:800;color:var(--border-coral);
+  letter-spacing:-.04em;line-height:1;margin-bottom:1rem;
+  display:block;
+}
+.p-step h3{font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.5rem;line-height:1.3;}
+.p-step p{font-size:.75rem;color:var(--text-muted);line-height:1.6;}
+@media(max-width:1024px){.process-steps{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.process-steps{grid-template-columns:1fr;}}
 </style>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://per4mance.guru/digital-marketing-agency-paschim-vihar.html">
