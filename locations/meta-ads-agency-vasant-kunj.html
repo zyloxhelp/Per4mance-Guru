@@ -245,6 +245,22 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.2);}
   .hero-actions .btn{justify-content:center;text-align:center;}
 }
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+.process-sec{background:#0f0f0f;}
+.process-steps{
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:1px;background:var(--border);
+  margin-top:3rem;border-radius:var(--radius);overflow:hidden;
+}
+.p-step{background:var(--card);padding:2rem 1.5rem;position:relative;}
+.p-step-num{
+  font-size:2rem;font-weight:800;color:var(--border-coral);
+  letter-spacing:-.04em;line-height:1;margin-bottom:1rem;
+  display:block;
+}
+.p-step h3{font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.5rem;line-height:1.3;}
+.p-step p{font-size:.75rem;color:var(--text-muted);line-height:1.6;}
+@media(max-width:1024px){.process-steps{grid-template-columns:1fr 1fr;}}@media(max-width:480px){.process-steps{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -362,6 +378,22 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.2);}
 <a href="/services.html" class="svc-card"><span class="svc-num">04</span><h3>Audience Strategy</h3><p>Broad targeting with strong creative — the strategy that works post-iOS, not pre-iOS.</p><div class="svc-arrow">Explore →</div></a>
 <a href="/services.html" class="svc-card"><span class="svc-num">05</span><h3>Advantage+ Strategy</h3><p>We know when Advantage+ Shopping wins and when manual structures outperform it.</p><div class="svc-arrow">Explore →</div></a>
 <a href="/services.html" class="svc-card"><span class="svc-num">06</span><h3>Active Optimisation</h3><p>Daily monitoring, weekly structural changes, bi-weekly creative refreshes — no set-and-forget.</p><div class="svc-arrow">Explore →</div></a></div>
+  </div>
+</section>
+
+
+<section class="process-sec" aria-labelledby="process-h2">
+  <div class="inner">
+    <div class="label">How We Work</div>
+    <h2 class="sec-h2" id="process-h2">The RADAR <em>Framework</em></h2>
+    <p class="sec-sub" style="color:var(--text-mid);">Every engagement begins with a structured 5-step process — no campaigns go live until the foundation is right. — no campaigns go live until the foundation is right.</p>
+    <div class="process-steps">
+      <div class="p-step"><span class="p-step-num">01</span><h3>Research &amp; Audit</h3><p>Full account audit, competitor analysis, pixel health check, and GA4 validation before any spend is touched.</p></div>
+      <div class="p-step"><span class="p-step-num">02</span><h3>Architecture &amp; Strategy</h3><p>Campaign structure, audience strategy, creative brief, and KPI targets — built around your Mumbai market context.</p></div>
+      <div class="p-step"><span class="p-step-num">03</span><h3>Deploy &amp; Execute</h3><p>Campaigns live, creative in rotation, tracking verified. Daily monitoring from Day 1 — not after the first monthly review.</p></div>
+      <div class="p-step"><span class="p-step-num">04</span><h3>Analyse &amp; Optimise</h3><p>Weekly structural changes, bi-weekly creative refreshes, and bidding updates based on actual conversion data.</p></div>
+      <div class="p-step"><span class="p-step-num">05</span><h3>Report &amp; Refine</h3><p>Monthly reports with every metric that matters. No vanity numbers, no confusing dashboards — just what moved and why.</p></div>
+    </div>
   </div>
 </section>
 
