@@ -288,6 +288,67 @@ header.nav{
 .cat-label::before{content:"▸";color:var(--green)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px 22px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- category folders ---------- */
+.folders{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 22px;margin-top:14px}
+@media(max-width:900px){.folders{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.folders{grid-template-columns:1fr}}
+.folder{
+  position:relative;cursor:pointer;text-align:left;font-family:var(--body);color:var(--ink);
+  border:2.5px solid var(--ink);border-radius:2px 16px 16px 16px;
+  min-height:186px;padding:24px 18px 18px;
+  display:flex;flex-direction:column;gap:5px;justify-content:flex-end;
+  box-shadow:6px 8px 0 rgba(18,18,18,.16);
+  transition:transform .2s cubic-bezier(.2,1.3,.4,1),box-shadow .2s;
+}
+.folder:hover{transform:translate(-2px,-7px) rotate(-1.2deg);box-shadow:11px 15px 0 rgba(18,18,18,.22)}
+.folder::before{ /* folder tab */
+  content:"";position:absolute;top:-15px;left:-2.5px;width:46%;height:18px;
+  background:inherit;border:2.5px solid var(--ink);border-bottom:none;border-radius:9px 13px 0 0;
+}
+.folder-ico{position:absolute;top:16px;right:16px;font-size:22px;opacity:.9}
+.folder-count{font-family:var(--head);font-weight:900;font-size:44px;line-height:1}
+.folder-count small{font-size:15px;font-weight:800}
+.folder-name{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:16px;letter-spacing:-.01em}
+.folder-open{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:10px;letter-spacing:.08em;opacity:.68}
+
+/* ---------- folder modal (browse a category) ---------- */
+.folder-modal{
+  position:fixed;inset:0;z-index:150;display:none;overflow-y:auto;
+  background:rgba(18,16,14,.9);backdrop-filter:blur(9px);padding:22px 22px 60px;
+}
+.folder-modal.open{display:block}
+.fm-head{
+  max-width:1120px;margin:0 auto 22px;padding-top:8px;position:sticky;top:0;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;z-index:2;
+}
+.fm-title{
+  font-family:var(--head);font-weight:900;text-transform:uppercase;color:#fff;
+  font-size:clamp(20px,3.2vw,34px);letter-spacing:-.01em;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.fm-title .tag{background:var(--green);color:var(--ink);border:2px solid var(--ink);border-radius:999px;font-size:11px;padding:.35em .8em}
+.fm-x{
+  flex:0 0 auto;width:44px;height:44px;border-radius:50%;border:3px solid #fff;
+  background:var(--pink);color:#fff;font-size:17px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:transform .18s;
+}
+.fm-x:hover{transform:scale(1.1) rotate(90deg)}
+.fm-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:900px){.fm-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.fm-grid{grid-template-columns:repeat(2,1fr)}}
+.fm-card{cursor:pointer}
+.fm-vid{
+  position:relative;border:2.5px solid var(--ink);border-radius:14px;overflow:hidden;
+  aspect-ratio:9/16;background:#111;box-shadow:0 8px 16px rgba(0,0,0,.3);
+  transition:transform .2s cubic-bezier(.2,1.3,.4,1);
+}
+.fm-card:hover .fm-vid{transform:translateY(-6px) rotate(-1.5deg)}
+.fm-vid video{width:100%;height:100%;object-fit:cover;display:block}
+.fm-cap{
+  margin-top:9px;text-align:center;color:#f2f2f2;
+  font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:11px;letter-spacing:.03em;
+}
 .case{color:var(--ink);display:block;cursor:pointer}
 /* folder pocket: media pokes out the top, colour front hides the bottom half */
 .pocket{
@@ -707,133 +768,11 @@ footer a{color:#d6d6d6}
       <h2 class="h-sec">A taste of what we ship.</h2>
       <p class="lead">Video ads, brand films, AI UGC, and static creatives — across jewellery, fashion, footwear, wellness, travel, and lifestyle brands.</p>
     </div>
-    <h3 class="cat-label">AI Video Ads</h3>
-    <div class="grid">
-      <div class="case" data-type="video" data-src="creative/work/natayush-video-ad.mp4" data-label="NatAyush"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/natayush-video-ad.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--violet)"></div></div>
-        <div class="case-meta"><span>AI Video Ad</span><strong>NatAyush</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/zuari-video-ad-2.mp4" data-label="Zuari"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/zuari-video-ad-2.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--green)"></div></div>
-        <div class="case-meta"><span>AI Video Ad</span><strong>Zuari</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/zuari-video-ad-4.mp4" data-label="Zuari"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/zuari-video-ad-4.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink)"></div></div>
-        <div class="case-meta"><span>AI Video Ad</span><strong>Zuari</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/ai-video-ad.mp4" data-label="AI Video Ad"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ai-video-ad.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--yellow)"></div></div>
-        <div class="case-meta"><span>AI Video Ad</span><strong>AI Video Ad</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/brand-video-ad.mp4" data-label="Brand Video"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/brand-video-ad.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--cyan)"></div></div>
-        <div class="case-meta"><span>AI Video Ad</span><strong>Brand Video</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-video-ad.mp4" data-label="Product Reel"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-video-ad.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--orange)"></div></div>
-        <div class="case-meta"><span>AI Video Ad</span><strong>Product Reel</strong></div></div>
-    </div>
-    <h3 class="cat-label">AI Product Showcase</h3>
-    <div class="grid">
-      <div class="case" data-type="video" data-src="creative/work/ring-reel.mp4" data-label="Ring Reel"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ring-reel.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--blue)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Ring Reel</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/butterfly-showcase.mp4" data-label="Butterfly"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/butterfly-showcase.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink-soft)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Butterfly</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/earth-garden.mp4" data-label="Earth Garden"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/earth-garden.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--violet)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Earth Garden</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/hnl-showcase.mp4" data-label="H&amp;L"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/hnl-showcase.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--green)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>H&amp;L</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/eg-showcase.mp4" data-label="EG"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/eg-showcase.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>EG</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/natbliss-showcase.mp4" data-label="NatBliss"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/natbliss-showcase.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--yellow)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>NatBliss</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-showcase-1.mp4" data-label="Product Showcase"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-showcase-1.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--cyan)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Product Showcase</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-showcase-2.mp4" data-label="Product Showcase"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-showcase-2.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--orange)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Product Showcase</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-showcase-3.mp4" data-label="Product Showcase"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-showcase-3.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--blue)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Product Showcase</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-ad.mp4" data-label="Product Ad"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-ad.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink-soft)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Product Ad</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-showcase-4.mp4" data-label="Product Showcase"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-showcase-4.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--violet)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Product Showcase</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/product-showcase-5.mp4" data-label="Product Showcase"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/product-showcase-5.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--green)"></div></div>
-        <div class="case-meta"><span>AI Product Showcase</span><strong>Product Showcase</strong></div></div>
-    </div>
-    <h3 class="cat-label">AI Brand Film</h3>
-    <div class="grid">
-      <div class="case" data-type="video" data-src="creative/work/gullylabs-brand-film.mp4" data-label="GullyLabs"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/gullylabs-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink)"></div></div>
-        <div class="case-meta"><span>AI Brand Film</span><strong>GullyLabs</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/veirdo-brand-film.mp4" data-label="Veirdo"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/veirdo-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--yellow)"></div></div>
-        <div class="case-meta"><span>AI Brand Film</span><strong>Veirdo</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/blabliblu-brand-film.mp4" data-label="Bla Bli Blu"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/blabliblu-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--cyan)"></div></div>
-        <div class="case-meta"><span>AI Brand Film</span><strong>Bla Bli Blu</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/comet-brand-film.mp4" data-label="Comet"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/comet-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--orange)"></div></div>
-        <div class="case-meta"><span>AI Brand Film</span><strong>Comet</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/two-pages-brand-film.mp4" data-label="Two Pages"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/two-pages-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--blue)"></div></div>
-        <div class="case-meta"><span>AI Brand Film</span><strong>Two Pages</strong></div></div>
-    </div>
-    <h3 class="cat-label">AI UGC</h3>
-    <div class="grid">
-      <div class="case" data-type="video" data-src="creative/work/ugc-1.mp4" data-label="UGC Ad"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ugc-1.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink-soft)"></div></div>
-        <div class="case-meta"><span>AI UGC</span><strong>UGC Ad</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/natbliss-ugc.mp4" data-label="NatBliss"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/natbliss-ugc.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--violet)"></div></div>
-        <div class="case-meta"><span>AI UGC</span><strong>NatBliss</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/ugc-pg.mp4" data-label="UGC Reel"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ugc-pg.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--green)"></div></div>
-        <div class="case-meta"><span>AI UGC</span><strong>UGC Reel</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/ugc-script-3.mp4" data-label="UGC Ad"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ugc-script-3.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--pink)"></div></div>
-        <div class="case-meta"><span>AI UGC</span><strong>UGC Ad</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/ugc-video-1.mp4" data-label="UGC Ad"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ugc-video-1.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--yellow)"></div></div>
-        <div class="case-meta"><span>AI UGC</span><strong>UGC Ad</strong></div></div>
-      <div class="case" data-type="video" data-src="creative/work/ugc-2.mp4" data-label="UGC Ad"><div class="pocket">
-        <div class="media"><span class="play">▶</span><video src="creative/work/ugc-2.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="lip" style="background:var(--cyan)"></div></div>
-        <div class="case-meta"><span>AI UGC</span><strong>UGC Ad</strong></div></div>
+    <div class="folders">
+      <button class="folder" data-cat="AI Video Ads" style="background:var(--yellow)"><span class="folder-ico">📁</span><span class="folder-count">6<small> videos</small></span><span class="folder-name">AI Video Ads</span><span class="folder-open">▶ Open folder</span></button>
+      <button class="folder" data-cat="AI Product Showcase" style="background:var(--green)"><span class="folder-ico">📁</span><span class="folder-count">12<small> videos</small></span><span class="folder-name">AI Product Showcase</span><span class="folder-open">▶ Open folder</span></button>
+      <button class="folder" data-cat="AI Brand Film" style="background:var(--pink)"><span class="folder-ico">📁</span><span class="folder-count">5<small> videos</small></span><span class="folder-name">AI Brand Film</span><span class="folder-open">▶ Open folder</span></button>
+      <button class="folder" data-cat="AI UGC" style="background:var(--cyan)"><span class="folder-ico">📁</span><span class="folder-count">6<small> videos</small></span><span class="folder-name">AI UGC</span><span class="folder-open">▶ Open folder</span></button>
     </div>
   </div>
 </section>
@@ -973,6 +912,15 @@ footer a{color:#d6d6d6}
 </footer>
 
 <!-- ================= LIGHTBOX PLAYER ================= -->
+<!-- ================= FOLDER MODAL ================= -->
+<div class="folder-modal" id="folderModal" aria-hidden="true">
+  <div class="fm-head">
+    <span class="fm-title" id="fmTitle"></span>
+    <button class="fm-x" id="fmX" aria-label="Close">✕</button>
+  </div>
+  <div class="fm-grid" id="fmGrid"></div>
+</div>
+
 <div class="lb" id="lb" aria-hidden="true">
   <div class="lb-in">
     <button class="lb-x" id="lbX" aria-label="Close">✕</button>
@@ -988,8 +936,8 @@ footer a{color:#d6d6d6}
 
   function close(){
     lb.classList.remove('open');lb.setAttribute('aria-hidden','true');
-    stage.innerHTML='';document.body.style.overflow='';
-    document.querySelectorAll('.media video').forEach(function(v){try{v.play()}catch(e){}});
+    stage.innerHTML='';document.body.style.overflow=(fMod&&fMod.classList.contains('open'))?'hidden':'';
+    document.querySelectorAll('.fm-grid video').forEach(function(v){try{v.play()}catch(e){}});
   }
   function open(type,src,label){
     stage.innerHTML='';
@@ -1044,10 +992,45 @@ footer a{color:#d6d6d6}
         else{v.pause&&v.pause();}
       });
     },{rootMargin:'120px'});
-    document.querySelectorAll('.media video,.story video,.hero-bg').forEach(function(v){io.observe(v);});
+    document.querySelectorAll('.story video,.hero-bg').forEach(function(v){io.observe(v);});
   }else{
-    document.querySelectorAll('.media video,.story video,.hero-bg').forEach(function(v){v.play&&v.play().catch(function(){});});
+    document.querySelectorAll('.story video,.hero-bg').forEach(function(v){v.play&&v.play().catch(function(){});});
   }
+
+  /* category folders: open a folder -> browse its videos -> click one to play */
+  var CATS={
+    "AI Video Ads":[["natayush-video-ad","NatAyush"],["zuari-video-ad-2","Zuari"],["zuari-video-ad-4","Zuari"],["ai-video-ad","AI Video Ad"],["brand-video-ad","Brand Video"],["product-video-ad","Product Reel"]],
+    "AI Product Showcase":[["ring-reel","Ring Reel"],["butterfly-showcase","Butterfly"],["earth-garden","Earth Garden"],["hnl-showcase","H&L"],["eg-showcase","EG"],["natbliss-showcase","NatBliss"],["product-showcase-1","Product Showcase"],["product-showcase-2","Product Showcase"],["product-showcase-3","Product Showcase"],["product-ad","Product Ad"],["product-showcase-4","Product Showcase"],["product-showcase-5","Product Showcase"]],
+    "AI Brand Film":[["gullylabs-brand-film","GullyLabs"],["veirdo-brand-film","Veirdo"],["blabliblu-brand-film","Bla Bli Blu"],["comet-brand-film","Comet"],["two-pages-brand-film","Two Pages"]],
+    "AI UGC":[["ugc-1","UGC Ad"],["natbliss-ugc","NatBliss"],["ugc-pg","UGC Reel"],["ugc-script-3","UGC Ad"],["ugc-video-1","UGC Ad"],["ugc-2","UGC Ad"]]
+  };
+  var fMod=document.getElementById('folderModal'),fGrid=document.getElementById('fmGrid'),fTitle=document.getElementById('fmTitle'),fX=document.getElementById('fmX');
+  function openFolder(cat){
+    var items=CATS[cat]; if(!items)return;
+    fTitle.innerHTML=cat+' <span class="tag">'+items.length+' videos</span>';
+    fGrid.innerHTML='';
+    items.forEach(function(it){
+      var card=document.createElement('div'); card.className='fm-card';
+      var vb=document.createElement('div'); vb.className='fm-vid'; vb.innerHTML='<span class="play">\u25B6</span>';
+      var v=document.createElement('video'); v.src='creative/work/'+it[0]+'.mp4'; v.muted=true; v.loop=true; v.playsInline=true; v.preload='metadata';
+      vb.appendChild(v);
+      var cap=document.createElement('div'); cap.className='fm-cap'; cap.textContent=it[1];
+      card.appendChild(vb); card.appendChild(cap);
+      card.addEventListener('click',function(){ open('video','creative/work/'+it[0]+'.mp4', it[1]); });
+      fGrid.appendChild(card);
+      if(v.play) v.play().catch(function(){});
+    });
+    fMod.classList.add('open'); fMod.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeFolder(){
+    fMod.classList.remove('open'); fMod.setAttribute('aria-hidden','true');
+    fGrid.innerHTML=''; document.body.style.overflow='';
+  }
+  document.querySelectorAll('.folder').forEach(function(el){el.addEventListener('click',function(){openFolder(el.getAttribute('data-cat'));});});
+  if(fX) fX.addEventListener('click',closeFolder);
+  if(fMod) fMod.addEventListener('click',function(e){if(e.target===fMod)closeFolder();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&fMod&&fMod.classList.contains('open')&&!lb.classList.contains('open'))closeFolder();});
 })();
 
 /* rotating graffiti wordmark — Content for founders / brands / dreamers / builders / creators */
