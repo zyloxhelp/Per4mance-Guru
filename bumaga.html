@@ -293,24 +293,37 @@ header.nav{
 .folders{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 22px;margin-top:14px}
 @media(max-width:900px){.folders{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.folders{grid-template-columns:1fr}}
+/* folder = pocket: coloured back panel, video sitting in it, coloured front hiding its lower half */
 .folder{
   position:relative;cursor:pointer;text-align:left;font-family:var(--body);color:var(--ink);
-  border:2.5px solid var(--ink);border-radius:2px 16px 16px 16px;
-  min-height:186px;padding:24px 18px 18px;
-  display:flex;flex-direction:column;gap:5px;justify-content:flex-end;
+  height:286px;
+  transition:transform .22s cubic-bezier(.2,1.3,.4,1);
+}
+.folder:hover{transform:translateY(-9px) rotate(-1.3deg)}
+.folder-back,.folder-front{background:var(--fc)}
+.folder-back{
+  position:absolute;left:0;right:0;top:56px;bottom:0;z-index:0;
+  border:2.5px solid var(--ink);border-radius:16px;
+}
+.folder-peek{
+  position:absolute;left:9%;right:9%;top:0;height:184px;z-index:1;
+  border:2.5px solid var(--ink);border-radius:10px;overflow:hidden;background:#111;
+  box-shadow:0 10px 16px rgba(0,0,0,.22);
+}
+.folder-peek video{width:100%;height:100%;object-fit:cover;display:block}
+.folder-front{
+  position:absolute;left:0;right:0;bottom:0;height:196px;z-index:2;
+  border:2.5px solid var(--ink);border-radius:16px;
+  padding:0 18px 20px;
+  display:flex;flex-direction:column;justify-content:flex-end;
   box-shadow:6px 8px 0 rgba(18,18,18,.16);
-  transition:transform .2s cubic-bezier(.2,1.3,.4,1),box-shadow .2s;
+  transition:box-shadow .22s;
 }
-.folder:hover{transform:translate(-2px,-7px) rotate(-1.2deg);box-shadow:11px 15px 0 rgba(18,18,18,.22)}
-.folder::before{ /* folder tab */
-  content:"";position:absolute;top:-15px;left:-2.5px;width:46%;height:18px;
-  background:inherit;border:2.5px solid var(--ink);border-bottom:none;border-radius:9px 13px 0 0;
+.folder:hover .folder-front{box-shadow:11px 15px 0 rgba(18,18,18,.22)}
+.folder-name{
+  font-family:var(--head);font-weight:900;text-transform:uppercase;
+  font-size:clamp(17px,1.6vw,21px);line-height:1.05;letter-spacing:-.01em;
 }
-.folder-ico{position:absolute;top:16px;right:16px;font-size:22px;opacity:.9}
-.folder-count{font-family:var(--head);font-weight:900;font-size:44px;line-height:1}
-.folder-count small{font-size:15px;font-weight:800}
-.folder-name{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:16px;letter-spacing:-.01em}
-.folder-open{font-family:var(--head);font-weight:800;text-transform:uppercase;font-size:10px;letter-spacing:.08em;opacity:.68}
 
 /* ---------- folder modal (browse a category) ---------- */
 .folder-modal{
@@ -769,10 +782,26 @@ footer a{color:#d6d6d6}
       <p class="lead">Video ads, brand films, AI UGC, and static creatives — across jewellery, fashion, footwear, wellness, travel, and lifestyle brands.</p>
     </div>
     <div class="folders">
-      <button class="folder" data-cat="AI Video Ads" style="background:var(--yellow)"><span class="folder-ico">📁</span><span class="folder-count">6<small> videos</small></span><span class="folder-name">AI Video Ads</span><span class="folder-open">▶ Open folder</span></button>
-      <button class="folder" data-cat="AI Product Showcase" style="background:var(--green)"><span class="folder-ico">📁</span><span class="folder-count">12<small> videos</small></span><span class="folder-name">AI Product Showcase</span><span class="folder-open">▶ Open folder</span></button>
-      <button class="folder" data-cat="AI Brand Film" style="background:var(--pink)"><span class="folder-ico">📁</span><span class="folder-count">5<small> videos</small></span><span class="folder-name">AI Brand Film</span><span class="folder-open">▶ Open folder</span></button>
-      <button class="folder" data-cat="AI UGC" style="background:var(--cyan)"><span class="folder-ico">📁</span><span class="folder-count">6<small> videos</small></span><span class="folder-name">AI UGC</span><span class="folder-open">▶ Open folder</span></button>
+      <div class="folder" data-cat="AI Video Ads" style="--fc:var(--yellow)" role="button" tabindex="0" aria-label="Open AI Video Ads">
+        <div class="folder-back"></div>
+        <div class="folder-peek"><video src="creative/work/natayush-video-ad.mp4" muted loop playsinline preload="metadata"></video></div>
+        <div class="folder-front"><span class="folder-name">AI Video Ads</span></div>
+      </div>
+      <div class="folder" data-cat="AI Product Showcase" style="--fc:var(--green)" role="button" tabindex="0" aria-label="Open AI Product Showcase">
+        <div class="folder-back"></div>
+        <div class="folder-peek"><video src="creative/work/ring-reel.mp4" muted loop playsinline preload="metadata"></video></div>
+        <div class="folder-front"><span class="folder-name">AI Product Showcase</span></div>
+      </div>
+      <div class="folder" data-cat="AI Brand Film" style="--fc:var(--pink)" role="button" tabindex="0" aria-label="Open AI Brand Film">
+        <div class="folder-back"></div>
+        <div class="folder-peek"><video src="creative/work/blabliblu-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
+        <div class="folder-front"><span class="folder-name">AI Brand Film</span></div>
+      </div>
+      <div class="folder" data-cat="AI UGC" style="--fc:var(--cyan)" role="button" tabindex="0" aria-label="Open AI UGC">
+        <div class="folder-back"></div>
+        <div class="folder-peek"><video src="creative/work/ugc-video-1.mp4" muted loop playsinline preload="metadata"></video></div>
+        <div class="folder-front"><span class="folder-name">AI UGC</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -992,9 +1021,9 @@ footer a{color:#d6d6d6}
         else{v.pause&&v.pause();}
       });
     },{rootMargin:'120px'});
-    document.querySelectorAll('.story video,.hero-bg').forEach(function(v){io.observe(v);});
+    document.querySelectorAll('.story video,.hero-bg,.folder-peek video').forEach(function(v){io.observe(v);});
   }else{
-    document.querySelectorAll('.story video,.hero-bg').forEach(function(v){v.play&&v.play().catch(function(){});});
+    document.querySelectorAll('.story video,.hero-bg,.folder-peek video').forEach(function(v){v.play&&v.play().catch(function(){});});
   }
 
   /* category folders: open a folder -> browse its videos -> click one to play */
@@ -1027,7 +1056,7 @@ footer a{color:#d6d6d6}
     fMod.classList.remove('open'); fMod.setAttribute('aria-hidden','true');
     fGrid.innerHTML=''; document.body.style.overflow='';
   }
-  document.querySelectorAll('.folder').forEach(function(el){el.addEventListener('click',function(){openFolder(el.getAttribute('data-cat'));});});
+  document.querySelectorAll('.folder').forEach(function(el){el.addEventListener('click',function(){openFolder(el.getAttribute('data-cat'));});el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openFolder(el.getAttribute('data-cat'));}});});
   if(fX) fX.addEventListener('click',closeFolder);
   if(fMod) fMod.addEventListener('click',function(e){if(e.target===fMod)closeFolder();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&fMod&&fMod.classList.contains('open')&&!lb.classList.contains('open'))closeFolder();});
