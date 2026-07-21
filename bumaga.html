@@ -296,33 +296,43 @@ header.nav{
 /* folder = pocket: coloured back panel, video sitting in it, coloured front hiding its lower half */
 .folder{
   position:relative;cursor:pointer;text-align:left;font-family:var(--body);color:var(--ink);
-  height:286px;
+  height:320px;
   transition:transform .22s cubic-bezier(.2,1.3,.4,1);
 }
 .folder:hover{transform:translateY(-9px) rotate(-1.3deg)}
 .folder-back,.folder-front{background:var(--fc)}
 .folder-back{
-  position:absolute;left:0;right:0;top:56px;bottom:0;z-index:0;
+  position:absolute;left:0;right:0;top:76px;bottom:0;z-index:0;
   border:2.5px solid var(--ink);border-radius:16px;
 }
 .folder-peek{
-  position:absolute;left:9%;right:9%;top:0;height:184px;z-index:1;
+  position:absolute;left:7%;right:7%;top:0;height:236px;z-index:1;
   border:2.5px solid var(--ink);border-radius:10px;overflow:hidden;background:#111;
   box-shadow:0 10px 16px rgba(0,0,0,.22);
 }
 .folder-peek video{width:100%;height:100%;object-fit:cover;display:block}
 .folder-front{
-  position:absolute;left:0;right:0;bottom:0;height:196px;z-index:2;
+  position:absolute;left:0;right:0;bottom:0;height:140px;z-index:2;
   border:2.5px solid var(--ink);border-radius:16px;
-  padding:0 18px 20px;
+  padding:0 16px 16px;
   display:flex;flex-direction:column;justify-content:flex-end;
   box-shadow:6px 8px 0 rgba(18,18,18,.16);
   transition:box-shadow .22s;
 }
 .folder:hover .folder-front{box-shadow:11px 15px 0 rgba(18,18,18,.22)}
+.folder-foot{display:block}
 .folder-name{
   font-family:var(--head);font-weight:900;text-transform:uppercase;
-  font-size:clamp(17px,1.6vw,21px);line-height:1.05;letter-spacing:-.01em;
+  font-size:clamp(18px,1.8vw,24px);line-height:1;letter-spacing:-.01em;
+  padding-right:96px;   /* keep last line clear of the corner pill */
+}
+.folder-more{
+  position:absolute;top:12px;right:12px;z-index:3;
+  display:inline-flex;align-items:center;gap:3px;
+  font-family:var(--head);font-weight:800;text-transform:uppercase;
+  font-size:7px;letter-spacing:.02em;line-height:1;white-space:nowrap;
+  border:1.5px solid var(--ink);border-radius:999px;background:transparent;
+  padding:.5em .7em;color:var(--ink);
 }
 
 /* ---------- folder modal (browse a category) ---------- */
@@ -785,22 +795,22 @@ footer a{color:#d6d6d6}
       <div class="folder" data-cat="AI Video Ads" style="--fc:var(--yellow)" role="button" tabindex="0" aria-label="Open AI Video Ads">
         <div class="folder-back"></div>
         <div class="folder-peek"><video src="creative/work/natayush-video-ad.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="folder-front"><span class="folder-name">AI Video Ads</span></div>
+        <div class="folder-front"><div class="folder-foot"><span class="folder-name">AI Video Ads</span><span class="folder-more">Click to view more ▸</span></div></div>
       </div>
       <div class="folder" data-cat="AI Product Showcase" style="--fc:var(--green)" role="button" tabindex="0" aria-label="Open AI Product Showcase">
         <div class="folder-back"></div>
         <div class="folder-peek"><video src="creative/work/ring-reel.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="folder-front"><span class="folder-name">AI Product Showcase</span></div>
+        <div class="folder-front"><div class="folder-foot"><span class="folder-name">AI Product Showcase</span><span class="folder-more">Click to view more ▸</span></div></div>
       </div>
       <div class="folder" data-cat="AI Brand Film" style="--fc:var(--pink)" role="button" tabindex="0" aria-label="Open AI Brand Film">
         <div class="folder-back"></div>
         <div class="folder-peek"><video src="creative/work/blabliblu-brand-film.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="folder-front"><span class="folder-name">AI Brand Film</span></div>
+        <div class="folder-front"><div class="folder-foot"><span class="folder-name">AI Brand Film</span><span class="folder-more">Click to view more ▸</span></div></div>
       </div>
       <div class="folder" data-cat="AI UGC" style="--fc:var(--cyan)" role="button" tabindex="0" aria-label="Open AI UGC">
         <div class="folder-back"></div>
         <div class="folder-peek"><video src="creative/work/ugc-video-1.mp4" muted loop playsinline preload="metadata"></video></div>
-        <div class="folder-front"><span class="folder-name">AI UGC</span></div>
+        <div class="folder-front"><div class="folder-foot"><span class="folder-name">AI UGC</span><span class="folder-more">Click to view more ▸</span></div></div>
       </div>
     </div>
   </div>
