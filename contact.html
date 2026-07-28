@@ -997,10 +997,14 @@ html, body {
         tags:    ['source-website','audit-requested']
       };
 
-      fetch('https://services.leadconnectorhq.com/hooks/rTvy0ecU0xKjIm16OJbL/webhook-trigger/4f8583ca-eb8d-410d-b5c3-4412cf96d059',{
+      fetch('https://api.web3forms.com/submit',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(payload)
+        body:JSON.stringify(Object.assign({
+          access_key: 'YOUR_WEB3FORMS_KEY_HERE',
+          subject: '🔥 New Lead: ' + fname + ' | ' + (svcs||'General'),
+          from_name: 'Per4mance Guru Website'
+        }, payload))
       }).finally(function(){
         document.getElementById('contactForm').style.display='none';
         document.getElementById('serviceChips').parentElement.style.display='none';
@@ -1226,13 +1230,12 @@ const obs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // ============================================
-// GHL WEBHOOK CONFIG
-// Apna GHL Webhook URL yahan paste karo:
-// GHL → Automation → Workflows → Trigger: 
-// "Inbound Webhook" → Copy Webhook URL
+// WEB3FORMS CONFIG
+// Apna Web3Forms Access Key yahan paste karo:
+// https://web3forms.com → enter hello@per4mance.guru
 // ============================================
-var GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/rTvy0ecU0xKjIm16OJbL/webhook-trigger/4f8583ca-eb8d-410d-b5c3-4412cf96d059';
-// Example: 'https://services.leadconnectorhq.com/hooks/XXXXXXXX/webhook-trigger/XXXXXXXX'
+var WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY_HERE';
+// Get your key: https://web3forms.com → enter hello@per4mance.guru → check email
 
 // Budget slider
 var budgetSteps=['₹10,000','₹25,000','₹50,000','₹1,00,000','₹2,00,000','₹3,00,000','₹5,00,000','₹7,00,000','₹10,00,000','₹15,00,000','₹20L+'];
@@ -1305,10 +1308,14 @@ document.getElementById('submitBtn').addEventListener('click',function(){
   };
 
   // Send to GHL Webhook
-  fetch(GHL_WEBHOOK_URL, {
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
+    body: JSON.stringify(Object.assign({
+      access_key: WEB3FORMS_KEY,
+      subject: '🔥 New Lead: ' + fname + ' | ' + (services||'General'),
+      from_name: 'Per4mance Guru Website'
+    }, payload))
   })
   .then(function(res){
     // Show success regardless (GHL webhooks sometimes return non-200)
