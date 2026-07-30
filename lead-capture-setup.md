@@ -1,10 +1,15 @@
 # Lead capture — setup
 
 Every form on the site now routes through [`/assets/lead-capture.js`](assets/lead-capture.js).
-Both destinations are configured in the `CONFIG` block at the top of that **one** file.
+All destinations are configured in the `CONFIG` block at the top of that **one** file.
 
-Until the two placeholders below are replaced, those destinations are skipped — the
-script detects `__PLACEHOLDER__` values and treats them as "not live".
+**Status: both destinations are live.** Email goes to `hello@per4mance.guru` and
+`zyloxhelp@gmail.com`; the Apps Script endpoint is deployed and verified writing rows
+(a `GET` returns `{"ok":true,...}` and a `POST` returns `{"ok":true}`). The steps below
+are kept as reference for re-issuing a key or redeploying the script.
+
+If a value is ever reset to a `__PLACEHOLDER__`, the script detects it and skips that
+destination rather than failing.
 
 ---
 

@@ -28,7 +28,7 @@
     ],
 
     // Apps Script -> Deploy -> Web app -> copy the /exec URL
-    SHEET_ENDPOINT: '__SHEET_ENDPOINT__',
+    SHEET_ENDPOINT: 'https://script.google.com/macros/s/AKfycbzpPsJiej4LEclMl8FmN4WBoKeUeA9VbwlFI8am8kROsGRAYmnXN0KpFzZ4w2Sp8oc/exec',
 
     // Existing CRM hooks. Kept alive; never gate the success screen on them.
     LEGACY: [
