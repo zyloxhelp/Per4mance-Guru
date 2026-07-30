@@ -859,27 +859,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 });
 
 // Contact form → GHL webhook
-(function(){
-  var GHL_URL='https://services.leadconnectorhq.com/hooks/rTvy0ecU0xKjIm16OJbL/webhook-trigger/4f8583ca-eb8d-410d-b5c3-4412cf96d059';
-  var form=document.getElementById('auditForm');
-  var btn=document.getElementById('formBtn');
-  var success=document.getElementById('formSuccess');
-  if(!form)return;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    btn.textContent='Sending…';btn.disabled=true;
-    var data={};
-    new FormData(form).forEach(function(v,k){data[k]=v;});
-    data.source='performance-marketing-delhi';data.page=location.href;
-    // mode:'no-cors' avoids the browser-side CORS block on direct POST to leadconnectorhq.com
-    // (GHL webhooks don't send CORS headers back to static sites like GitHub Pages).
-    // Response is opaque so we can't read it, but the POST still reaches GHL.
-    fetch(GHL_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-      .then(function(){form.style.display='none';success.style.display='block';})
-      .catch(function(){btn.textContent='📅 Get My Free Audit';btn.disabled=false;alert('Something went wrong. Please WhatsApp us at +91 98110 96907');});
-  });
-})();
+window.PG_LEAD_SOURCE='performance-marketing-delhi';
 </script>
 
+<script src="/assets/lead-capture.js" defer></script>
 </body>
 </html>

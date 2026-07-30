@@ -756,24 +756,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 });
 
 // Contact form → GHL webhook
-(function(){
-  var GHL_URL= + ghl_url + ;
-  var form=document.getElementById('auditForm');
-  var btn=document.getElementById('formBtn');
-  var success=document.getElementById('formSuccess');
-  if(!form)return;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    btn.textContent='Sending…';btn.disabled=true;
-    var data={};
-    new FormData(form).forEach(function(v,k){data[k]=v;});
-    data.source='performance-marketing-ludhiana';data.page=location.href;
-    fetch(GHL_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-      .then(function(){form.style.display='none';success.style.display='block';})
-      .catch(function(){btn.textContent='📅 Get My Free Audit';btn.disabled=false;alert('Something went wrong. Please WhatsApp us at +91 98110 96907');});
-  });
-})();
+window.PG_LEAD_SOURCE='performance-marketing-ludhiana';
 </script>
 
+<script src="/assets/lead-capture.js" defer></script>
 </body>
 </html>

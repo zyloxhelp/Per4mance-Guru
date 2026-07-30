@@ -571,18 +571,8 @@ document.querySelectorAll('.faq-q').forEach(function(btn){
 document.querySelectorAll('a[href^="#"]').forEach(function(a){
   a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
 });
-(function(){
-  var form=document.getElementById('auditForm'),btn=document.getElementById('formBtn'),success=document.getElementById('formSuccess');
-  if(!form)return;
-  form.addEventListener('submit',function(e){
-    e.preventDefault();btn.textContent='Sending…';btn.disabled=true;
-    var data={};new FormData(form).forEach(function(v,k){data[k]=v;});
-    data.source='meta-ads-agency-mukherjee-nagar';data.page=location.href;
-    fetch('https://services.leadconnectorhq.com/hooks/rTvy0ecU0xKjIm16OJbL/webhook-trigger/4f8583ca-eb8d-410d-b5c3-4412cf96d059',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-      .then(function(){form.style.display='none';success.style.display='block';})
-      .catch(function(){btn.textContent='📅 Get My Free Audit';btn.disabled=false;});
-  });
-})();
+window.PG_LEAD_SOURCE='meta-ads-agency-mukherjee-nagar';
 </script>
+<script src="/assets/lead-capture.js" defer></script>
 </body>
 </html>

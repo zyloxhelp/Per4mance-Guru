@@ -997,16 +997,24 @@ html, body {
         tags:    ['source-website','audit-requested']
       };
 
-      fetch('https://hook.eu1.make.com/8l6x59qe032gvfz5h6uj0ewc841o92kd',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(payload)
-      }).finally(function(){
-        document.getElementById('contactForm').style.display='none';
-        document.getElementById('serviceChips').parentElement.style.display='none';
-        document.querySelector('.form-subtext') && (document.querySelector('.form-subtext').style.display='none');
-        document.querySelector('.form-heading') && (document.querySelector('.form-heading').style.display='none');
-        document.getElementById('fSuccess').style.display='flex';
+      // Keeps this form's original Make.com destination alongside email + sheet.
+      PGLead.send(payload,{legacy:['https://hook.eu1.make.com/8l6x59qe032gvfz5h6uj0ewc841o92kd']}).then(function(res){
+        if(res.ok){
+          document.getElementById('contactForm').style.display='none';
+          document.getElementById('serviceChips').parentElement.style.display='none';
+          document.querySelector('.form-subtext') && (document.querySelector('.form-subtext').style.display='none');
+          document.querySelector('.form-heading') && (document.querySelector('.form-heading').style.display='none');
+          document.getElementById('fSuccess').style.display='flex';
+          return;
+        }
+        // Nothing stored anywhere — show the truth, not a fake confirmation.
+        btn.disabled=false;
+        document.getElementById('fBtnText').style.display='inline';
+        document.getElementById('fBtnLoader').style.display='none';
+        errEl.style.display='block';
+        errMsg.innerHTML='Couldn\'t send that — please WhatsApp us at '+
+          '<a href="https://wa.me/919811096907" target="_blank" rel="noopener" '+
+          'style="color:inherit;text-decoration:underline;">+91 98110 96907</a>.';
       });
     });
     </script>
@@ -1244,91 +1252,8 @@ document.querySelectorAll('.chip').forEach(function(chip){
   chip.addEventListener('click',function(){chip.classList.toggle('selected');});
 });
 
-// Form submit → GHL
-document.getElementById('submitBtn').addEventListener('click',function(){
-  // Get values
-  var fname  = (document.getElementById('fname').value||'').trim();
-  var email  = (document.getElementById('email').value||'').trim();
-  var phone  = (document.getElementById('phone').value||'').trim();
-  var message= (document.getElementById('message').value||'').trim();
-  var bname  = (document.getElementById('bname').value||'').trim();
-  var biztype= (document.getElementById('biztype').value||'').trim();
-  var revenue= (document.getElementById('revenue').value||'').trim();
-  var website= (document.getElementById('website').value||'').trim();
-  var budget = budgetSteps[slider ? slider.value : 3];
-
-  // Get selected services
-  var services = Array.from(document.querySelectorAll('.chip.selected'))
-                      .map(function(c){return c.dataset.val;}).join(', ');
-
-  // Validation
-  var errEl = document.getElementById('formError');
-  var errMsg = document.getElementById('formErrorMsg');
-  if(!fname || !email || !phone || !message){
-    errEl.style.display='block';
-    errMsg.textContent='Please fill in Name, Email, Phone and Goal fields.';
-    errEl.scrollIntoView({behavior:'smooth',block:'center'});
-    return;
-  }
-  var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!emailReg.test(email)){
-    errEl.style.display='block';
-    errMsg.textContent='Please enter a valid email address.';
-    return;
-  }
-  errEl.style.display='none';
-
-  // Show loader
-  var btn = document.getElementById('submitBtn');
-  btn.disabled=true;
-  document.getElementById('btnText').style.display='none';
-  document.getElementById('btnLoader').style.display='inline-flex';
-
-  // Build payload for GHL
-  var payload = {
-    firstName:    fname.split(' ')[0],
-    lastName:     fname.split(' ').slice(1).join(' ') || '',
-    email:        email,
-    phone:        phone,
-    name:         fname,
-    businessName: bname,
-    businessType: biztype,
-    monthlyRevenue: revenue,
-    marketingBudget: budget,
-    servicesInterested: services || 'Not specified',
-    website:      website,
-    message:      message,
-    source:       'Website Contact Form',
-    tags:         ['source-website','audit-requested'],
-    pipelineStage: 'New Lead'
-  };
-
-  // Send to GHL Webhook
-  fetch('https://hook.eu1.make.com/8l6x59qe032gvfz5h6uj0ewc841o92kd', {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
-  })
-  .then(function(res){
-    // Show success regardless (GHL webhooks sometimes return non-200)
-    showSuccess();
-  })
-  .catch(function(err){
-    // Even on network error — still show success (data may have gone through)
-    console.log('GHL webhook:', err);
-    showSuccess();
-  });
-});
-
-function showSuccess(){
-  document.getElementById('contactForm').style.display='none';
-  document.getElementById('serviceChips').parentElement.style.display='none';
-  document.querySelector('.form-subtext').style.display='none';
-  document.querySelector('.form-heading').style.display='none';
-  var success=document.getElementById('formSuccess');
-  success.style.display='flex';
-  success.style.animation='fadeUp 0.6s ease both';
-}
+// (removed: duplicate submit handler that targeted #submitBtn/#formSuccess,
+//  neither of which exists in this page. The live handler is #fSubmitBtn above.)
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -1341,5 +1266,6 @@ window.addEventListener('scroll',function(){
   if(n) n.style.padding=window.scrollY>50?'.7rem 4rem':'1.1rem 4rem';
 });
 </script>
+<script src="/assets/lead-capture.js" defer></script>
 </body>
 </html>

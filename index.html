@@ -2905,7 +2905,6 @@ html, body {
 
 <script>
 (function(){
-  var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/rTvy0ecU0xKjIm16OJbL/webhook-trigger/4f8583ca-eb8d-410d-b5c3-4412cf96d059';
   var overlay = document.getElementById('pg-popup-overlay');
   var SHOWN_KEY = 'pg_popup_shown';
 
@@ -2965,21 +2964,28 @@ html, body {
     document.getElementById('pp-btn-text').style.display='none';
     document.getElementById('pp-btn-loader').style.display='inline';
 
-    fetch(GHL_WEBHOOK,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        firstName: name.split(' ')[0],
-        lastName:  name.split(' ').slice(1).join(' ')||'',
-        name: name, email: email, phone: phone,
-        businessName: biz,
-        servicesInterested: svc||'Not specified',
-        source: 'Website Popup',
-        tags: ['source-website','source-popup','audit-requested']
-      })
-    }).finally(function(){
-      document.getElementById('pp-form-wrap').style.display='none';
-      document.getElementById('pp-success').style.display='block';
+    PGLead.send({
+      firstName: name.split(' ')[0],
+      lastName:  name.split(' ').slice(1).join(' ')||'',
+      name: name, email: email, phone: phone,
+      businessName: biz,
+      servicesInterested: svc||'Not specified',
+      source: 'Website Popup',
+      tags: ['source-website','source-popup','audit-requested']
+    }).then(function(res){
+      if(res.ok){
+        document.getElementById('pp-form-wrap').style.display='none';
+        document.getElementById('pp-success').style.display='block';
+        return;
+      }
+      // Nothing was stored — say so instead of showing a false confirmation.
+      btn.disabled=false;
+      document.getElementById('pp-btn-text').style.display='inline';
+      document.getElementById('pp-btn-loader').style.display='none';
+      errEl.innerHTML='⚠️ Couldn\'t send that — please WhatsApp us at '+
+        '<a href="https://wa.me/919811096907" target="_blank" rel="noopener" '+
+        'style="color:#fff;text-decoration:underline;">+91 98110 96907</a>.';
+      errEl.style.display='block';
     });
   });
 })();
@@ -3032,5 +3038,6 @@ setTimeout(function() {
 })();
 </script>
 
+<script src="/assets/lead-capture.js" defer></script>
 </body>
 </html>
