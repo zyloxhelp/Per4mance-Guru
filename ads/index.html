@@ -113,18 +113,14 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 
 /* VIDEO TESTIMONIALS — horizontal scroll marquee */
 .video-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-/* horizontal marquee track */
-.video-marquee-outer{overflow:hidden;margin-top:48px;cursor:grab;user-select:none}
-.video-marquee-outer:active{cursor:grabbing}
+.video-marquee-outer{overflow:hidden;margin-top:48px;user-select:none}
 .video-marquee-track{display:flex;gap:12px;animation:vmarquee 40s linear infinite;width:max-content}
-.video-marquee-outer:hover .video-marquee-track{animation-play-state:paused}
+.video-marquee-track.paused{animation-play-state:paused}
 @keyframes vmarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-/* each card in the horizontal strip */
 .video-card{flex:0 0 240px;background:var(--off-black);border-radius:12px;overflow:hidden;transition:background .25s,transform .3s,box-shadow .3s;border:1px solid var(--border)}
-.video-marquee-outer:hover .video-card:hover{background:var(--surface);transform:scale(1.03);box-shadow:0 16px 48px rgba(0,0,0,.6);border-color:rgba(255,92,26,.3)}
-.video-thumb{width:100%;aspect-ratio:9/16;position:relative;background:#000;overflow:hidden;cursor:pointer}
-.video-thumb video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.video-card:hover .video-thumb video{transform:scale(1.04)}
+.video-card:hover{background:var(--surface);transform:scale(1.03);box-shadow:0 16px 48px rgba(0,0,0,.6);border-color:rgba(255,92,26,.3)}
+.video-thumb{width:100%;aspect-ratio:9/16;position:relative;background:var(--surface2);overflow:hidden;cursor:pointer}
+.video-thumb video{width:100%;height:100%;object-fit:cover;display:block}
 .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,92,26,.92);display:flex;align-items:center;justify-content:center;transition:transform .2s,opacity .2s;box-shadow:0 0 28px rgba(255,92,26,.45);pointer-events:none}
 .video-thumb.playing .play-btn{opacity:0}
 .video-thumb::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none;z-index:1}
@@ -338,7 +334,9 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Per<span>4</span>mance Guru</a>
+  <a href="#" class="nav-logo">
+    <img src="https://per4mance.guru/assets/per4mance-guru.webp" alt="Per4mance Guru" style="height:36px;width:auto;display:block">
+  </a>
   <ul class="nav-links">
     <li><a href="#results">Results</a></li>
     <li><a href="#services">Services</a></li>
@@ -725,7 +723,21 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
 
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="footer-logo">Per<span>4</span>mance Guru</a>
+  <div style="display:flex;flex-direction:column;gap:16px">
+    <a href="#" class="footer-logo">
+      <img src="https://per4mance.guru/assets/per4mance-guru.webp" alt="Per4mance Guru" style="height:32px;width:auto;display:block">
+    </a>
+    <div style="display:flex;align-items:center;gap:20px">
+      <a href="mailto:hello@per4mance.guru" style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--muted)'">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M1 4l6 4 6-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        hello@per4mance.guru
+      </a>
+      <a href="https://www.instagram.com/per4mance_guru?igsh=MWwwNXRiN2ozOGZseQ==" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s" onmouseover="this.style.color='#FF5C1A'" onmouseout="this.style.color='var(--muted)'">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="3.5" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="7" r="2.8" stroke="currentColor" stroke-width="1.2"/><circle cx="10.5" cy="3.5" r=".7" fill="currentColor"/></svg>
+        @per4mance_guru
+      </a>
+    </div>
+  </div>
   <div class="footer-links">
     <a href="#results">Results</a>
     <a href="#services">Services</a>
@@ -856,23 +868,69 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
     document.body.style.overflow = '';
   }
 
-  // Video player
-  function playVid(thumb){
-    const vid = thumb.querySelector('video');
-    if(vid.paused){
-      document.querySelectorAll('.video-thumb video').forEach(v=>{if(v!==vid){v.pause();v.closest('.video-thumb').classList.remove('playing');}});
-      vid.muted=false;vid.play();thumb.classList.add('playing');
-    } else {vid.pause();thumb.classList.remove('playing');}
+  // Client marquee — pause + highlight on hover
+  const clientMarquee = document.getElementById('client-marquee');
+  if (clientMarquee) {
+    clientMarquee.addEventListener('mouseover', () => clientMarquee.style.animationPlayState = 'paused');
+    clientMarquee.addEventListener('mouseout', () => clientMarquee.style.animationPlayState = 'running');
   }
-  function toggleMute(e,btn){
+
+  // ── VIDEO MARQUEE ──
+  const videoTrack = document.getElementById('video-marquee-track');
+
+  // Seek each video to 0.5s on load so the first frame shows as thumbnail
+  document.querySelectorAll('.video-marquee-track video').forEach(v => {
+    v.addEventListener('loadedmetadata', () => { v.currentTime = 0.5; }, {once: true});
+    v.load();
+  });
+
+  // Track how many videos are playing
+  let playingCount = 0;
+
+  function setMarqueePause(paused) {
+    if (!videoTrack) return;
+    videoTrack.classList.toggle('paused', paused);
+  }
+
+  // Video player — play stops marquee, pause restarts it
+  function playVid(thumb) {
+    const vid = thumb.querySelector('video');
+    if (vid.paused) {
+      // pause all other videos
+      document.querySelectorAll('.video-thumb video').forEach(v => {
+        if (v !== vid && !v.paused) {
+          v.pause();
+          v.closest('.video-thumb').classList.remove('playing');
+        }
+      });
+      playingCount = 1;
+      setMarqueePause(true);   // stop marquee while video plays
+      vid.muted = false;
+      vid.play();
+      thumb.classList.add('playing');
+    } else {
+      vid.pause();
+      thumb.classList.remove('playing');
+      playingCount = 0;
+      setMarqueePause(false);  // restart marquee when paused
+    }
+  }
+
+  function toggleMute(e, btn) {
     e.stopPropagation();
     const vid = btn.closest('.video-thumb').querySelector('video');
-    vid.muted=!vid.muted;
-    btn.querySelector('.icon-sound').style.display=vid.muted?'none':'block';
-    btn.querySelector('.icon-mute').style.display=vid.muted?'block':'none';
+    vid.muted = !vid.muted;
+    btn.querySelector('.icon-sound').style.display = vid.muted ? 'none' : 'block';
+    btn.querySelector('.icon-mute').style.display  = vid.muted ? 'block' : 'none';
   }
-  document.querySelectorAll('.video-thumb video').forEach(v=>{
-    v.addEventListener('ended',()=>v.closest('.video-thumb').classList.remove('playing'));
+
+  // When video ends naturally — restart marquee
+  document.querySelectorAll('.video-thumb video').forEach(v => {
+    v.addEventListener('ended', () => {
+      v.closest('.video-thumb').classList.remove('playing');
+      playingCount = 0;
+      setMarqueePause(false);
+    });
   });
 
   // Meta Pixel Lead on GHL submit
