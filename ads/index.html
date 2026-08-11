@@ -109,7 +109,7 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 .shopify-caption{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
 .shopify-caption strong{color:var(--orange);font-weight:700}
 .shopify-live{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
-.shopify-img{width:100%;overflow:hidden;background:var(--surface2)}
+.shopify-img{width:100%;overflow:hidden;background:var(--surface2);min-height:180px;display:flex;align-items:center;justify-content:center}
 .shopify-img img{width:100%;height:auto;display:block;transition:transform .5s ease}
 .shopify-card:hover .shopify-img img{transform:scale(1.02)}
 
@@ -119,8 +119,8 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 .marquee-inner:hover{animation-play-state:paused}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* Client logos row with hover highlight */
-.cl-item{display:inline-flex;align-items:center;padding:20px 32px;border-right:1px solid var(--border);font-size:13px;font-weight:600;color:var(--muted2);letter-spacing:.04em;white-space:nowrap;transition:color .25s,background .25s;cursor:default;text-transform:uppercase}
-.cl-item:hover{color:var(--white);background:rgba(255,92,26,.06)}
+.cl-item{display:inline-flex;align-items:center;padding:22px 36px;border-right:1px solid var(--border);font-size:15px;font-weight:600;color:var(--white);letter-spacing:.04em;white-space:nowrap;transition:color .25s,background .25s;cursor:default;text-transform:uppercase}
+.cl-item:hover{color:var(--orange);background:rgba(255,92,26,.06)}
 .cl-item .cl-shark{font-size:9px;font-weight:700;background:var(--orange-soft);color:var(--orange);border:1px solid rgba(255,92,26,.25);padding:2px 5px;border-radius:3px;margin-left:6px;letter-spacing:.06em;text-transform:uppercase}
 
 /* VIDEO TESTIMONIALS — horizontal scroll marquee */
@@ -199,18 +199,33 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 .how-step:hover .step-title{color:var(--orange)}
 .step-text{font-size:14px;color:var(--muted);line-height:1.75}
 
-/* SERVICES */
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px}
-.svc-card{background:var(--off-black);padding:48px;position:relative;overflow:hidden;transition:background .25s}
-.svc-card:hover{background:var(--surface)}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),rgba(255,92,26,0));transform:scaleX(0);transform-origin:left;transition:transform .4s}
-.svc-card:hover::before{transform:scaleX(1)}
-.svc-icon-box{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:transform .3s,box-shadow .3s}
-.svc-card:hover .svc-icon-box{transform:scale(1.08);box-shadow:0 0 24px rgba(255,92,26,.18)}
-.svc-title{font-family:var(--D);font-size:22px;font-weight:700;color:var(--white);margin-bottom:12px}
-.svc-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:24px}
+/* SERVICES ACCORDION */
+.svc-accordion{margin-top:52px;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.svc-row{display:grid;grid-template-columns:280px 1fr 52px;align-items:center;padding:28px 32px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .3s,padding .3s;position:relative;gap:24px}
+.svc-row:last-child{border-bottom:none}
+.svc-row:hover{background:rgba(255,92,26,.05);padding-top:32px;padding-bottom:32px}
+.svc-row-left{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.svc-num{font-family:var(--D);font-size:13px;font-weight:700;color:var(--muted2);letter-spacing:.06em;min-width:24px;transition:color .25s}
+.svc-row:hover .svc-num{color:var(--orange)}
+.svc-name{font-family:var(--D);font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--white);transition:color .25s;white-space:nowrap}
+.svc-row:hover .svc-name{color:var(--orange)}
+/* left orange bar slides in on hover */
+.svc-row::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--orange);transform:scaleY(0);transform-origin:center;transition:transform .3s ease}
+.svc-row:hover::before{transform:scaleY(1)}
+/* body — hidden by default, revealed ONLY on hover */
+.svc-row-body{overflow:hidden;max-height:0;opacity:0;transition:max-height .4s ease,opacity .3s ease}
+.svc-row:hover .svc-row-body{max-height:200px;opacity:1}
+.svc-row-text{font-size:14px;color:var(--muted);line-height:1.75}
+/* arrow icon */
+.svc-row-arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--muted2);flex-shrink:0;transition:background .25s,border-color .25s,color .25s,transform .3s;justify-self:end}
+.svc-row:hover .svc-row-arrow{background:var(--orange);border-color:var(--orange);color:white;transform:rotate(45deg)}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);border:1px solid rgba(255,92,26,.15);padding:5px 10px;border-radius:4px}
+@media(max-width:768px){
+  .svc-row{grid-template-columns:1fr 40px;gap:12px;padding:20px}
+  .svc-row:hover{padding-top:24px;padding-bottom:24px}
+  .svc-row-left{flex-direction:column;align-items:flex-start;gap:4px}
+}
 
 /* TEAM MARQUEE */
 .team-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -326,13 +341,14 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
 .footer-links a:hover{color:var(--white)}
 .footer-copy{font-size:12px;color:var(--muted2)}
 
-/* SCROLL REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.08s}
-.reveal-delay-2{transition-delay:.16s}
-.reveal-delay-3{transition-delay:.24s}
-.reveal-delay-4{transition-delay:.32s}
+/* SCROLL REVEAL — elements visible by default; JS enhances with animation */
+.reveal{opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .5s ease}
+.reveal.ready{opacity:0;transform:translateY(16px)}
+.reveal.ready.visible{opacity:1;transform:translateY(0)}
+.reveal.ready.visible.reveal-delay-1{transition-delay:.06s}
+.reveal.ready.visible.reveal-delay-2{transition-delay:.12s}
+.reveal.ready.visible.reveal-delay-3{transition-delay:.18s}
+.reveal.ready.visible.reveal-delay-4{transition-delay:.24s}
 
 /* RESPONSIVE */
 @media(max-width:1024px){nav{padding:16px 32px}.hero{padding:100px 32px 60px}.sec{padding:72px 32px}footer{padding:32px 32px}}
@@ -392,7 +408,7 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   </div>
 
   <h1 class="hero-h1 reveal reveal-delay-1">
-    Your ads are live.<br>Your brand should be<br><span class="hl">scaling.</span>
+    Your Digital<br>Partner for<br><span class="hl">Measurable Success</span>
   </h1>
 
   <p class="hero-sub reveal reveal-delay-2">
@@ -425,71 +441,79 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   <h2 id="shopify-h" class="s-title">Real dashboards. Real <span class="hl-italic">results.</span></h2>
   <p class="s-sub">These are actual Shopify analytics from brands we manage. Not mock-ups. Not estimates.</p>
   <div class="shopify-grid">
-    <div class="shopify-card reveal">
+    <div class="shopify-card">
       <div class="shopify-badge">
         <div>
-          <div class="shopify-niche">Bags &amp; Accessories</div>
+          <div class="shopify-niche">Bags &amp; Accessories Brand</div>
           <div class="shopify-caption">scaled to <strong>₹1 Crore</strong> a month</div>
         </div>
         <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
       </div>
-      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c7845c7fc4f61f8027ab.png" alt="Shopify dashboard bags"></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c7845c7fc4f61f8027ab.png" alt="Shopify dashboard bags" loading="eager"></div>
     </div>
-    <div class="shopify-card reveal reveal-delay-1">
+    <div class="shopify-card">
       <div class="shopify-badge">
         <div>
-          <div class="shopify-niche">Home &amp; Furniture</div>
+          <div class="shopify-niche">Home &amp; Furniture Brand</div>
           <div class="shopify-caption">scaled to <strong>₹63 Lakhs</strong> a month</div>
         </div>
         <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
       </div>
-      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9a9c7792ea259c91.jpeg" alt="Shopify dashboard furniture"></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9a9c7792ea259c91.jpeg" alt="Shopify dashboard furniture" loading="eager"></div>
     </div>
-    <div class="shopify-card reveal reveal-delay-2">
+    <div class="shopify-card">
       <div class="shopify-badge">
         <div>
-          <div class="shopify-niche">Fashion &amp; Apparel</div>
+          <div class="shopify-niche">Fashion &amp; Apparel Brand</div>
           <div class="shopify-caption">scaled to <strong>₹40 Lakhs</strong> a month</div>
         </div>
         <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
       </div>
-      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c4fe9a9c7792ea26ac2d.png" alt="Shopify dashboard apparel"></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c4fe9a9c7792ea26ac2d.png" alt="Shopify dashboard apparel" loading="eager"></div>
     </div>
   </div>
   <div class="shopify-grid" style="margin-top:2px">
-    <div class="shopify-card reveal">
+    <div class="shopify-card">
       <div class="shopify-badge">
         <div>
-          <div class="shopify-niche">Beauty &amp; Skincare</div>
+          <div class="shopify-niche">Beauty &amp; Skincare Brand</div>
           <div class="shopify-caption">scaled to <strong>₹57 Lakhs</strong> a month</div>
         </div>
         <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
       </div>
-      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5441635e466c1f12665.png" alt="Shopify dashboard beauty"></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5441635e466c1f12665.png" alt="Shopify dashboard beauty" loading="eager"></div>
     </div>
-    <div class="shopify-card reveal reveal-delay-1">
+    <div class="shopify-card">
       <div class="shopify-badge">
         <div>
-          <div class="shopify-niche">Health &amp; Wellness</div>
+          <div class="shopify-niche">Health &amp; Wellness Brand</div>
           <div class="shopify-caption">scaled to <strong>₹70 Lakhs</strong> a month</div>
         </div>
         <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
       </div>
-      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5d59a9c7792ea271b96.png" alt="Shopify dashboard wellness"></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5d59a9c7792ea271b96.png" alt="Shopify dashboard wellness" loading="eager"></div>
     </div>
-    <div class="shopify-card reveal reveal-delay-2">
+    <div class="shopify-card">
       <div class="shopify-badge">
         <div>
-          <div class="shopify-niche">Food &amp; Beverages</div>
+          <div class="shopify-niche">Food &amp; Beverages Brand</div>
           <div class="shopify-caption">scaled to <strong>₹65 Lakhs</strong> a month</div>
         </div>
         <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
       </div>
-      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9994d35aa0b408a0.jpeg" alt="Shopify dashboard food"></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9994d35aa0b408a0.jpeg" alt="Shopify dashboard food" loading="eager"></div>
     </div>
   </div>
   <p style="text-align:center;font-size:12px;color:var(--muted2);margin-top:20px">Actual Shopify analytics. Client data anonymised.</p>
 </section>
+
+<!-- CLIENTS — between Shopify and Testimonials -->
+<div class="marquee-wrap" aria-label="Our clients">
+  <div class="marquee-inner" id="client-marquee">
+    <span class="cl-item">Tata Play</span><span class="cl-item">HRX</span><span class="cl-item">JJ Valaya</span><span class="cl-item">AWS</span><span class="cl-item">Blue Heaven</span><span class="cl-item">Carlton London</span><span class="cl-item">Patanjali Nirvana</span><span class="cl-item">Manav Rachna</span><span class="cl-item">Mackly</span><span class="cl-item">Melooha<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Singh Styled<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Assembly Luggage<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Woolah Tea<span class="cl-shark">Shark Tank</span></span><span class="cl-item">The Sass Bar<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Firvt</span><span class="cl-item">Hues Studio</span><span class="cl-item">Zero Kaata</span><span class="cl-item">Oud Factory</span><span class="cl-item">August Bioscience</span><span class="cl-item">Zariin</span><span class="cl-item">Kashmir Box</span><span class="cl-item">Gadre Marine</span><span class="cl-item">Redesyn</span><span class="cl-item">Urban Muni</span><span class="cl-item">Table &amp; Twist</span>
+    <span class="cl-item">Tata Play</span><span class="cl-item">HRX</span><span class="cl-item">JJ Valaya</span><span class="cl-item">AWS</span><span class="cl-item">Blue Heaven</span><span class="cl-item">Carlton London</span><span class="cl-item">Patanjali Nirvana</span><span class="cl-item">Manav Rachna</span><span class="cl-item">Mackly</span><span class="cl-item">Melooha<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Singh Styled<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Assembly Luggage<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Woolah Tea<span class="cl-shark">Shark Tank</span></span><span class="cl-item">The Sass Bar<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Firvt</span><span class="cl-item">Hues Studio</span><span class="cl-item">Zero Kaata</span><span class="cl-item">Oud Factory</span><span class="cl-item">August Bioscience</span><span class="cl-item">Zariin</span><span class="cl-item">Kashmir Box</span><span class="cl-item">Gadre Marine</span><span class="cl-item">Redesyn</span><span class="cl-item">Urban Muni</span><span class="cl-item">Table &amp; Twist</span>
+  </div>
+</div>
 
 <!-- 3. VIDEO TESTIMONIALS — horizontal scroll marquee -->
 <section class="sec video-section" aria-labelledby="vt-h">
@@ -589,17 +613,9 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   </div>
 </section>
 
-<!-- 4. CLIENTS — horizontal scrolling marquee with hover stop + highlight -->
-<div class="marquee-wrap" aria-label="Our clients">
-  <div class="marquee-inner" id="client-marquee">
-    <span class="cl-item">Tata Play</span><span class="cl-item">HRX</span><span class="cl-item">JJ Valaya</span><span class="cl-item">AWS</span><span class="cl-item">Blue Heaven</span><span class="cl-item">Carlton London</span><span class="cl-item">Patanjali Nirvana</span><span class="cl-item">Manav Rachna</span><span class="cl-item">Mackly</span><span class="cl-item">Melooha<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Singh Styled<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Assembly Luggage<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Woolah Tea<span class="cl-shark">Shark Tank</span></span><span class="cl-item">The Sass Bar<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Firvt</span><span class="cl-item">Hues Studio</span><span class="cl-item">Zero Kaata</span><span class="cl-item">Oud Factory</span><span class="cl-item">August Bioscience</span><span class="cl-item">Zariin</span><span class="cl-item">Kashmir Box</span><span class="cl-item">Gadre Marine</span><span class="cl-item">Redesyn</span><span class="cl-item">Urban Muni</span><span class="cl-item">Table &amp; Twist</span>
-    <span class="cl-item">Tata Play</span><span class="cl-item">HRX</span><span class="cl-item">JJ Valaya</span><span class="cl-item">AWS</span><span class="cl-item">Blue Heaven</span><span class="cl-item">Carlton London</span><span class="cl-item">Patanjali Nirvana</span><span class="cl-item">Manav Rachna</span><span class="cl-item">Mackly</span><span class="cl-item">Melooha<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Singh Styled<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Assembly Luggage<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Woolah Tea<span class="cl-shark">Shark Tank</span></span><span class="cl-item">The Sass Bar<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Firvt</span><span class="cl-item">Hues Studio</span><span class="cl-item">Zero Kaata</span><span class="cl-item">Oud Factory</span><span class="cl-item">August Bioscience</span><span class="cl-item">Zariin</span><span class="cl-item">Kashmir Box</span><span class="cl-item">Gadre Marine</span><span class="cl-item">Redesyn</span><span class="cl-item">Urban Muni</span><span class="cl-item">Table &amp; Twist</span>
-  </div>
-</div>
-
 <!-- PROPRIETARY TOOL SECTION -->
 <section class="sec tool-section" aria-labelledby="tool-h">
-  <div class="eyebrow">Our Proprietary Technology</div>
+  <div class="eyebrow">PG's AI Proprietary Tool</div>
   <h2 id="tool-h" class="s-title">Your brand's performance, <span class="hl-italic">live.</span></h2>
   <p class="s-sub">We built our own client dashboard so you never have to ask "how are the ads doing?" again.</p>
   <div class="tool-inner">
@@ -616,74 +632,11 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
         <div class="tool-feat"><span class="tool-feat-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#FF5C1A" stroke-width="1.4" stroke-linecap="round"/></svg></span>ROAS, CAC, and blended spend tracked daily</div>
         <div class="tool-feat"><span class="tool-feat-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#FF5C1A" stroke-width="1.4" stroke-linecap="round"/></svg></span>Decisions, not just data — recommendations built in</div>
       </div>
-      <button class="btn-primary" onclick="openModal()" style="width:fit-content">
-        Get Access
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
     </div>
     <div class="tool-right">
-      <video class="tool-video" id="tool-vid" src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af7e22e83bdde330b467c.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <video class="tool-video" src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7b04091eb55bdfc32deb4e.mp4" autoplay muted loop playsinline preload="metadata"></video>
       <div class="tool-video-overlay"></div>
-      <button class="tool-mute-btn" id="tool-mute-btn" onclick="toggleToolMute()" aria-label="Toggle sound">
-        <svg class="tool-icon-muted" width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M2 6.5h3l4-3v11l-4-3H2V6.5z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
-          <path d="M14 6l-3.5 5M10.5 6L14 11" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <svg class="tool-icon-sound" width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:none">
-          <path d="M2 6.5h3l4-3v11l-4-3H2V6.5z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
-          <path d="M12 5.5a5 5 0 0 1 0 7" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-          <path d="M14 3.5a8 8 0 0 1 0 11" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <span class="tool-mute-label">Tap to unmute</span>
-      </button>
     </div>
-  </div>
-</section>
-
-<!-- 5. PROBLEM -->
-<section class="sec pain-section" aria-labelledby="pain-h">
-  <div class="eyebrow">The Problem</div>
-  <h2 id="pain-h" class="s-title">Sound familiar?</h2>
-  <div class="pain-grid">
-    <div class="pain-card reveal">
-      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6l5 5 4-4 7 7" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 14h4v-4" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <div class="pain-title">ROAS collapses when you scale</div>
-      <p class="pain-text">You increase budget and CPA spikes. The account can't hold efficiency. You're stuck under a ceiling you can't break.</p>
-    </div>
-    <div class="pain-card reveal reveal-delay-1">
-      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="2" stroke="#FF5C1A" stroke-width="1.6"/><path d="M3 8h16M8 3v5" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <div class="pain-title">Creatives are your biggest bottleneck</div>
-      <p class="pain-text">Your agency runs the same ad for 3 months. No creative testing cadence. No hook strategy. The algorithm gets bored.</p>
-    </div>
-    <div class="pain-card reveal reveal-delay-2">
-      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 3h2l2.5 10h10L19 7H6" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="18" r="1.5" fill="#FF5C1A"/><circle cx="16" cy="18" r="1.5" fill="#FF5C1A"/></svg></div>
-      <div class="pain-title">Google Shopping is wasting your budget</div>
-      <p class="pain-text">PMax eats spend with zero SKU-level control. No idea which products are profitable and which drain margins daily.</p>
-    </div>
-    <div class="pain-card reveal reveal-delay-3">
-      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="2" width="14" height="18" rx="2" stroke="#FF5C1A" stroke-width="1.6"/><path d="M8 7h6M8 11h6M8 15h4" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <div class="pain-title">You get reports. Not decisions.</div>
-      <p class="pain-text">Weekly PDFs with CTR and impressions. No explanation of what to cut, what to scale, and why.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 6. PROOF — case studies + numbers -->
-<section class="sec" aria-labelledby="cs-h" style="border-top:1px solid var(--border)">
-  <div class="eyebrow">Proof</div>
-  <h2 id="cs-h" class="s-title">Numbers that close <span class="hl-italic">arguments.</span></h2>
-  <p class="s-sub">Every number verified. Shopify dashboards. Live data. No estimates.</p>
-  <div class="cs-grid">
-    <div class="cs-card reveal"><div class="cs-brand">FIRVT — Premium Indian Streetwear</div><div class="cs-number">83x</div><div class="cs-period">Revenue growth over 4 years</div><div class="cs-metrics"><div><div class="cs-m-val">₹1.22L</div><div class="cs-m-lbl">Starting MRR</div></div><div><div class="cs-m-val">₹1.02Cr</div><div class="cs-m-lbl">Current MRR</div></div><div><div class="cs-m-val">0.40%→0.92%</div><div class="cs-m-lbl">CVR Lift</div></div></div><p class="cs-desc">Built paid media from zero. Full TOF/MOF/BOF. Creative testing every 7 to 10 days. CAC below ₹480 even at ₹10L+ spend.</p></div>
-    <div class="cs-card reveal reveal-delay-1"><div class="cs-brand">Hues Studio — Handcrafted Women's Bags</div><div class="cs-number">6x</div><div class="cs-period">Revenue growth in 4 months</div><div class="cs-metrics"><div><div class="cs-m-val">₹9.81L</div><div class="cs-m-lbl">Starting MRR</div></div><div><div class="cs-m-val">₹54.05L</div><div class="cs-m-lbl">After 4 Months</div></div><div><div class="cs-m-val">5x</div><div class="cs-m-lbl">Orders</div></div></div><p class="cs-desc">Meta built from near zero. Lifestyle Reels, UGC, catalogue retargeting. Sessions 3.5x. Orders 302 to 1,523/month.</p></div>
-    <div class="cs-card reveal reveal-delay-2"><div class="cs-brand">Mackly — Kids Innerwear, India + Sri Lanka</div><div class="cs-number">4.2x</div><div class="cs-period">Average ROAS across both markets</div><div class="cs-metrics"><div><div class="cs-m-val">2</div><div class="cs-m-lbl">Markets</div></div><div><div class="cs-m-val">India + LK</div><div class="cs-m-lbl">Simultaneous</div></div><div><div class="cs-m-val">Ongoing</div><div class="cs-m-lbl">Engagement</div></div></div><p class="cs-desc">Separate creative and audience strategy per market. Competitor review mining for hook banks. UGC framework around parent-first messaging.</p></div>
-    <div class="cs-card reveal reveal-delay-3"><div class="cs-brand">JJ Valaya — Luxury Indian Fashion</div><div class="cs-number">Premium</div><div class="cs-period">High-AOV luxury D2C performance</div><div class="cs-metrics"><div><div class="cs-m-val">Multi-Lakh</div><div class="cs-m-lbl">Monthly Budget</div></div><div><div class="cs-m-val">Ongoing</div><div class="cs-m-lbl">Partnership</div></div></div><p class="cs-desc">Precision targeting, high-AOV conversion architecture, creative built for an audience that doesn't respond to generic D2C playbooks.</p></div>
-  </div>
-  <div class="numbers-grid" style="margin-top:2px">
-    <div class="num-cell reveal"><div class="num-val">80<em>+</em></div><div class="num-lbl">D2C brands scaled across 5 countries</div></div>
-    <div class="num-cell reveal reveal-delay-1"><div class="num-val">83<em>x</em></div><div class="num-lbl">Peak revenue growth for a single brand in 4 years</div></div>
-    <div class="num-cell reveal reveal-delay-2"><div class="num-val">₹250<em>Cr+</em></div><div class="num-lbl">Total revenue driven across all clients</div></div>
-    <div class="num-cell reveal reveal-delay-3"><div class="num-val">₹<em>480</em></div><div class="num-lbl">Max blended CAC at ₹10L+ monthly ad spend</div></div>
   </div>
 </section>
 
@@ -692,7 +645,7 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   <div class="eyebrow">Our Process</div>
   <h2 id="how-h" class="s-title">How we build your <span class="hl-italic">growth engine.</span></h2>
   <div class="how-grid">
-    <div class="how-step reveal"><div class="how-step-glow"></div><div class="step-n">01</div><div class="step-title">Audit & Diagnose</div><p class="step-text">We tear down your existing account structure, creative library, and attribution setup. We find exactly what's costing money and what's worth scaling.</p></div>
+    <div class="how-step reveal"><div class="how-step-glow"></div><div class="step-n">01</div><div class="step-title">Audit &amp; Diagnose</div><p class="step-text">We tear down your existing account structure, creative library, and attribution setup. We find exactly what's costing money and what's worth scaling.</p></div>
     <div class="how-step reveal reveal-delay-1"><div class="how-step-glow"></div><div class="step-n">02</div><div class="step-title">Build the Infrastructure</div><p class="step-text">Full-funnel campaign architecture. TOF/MOF/BOF split. Bid strategy mapped to your growth phase. Creative testing every 7 to 10 days.</p></div>
     <div class="how-step reveal reveal-delay-2"><div class="how-step-glow"></div><div class="step-n">03</div><div class="step-title">Scale With Discipline</div><p class="step-text">Winners get aggressive budget. Losers get cut fast. CAC stays controlled. Weekly decisions, not weekly reports. Growth that compounds.</p></div>
   </div>
@@ -700,27 +653,54 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
 
 <!-- 8. SERVICES -->
 <section class="sec" id="services" aria-labelledby="svc-h" style="border-top:1px solid var(--border)">
-  <div class="eyebrow">Services</div>
-  <h2 id="svc-h" class="s-title">Three things. Done better than <span class="hl-italic">anyone else.</span></h2>
-  <div class="svc-grid" style="grid-template-columns:repeat(3,1fr)">
-    <div class="svc-card reveal">
-      <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" fill="#FF5C1A"/><rect x="14" y="2" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".4"/><rect x="2" y="14" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".4"/><rect x="14" y="14" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".15"/></svg></div>
-      <div class="svc-title">Meta Ads</div>
-      <p class="svc-text">Full-funnel Meta campaigns for D2C brands serious about profitable scale. Campaign architecture, creative strategy, audience segmentation, bid management, and scaling protocols.</p>
-      <div class="tags"><span class="tag">TOF / MOF / BOF</span><span class="tag">Creative Testing</span><span class="tag">Cost Cap Scaling</span><span class="tag">UGC Strategy</span><span class="tag">Retargeting</span><span class="tag">Bid Discipline</span></div>
+  <div class="eyebrow">What We Do</div>
+  <h2 id="svc-h" class="s-title">Every format your <span class="hl-italic">brand</span> will ever need.</h2>
+  <p class="s-sub">Performance ad or brand film. Video or static. AI-powered or traditionally crafted. One roof, one team, one brief.</p>
+
+  <div class="svc-accordion">
+
+    <div class="svc-row" tabindex="0">
+      <div class="svc-row-left">
+        <span class="svc-num">01</span>
+        <span class="svc-name">Meta Ads</span>
+      </div>
+      <div class="svc-row-body">
+        <p class="svc-row-text">Full-funnel Meta campaigns built for profitable D2C scale. Campaign architecture, creative strategy, audience segmentation, bid management, and scaling protocols that hold CAC even at ₹10L+ monthly spend.</p>
+        <div class="tags" style="margin-top:16px"><span class="tag">TOF / MOF / BOF</span><span class="tag">Creative Testing</span><span class="tag">Cost Cap Scaling</span><span class="tag">UGC Strategy</span><span class="tag">Retargeting</span></div>
+      </div>
+      <div class="svc-row-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
     </div>
-    <div class="svc-card reveal reveal-delay-1">
-      <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="#FF5C1A" stroke-width="1.6"/><path d="M9 13h8M13 9v8" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/><circle cx="13" cy="13" r="3" fill="#FF5C1A" opacity=".3"/></svg></div>
-      <div class="svc-title">Google Ads</div>
-      <p class="svc-text">Shopping, Search, and PMax managed with SKU-level discipline. We classify every product, control what PMax spends on, protect brand terms, and eliminate search term waste.</p>
-      <div class="tags"><span class="tag">Shopping Campaigns</span><span class="tag">PMax Control</span><span class="tag">Search Term Audit</span><span class="tag">Brand Protection</span><span class="tag">SKU Classification</span><span class="tag">ROAS Targeting</span></div>
+
+    <div class="svc-row" tabindex="0">
+      <div class="svc-row-left">
+        <span class="svc-num">02</span>
+        <span class="svc-name">Google Ads</span>
+      </div>
+      <div class="svc-row-body">
+        <p class="svc-row-text">Shopping, Search, and PMax managed with SKU-level discipline. We classify every product, control what PMax spends on, protect brand terms, and eliminate search term waste that burns budget silently.</p>
+        <div class="tags" style="margin-top:16px"><span class="tag">Shopping Campaigns</span><span class="tag">PMax Control</span><span class="tag">Search Term Audit</span><span class="tag">Brand Protection</span><span class="tag">ROAS Targeting</span></div>
+      </div>
+      <div class="svc-row-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
     </div>
-    <div class="svc-card reveal reveal-delay-2">
-      <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="5" width="20" height="14" rx="2" stroke="#FF5C1A" stroke-width="1.6"/><path d="M10 10l6 3-6 3V10z" fill="#FF5C1A"/></svg></div>
-      <div class="svc-title">Performance Creatives</div>
-      <p class="svc-text">Ad creatives built to convert, not just look good. Hook strategy, competitor review mining, UGC briefs, AI-generated video, static ads, and a testing cadence that feeds the algorithm what it needs.</p>
-      <div class="tags"><span class="tag">Hook Writing</span><span class="tag">UGC Briefs</span><span class="tag">AI Video Ads</span><span class="tag">Static Creatives</span><span class="tag">Review Mining</span><span class="tag">Creative Strategy</span></div>
+
+    <div class="svc-row" tabindex="0">
+      <div class="svc-row-left">
+        <span class="svc-num">03</span>
+        <span class="svc-name">Performance Creatives</span>
+      </div>
+      <div class="svc-row-body">
+        <p class="svc-row-text">Ad creatives built to convert, not just look good. Hook strategy from competitor review mining, UGC briefs, AI-generated video ads, static creatives, and a testing cadence that feeds the algorithm what it needs to scale.</p>
+        <div class="tags" style="margin-top:16px"><span class="tag">Hook Writing</span><span class="tag">UGC Briefs</span><span class="tag">AI Video Ads</span><span class="tag">Static Creatives</span><span class="tag">Review Mining</span></div>
+      </div>
+      <div class="svc-row-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H5M13 3v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -903,11 +883,18 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
 
-  // Scroll reveal
+  // Scroll reveal — progressive enhancement (elements visible if JS fails)
+  const revealEls = document.querySelectorAll('.reveal');
+  revealEls.forEach(el => el.classList.add('ready')); // hide now that JS is running
   const ro = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
-  }, {threshold:.07});
-  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        ro.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0, rootMargin: '0px 0px -40px 0px'});
+  revealEls.forEach(el => ro.observe(el));
 
   // ── COUNTER ANIMATION ──
   function easeOutExpo(t) {
@@ -1028,18 +1015,13 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
     clientMarquee.addEventListener('mouseout', () => clientMarquee.style.animationPlayState = 'running');
   }
 
-  // Tool video mute toggle
+  // Tool video mute stub (button removed, kept to prevent reference errors)
   function toggleToolMute() {
     const vid = document.getElementById('tool-vid');
-    const btn = document.getElementById('tool-mute-btn');
-    const iconMuted = btn.querySelector('.tool-icon-muted');
-    const iconSound = btn.querySelector('.tool-icon-sound');
-    const label = btn.querySelector('.tool-mute-label');
-    vid.muted = !vid.muted;
-    iconMuted.style.display = vid.muted ? 'block' : 'none';
-    iconSound.style.display = vid.muted ? 'none' : 'block';
-    label.textContent = vid.muted ? 'Tap to unmute' : 'Tap to mute';
+    if (!vid) return;
   }
+
+  // Team marquee — hover pauses scroll
   const teamOuter = document.getElementById('team-marquee-outer');
   const teamTrack = document.getElementById('team-marquee-track');
   if (teamOuter && teamTrack) {
