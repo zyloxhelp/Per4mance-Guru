@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Per4mance Guru — Meta & Google Ads for D2C Brands</title>
+  <meta name="description" content="India's top performance marketing agency for D2C brands. Meta Ads & Google Ads. 80+ brands. 5 countries. ₹250Cr+ revenue driven."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- META PIXEL — replace PASTE_YOUR_PIXEL_ID_HERE -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','PASTE_YOUR_PIXEL_ID_HERE');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PASTE_YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#08080A;--off-black:#0F0F12;--surface:#141418;--surface2:#1A1A20;
+  --border:#1E1E26;--border2:#252530;--white:#FFFFFF;--off-white:#F0F0EC;
+  --muted:#7A7A88;--muted2:#44444F;--orange:#FF5C1A;
+  --orange-soft:rgba(255,92,26,.10);--orange-glow:rgba(255,92,26,.06);
+  --green:#22C55E;--red:#EF4444;
+  --D:'Poppins',sans-serif;--B:'Inter',sans-serif;--F:'Playfair Display',serif;
+}
+html{background:var(--black);color:var(--white);scroll-behavior:smooth}
+body{font-family:var(--B);font-size:16px;line-height:1.6;background:var(--black);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color:var(--border)}
+.nav-logo{font-family:var(--D);font-weight:800;font-size:20px;letter-spacing:-.5px;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--orange)!important;color:var(--white)!important;padding:10px 22px;border-radius:6px;font-size:13px!important;font-weight:700!important;letter-spacing:.01em!important;text-transform:none!important;border:none;cursor:pointer;transition:opacity .2s!important}
+.nav-cta:hover{opacity:.85!important}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:101}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile menu */
+.mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(8,8,10,.98);backdrop-filter:blur(20px);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity .3s}
+.mobile-menu.open{opacity:1;pointer-events:all}
+.mobile-menu a,.mobile-menu button{font-family:var(--D);font-size:28px;font-weight:700;color:var(--white);text-decoration:none;background:none;border:none;cursor:pointer;letter-spacing:-.01em;transition:color .2s}
+.mobile-menu a:hover,.mobile-menu button:hover{color:var(--orange)}
+.mobile-menu .mob-cta{background:var(--orange);color:var(--white)!important;padding:14px 36px;border-radius:8px;font-size:18px!important}
+
+/* HERO — centred, no images */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 60px 80px;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;opacity:.22;pointer-events:none}
+.hero-glow-c{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:800px;height:800px;background:radial-gradient(circle,rgba(255,92,26,.14) 0%,transparent 65%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(20,20,24,.82);backdrop-filter:blur(8px);border:1px solid var(--border2);border-radius:99px;padding:6px 16px 6px 8px;margin-bottom:32px}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-tag-text{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hero-h1{font-family:var(--D);font-size:clamp(48px,7vw,100px);font-weight:800;line-height:.97;letter-spacing:-.03em;color:var(--white);max-width:900px;margin-bottom:24px}
+.hero-h1 .hl{color:var(--orange);font-family:var(--F);font-style:italic;font-weight:800;letter-spacing:-.02em}
+.hero-sub{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:40px}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:var(--white);font-family:var(--B);font-size:15px;font-weight:600;padding:15px 30px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:opacity .2s,transform .2s}
+.btn-primary:hover{opacity:.86;transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:14px;font-weight:500;text-decoration:none;background:none;border:none;cursor:pointer;transition:color .2s}
+.btn-ghost:hover{color:var(--white)}
+.hero-qualifier{font-size:12px;color:var(--muted2);letter-spacing:.02em}
+.hero-stats{display:flex;gap:48px;justify-content:center;padding-top:48px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap;margin-top:52px;width:100%}
+.stat-num{font-family:var(--D);font-size:40px;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1}
+.stat-num em{color:var(--orange);font-style:normal}
+.stat-label{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.05em;text-transform:uppercase}
+
+/* SHARED SECTION */
+.sec{padding:96px 60px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.eyebrow::before{content:'';display:block;width:18px;height:1px;background:var(--orange)}
+.s-title{font-family:var(--D);font-size:clamp(28px,3.8vw,56px);font-weight:800;line-height:1.04;letter-spacing:-.025em;color:var(--white);margin-bottom:14px}
+.s-title .hl-italic{font-family:var(--F);font-style:italic;font-weight:800;color:var(--orange);letter-spacing:-.02em}
+.s-sub{font-size:17px;color:var(--muted);max-width:520px;line-height:1.75}
+
+/* SHOPIFY DASHBOARDS */
+.shopify-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:40px}
+.shopify-card{background:var(--off-black);overflow:hidden;transition:background .25s}
+.shopify-card:hover{background:var(--surface)}
+.shopify-badge{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;border-bottom:1px solid var(--border)}
+.shopify-niche{font-family:var(--D);font-size:13px;font-weight:700;color:var(--white)}
+.shopify-live{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase}
+.shopify-img{width:100%;overflow:hidden;background:var(--surface2)}
+.shopify-img img{width:100%;height:auto;display:block;transition:transform .5s ease}
+.shopify-card:hover .shopify-img img{transform:scale(1.02)}
+/* Revenue result row below image */
+.shopify-result{display:flex;align-items:center;justify-content:space-between;padding:12px 18px 14px;border-top:1px solid var(--border)}
+.shopify-rev{font-family:var(--D);font-size:18px;font-weight:800;color:var(--orange);letter-spacing:-.02em}
+.shopify-period{font-size:11px;color:var(--muted);font-weight:500}
+
+/* MARQUEE */
+.marquee-wrap{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;overflow:hidden}
+.marquee-inner{display:flex;gap:0;animation:marquee 30s linear infinite;white-space:nowrap}
+.marquee-inner:hover{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* Client logos row with hover highlight */
+.cl-item{display:inline-flex;align-items:center;padding:20px 32px;border-right:1px solid var(--border);font-size:13px;font-weight:600;color:var(--muted2);letter-spacing:.04em;white-space:nowrap;transition:color .25s,background .25s;cursor:default;text-transform:uppercase}
+.cl-item:hover{color:var(--white);background:rgba(255,92,26,.06)}
+.cl-item .cl-shark{font-size:9px;font-weight:700;background:var(--orange-soft);color:var(--orange);border:1px solid rgba(255,92,26,.25);padding:2px 5px;border-radius:3px;margin-left:6px;letter-spacing:.06em;text-transform:uppercase}
+
+/* VIDEO TESTIMONIALS — horizontal scroll marquee */
+.video-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+/* horizontal marquee track */
+.video-marquee-outer{overflow:hidden;margin-top:48px;cursor:grab;user-select:none}
+.video-marquee-outer:active{cursor:grabbing}
+.video-marquee-track{display:flex;gap:12px;animation:vmarquee 40s linear infinite;width:max-content}
+.video-marquee-outer:hover .video-marquee-track{animation-play-state:paused}
+@keyframes vmarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* each card in the horizontal strip */
+.video-card{flex:0 0 240px;background:var(--off-black);border-radius:12px;overflow:hidden;transition:background .25s,transform .3s,box-shadow .3s;border:1px solid var(--border)}
+.video-marquee-outer:hover .video-card:hover{background:var(--surface);transform:scale(1.03);box-shadow:0 16px 48px rgba(0,0,0,.6);border-color:rgba(255,92,26,.3)}
+.video-thumb{width:100%;aspect-ratio:9/16;position:relative;background:#000;overflow:hidden;cursor:pointer}
+.video-thumb video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.video-card:hover .video-thumb video{transform:scale(1.04)}
+.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,92,26,.92);display:flex;align-items:center;justify-content:center;transition:transform .2s,opacity .2s;box-shadow:0 0 28px rgba(255,92,26,.45);pointer-events:none}
+.video-thumb.playing .play-btn{opacity:0}
+.video-thumb::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,rgba(0,0,0,.7));pointer-events:none;z-index:1}
+.video-mute-btn{position:absolute;bottom:12px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;cursor:pointer;z-index:5;border:1px solid rgba(255,255,255,.15);transition:background .2s}
+.video-thumb.playing .video-mute-btn{display:flex}
+.video-mute-btn:hover{background:rgba(255,92,26,.7)}
+.video-meta{padding:14px 16px 18px}
+.video-person{font-family:var(--D);font-size:14px;font-weight:700;color:var(--white);margin-bottom:2px}
+.video-role{font-size:11px;color:var(--muted);margin-bottom:8px}
+.video-result{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);border:1px solid rgba(255,92,26,.2);padding:3px 8px;border-radius:4px}
+
+/* TEXT TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:2px}
+.testi-card{background:var(--off-black);padding:40px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:background .25s}
+.testi-card:hover{background:var(--surface)}
+.testi-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--orange);transition:height .45s}
+.testi-card:hover::before{height:100%}
+.testi-qm{font-family:var(--F);font-size:56px;line-height:.7;color:var(--orange);margin-bottom:16px;display:block;transition:transform .35s}
+.testi-card:hover .testi-qm{transform:scale(1.12) rotate(-3deg)}
+.testi-q{font-size:15px;color:var(--off-white);line-height:1.75;flex:1;margin-bottom:24px}
+.testi-person{border-top:1px solid var(--border);padding-top:18px}
+.testi-name{font-weight:600;font-size:14px;color:var(--white)}
+.testi-role{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* PAIN */
+.pain-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;border:1px solid var(--border)}
+.pain-card{padding:40px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;transition:background .25s}
+.pain-card:hover{background:var(--surface2)}
+.pain-card:nth-child(2n){border-right:none}
+.pain-card:nth-last-child(-n+2){border-bottom:none}
+.pain-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--orange);transition:height .4s}
+.pain-card:hover::before{height:100%}
+.icon-box{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:transform .3s,box-shadow .3s;background:var(--orange-soft);border:1px solid rgba(255,92,26,.2)}
+.pain-card:hover .icon-box{transform:scale(1.1) rotate(-3deg);box-shadow:0 0 20px rgba(255,92,26,.2)}
+.pain-title{font-family:var(--D);font-size:17px;font-weight:700;color:var(--white);margin-bottom:8px}
+.pain-text{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* CASE STUDIES */
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px}
+.cs-card{background:var(--off-black);padding:48px;position:relative;overflow:hidden;transition:background .25s}
+.cs-card:hover{background:var(--surface)}
+.cs-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.cs-card:hover::after{transform:scaleX(1)}
+.cs-brand{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.cs-number{font-family:var(--D);font-size:clamp(44px,5vw,64px);font-weight:800;letter-spacing:-.04em;color:var(--white);line-height:1;margin-bottom:5px;transition:color .3s}
+.cs-card:hover .cs-number{color:var(--orange)}
+.cs-period{font-size:13px;color:var(--muted);margin-bottom:22px}
+.cs-metrics{display:flex;gap:28px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:18px;flex-wrap:wrap}
+.cs-m-val{font-family:var(--D);font-size:18px;font-weight:700;color:var(--white)}
+.cs-m-lbl{font-size:10px;color:var(--muted2);text-transform:uppercase;letter-spacing:.07em;margin-top:3px}
+.cs-desc{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* HOW */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);margin-top:56px}
+.how-step{padding:40px;border-right:1px solid var(--border);position:relative;overflow:hidden;transition:background .3s}
+.how-step:last-child{border-right:none}
+.how-step:hover{background:var(--surface2)}
+.how-step-glow{position:absolute;top:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:var(--orange-glow);opacity:0;transition:opacity .4s}
+.how-step:hover .how-step-glow{opacity:1}
+.step-n{font-family:var(--D);font-size:52px;font-weight:800;color:var(--border2);line-height:1;margin-bottom:20px;letter-spacing:-.04em;transition:color .3s}
+.how-step:hover .step-n{color:var(--orange)}
+.step-title{font-family:var(--D);font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px;transition:color .3s}
+.how-step:hover .step-title{color:var(--orange)}
+.step-text{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);margin-top:56px}
+.svc-card{background:var(--off-black);padding:48px;position:relative;overflow:hidden;transition:background .25s}
+.svc-card:hover{background:var(--surface)}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--orange),rgba(255,92,26,0));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon-box{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:transform .3s,box-shadow .3s}
+.svc-card:hover .svc-icon-box{transform:scale(1.08);box-shadow:0 0 24px rgba(255,92,26,.18)}
+.svc-title{font-family:var(--D);font-size:22px;font-weight:700;color:var(--white);margin-bottom:12px}
+.svc-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:24px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);border:1px solid rgba(255,92,26,.15);padding:5px 10px;border-radius:4px}
+
+/* TEAM */
+.team-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);margin-top:56px}
+.team-card{background:var(--off-black);overflow:hidden;transition:background .25s;position:relative}
+.team-card:hover{background:var(--surface)}
+.team-photo{width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--surface2);position:relative}
+.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s,filter .4s}
+.team-card:hover .team-photo img{transform:scale(1.05)}
+/* orange top accent on hover */
+.team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .4s;z-index:1}
+.team-card:hover::before{transform:scaleX(1)}
+.team-info{padding:16px 18px 20px}
+.team-name{font-family:var(--D);font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px}
+.team-role{font-size:12px;color:var(--orange);font-weight:600;letter-spacing:.03em}
+
+/* CLIENTS */
+.clients-section{border-top:1px solid var(--border)}
+.clients-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border);margin-top:56px}
+.client-cell{padding:22px 18px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-align:center;transition:background .2s}
+.client-cell:hover{background:var(--surface)}
+.client-cell:nth-child(5n){border-right:none}
+.client-name{font-size:11px;font-weight:600;color:var(--muted2);letter-spacing:.05em;text-transform:uppercase;transition:color .2s;line-height:1.4}
+.client-cell:hover .client-name{color:var(--white)}
+.shark{display:inline-block;font-size:9px;font-weight:700;background:var(--orange-soft);color:var(--orange);padding:2px 5px;border-radius:3px;margin-top:3px;display:block;text-transform:uppercase}
+
+/* QUALIFIER */
+.qualifier-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.qualifier-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);margin-top:52px}
+.q-col{padding:48px}
+.q-col:first-child{border-right:1px solid var(--border)}
+.q-col-title{font-family:var(--D);font-size:16px;font-weight:700;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.q-list{list-style:none;display:flex;flex-direction:column;gap:16px}
+.q-list li{font-size:15px;color:var(--muted);display:flex;align-items:flex-start;gap:12px;line-height:1.6;transition:color .2s,transform .2s}
+.q-list li:hover{color:var(--off-white);transform:translateX(4px)}
+.q-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.q-dot-green{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3)}
+.q-dot-red{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25)}
+.for-title{color:var(--green)}
+.not-title{color:var(--red)}
+
+/* FAQ */
+.faq-section{border-top:1px solid var(--border)}
+.faq-center{max-width:760px;margin:0 auto;margin-top:52px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;user-select:none;gap:16px}
+.faq-q-text{font-family:var(--D);font-size:17px;font-weight:600;color:var(--white);transition:color .2s;line-height:1.3}
+.faq-item.open .faq-q-text{color:var(--orange)}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s,border-color .2s,transform .3s}
+.faq-item.open .faq-icon{background:var(--orange-soft);border-color:rgba(255,92,26,.4);transform:rotate(45deg)}
+.faq-body{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.faq-item.open .faq-body{max-height:300px}
+.faq-ans{font-size:15px;color:var(--muted);line-height:1.75;padding-bottom:22px}
+
+/* NUMBERS */
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin-top:56px}
+.num-cell{padding:44px 32px;border-right:1px solid var(--border);transition:background .3s}
+.num-cell:last-child{border-right:none}
+.num-cell:hover{background:var(--surface2)}
+.num-val{font-family:var(--D);font-size:48px;font-weight:800;letter-spacing:-.04em;color:var(--white);line-height:1;transition:color .3s}
+.num-cell:hover .num-val{color:var(--orange)}
+.num-val em{color:var(--orange);font-style:normal}
+.num-lbl{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.5}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);z-index:1000;display:flex;align-items:flex-start;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;overflow-y:auto}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--off-black);border:1px solid var(--border2);border-radius:20px;width:100%;max-width:580px;margin:auto;position:relative;transform:translateY(24px) scale(.97);transition:transform .35s,opacity .35s;opacity:0;padding-bottom:32px}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1);opacity:1}
+.modal-header{padding:28px 32px 0;display:flex;justify-content:space-between;align-items:flex-start}
+.modal-title{font-family:var(--D);font-size:22px;font-weight:800;color:var(--white)}
+.modal-sub{font-size:13px;color:var(--muted);margin-top:4px}
+.modal-close{width:36px;height:36px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s;color:var(--muted)}
+.modal-close:hover{background:var(--surface);color:var(--white)}
+.modal-trust{display:flex;flex-wrap:wrap;gap:10px;padding:14px 32px 0}
+.modal-trust-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.modal-body{padding:16px 32px 0;min-height:900px}
+.modal-body iframe{width:100%;border:none;display:block;min-height:880px}
+
+/* FLOAT BUTTON */
+.float-btn{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.float-cta{display:flex;align-items:center;gap:10px;background:var(--orange);color:var(--white);font-family:var(--B);font-size:13px;font-weight:700;padding:12px 20px;border-radius:99px;border:none;cursor:pointer;box-shadow:0 8px 32px rgba(255,92,26,.45);transition:transform .2s,opacity .2s;white-space:nowrap}
+.float-cta:hover{transform:translateY(-2px);opacity:.92}
+.float-cta-dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.5s infinite}
+.float-tooltip{background:var(--surface);border:1px solid var(--border2);border-radius:10px;padding:10px 14px;font-size:12px;color:var(--off-white);max-width:200px;text-align:right;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:var(--D);font-size:18px;font-weight:800;color:var(--white);text-decoration:none}
+.footer-logo span{color:var(--orange)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:12px;color:var(--muted2)}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.08s}
+.reveal-delay-2{transition-delay:.16s}
+.reveal-delay-3{transition-delay:.24s}
+.reveal-delay-4{transition-delay:.32s}
+
+/* RESPONSIVE */
+@media(max-width:1024px){nav{padding:16px 32px}.hero{padding:100px 32px 60px}.sec{padding:72px 32px}footer{padding:32px 32px}}
+@media(max-width:768px){
+  nav{padding:14px 20px}.nav-links{display:none}.hamburger{display:flex}
+  .hero{padding:100px 24px 60px}.hero-stats{gap:24px}
+  .sec{padding:64px 24px}
+  .pain-grid,.cs-grid,.svc-grid,.testi-grid,.qualifier-inner,.numbers-grid{grid-template-columns:1fr}
+  .how-grid{grid-template-columns:1fr}.how-step{border-right:none;border-bottom:1px solid var(--border)}.how-step:last-child{border-bottom:none}
+  .q-col:first-child{border-right:none;border-bottom:1px solid var(--border)}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .clients-grid{grid-template-columns:repeat(3,1fr)}.client-cell:nth-child(3n){border-right:none}
+  .shopify-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;align-items:flex-start;padding:28px 20px}
+}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr 1fr}.clients-grid{grid-template-columns:1fr 1fr}.video-card{flex:0 0 160px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#results" onclick="closeMobileMenu()">Results</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#team" onclick="closeMobileMenu()">Team</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <button class="mob-cta" onclick="closeMobileMenu();openModal()">Book a Call</button>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Per<span>4</span>mance Guru</a>
+  <ul class="nav-links">
+    <li><a href="#results">Results</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><button class="nav-cta" onclick="openModal()">Book a Call</button></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- 1. HERO — centred, no images -->
+<section class="hero" aria-label="Hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-glow-c" aria-hidden="true"></div>
+
+  <div class="hero-tag reveal">
+    <span class="hero-tag-dot" aria-hidden="true"></span>
+    <span class="hero-tag-text">India's Top Performance Marketing Agency</span>
+  </div>
+
+  <h1 class="hero-h1 reveal reveal-delay-1">
+    Your ads are live.<br>Your brand should be<br><span class="hl">scaling.</span>
+  </h1>
+
+  <p class="hero-sub reveal reveal-delay-2">
+    Meta Ads and Google Ads built for D2C brands serious about profitable, compounding growth. 80+ brands. 5 countries. No retainer traps.
+  </p>
+
+  <div class="hero-actions reveal reveal-delay-3">
+    <button class="btn-primary" onclick="openModal()">
+      Book a Strategy Call
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <a href="#results" class="btn-ghost">
+      See our results
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <p class="hero-qualifier reveal reveal-delay-3">Open to brands spending ₹2L+ per month on Meta or Google Ads.</p>
+
+  <div class="hero-stats reveal reveal-delay-4">
+    <div><div class="stat-num">80<em>+</em></div><div class="stat-label">Brands Scaled</div></div>
+    <div><div class="stat-num">5</div><div class="stat-label">Countries</div></div>
+    <div><div class="stat-num">83<em>x</em></div><div class="stat-label">Peak Growth</div></div>
+    <div><div class="stat-num">₹250<em>Cr+</em></div><div class="stat-label">Revenue Driven</div></div>
+  </div>
+</section>
+
+<!-- 2. REAL DASHBOARDS — Shopify Screenshots -->
+<section class="sec" id="results" aria-labelledby="shopify-h" style="border-top:1px solid var(--border)">
+  <div class="eyebrow">Shopify Data</div>
+  <h2 id="shopify-h" class="s-title">Real dashboards. Real <span class="hl-italic">results.</span></h2>
+  <p class="s-sub">These are actual Shopify analytics from brands we manage. Not mock-ups. Not estimates.</p>
+  <div class="shopify-grid">
+    <div class="shopify-card reveal">
+      <div class="shopify-badge"><span class="shopify-niche">Bags &amp; Accessories</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9994d35aa0b408a0.jpeg" alt="Shopify dashboard bags"></div>
+      <div class="shopify-result"><span class="shopify-rev">₹1 Crore</span><span class="shopify-period">in a month</span></div>
+    </div>
+    <div class="shopify-card reveal reveal-delay-1">
+      <div class="shopify-badge"><span class="shopify-niche">Home &amp; Furniture</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9a9c7792ea259c91.jpeg" alt="Shopify dashboard furniture"></div>
+      <div class="shopify-result"><span class="shopify-rev">₹63 Lakh</span><span class="shopify-period">May 2026</span></div>
+    </div>
+    <div class="shopify-card reveal reveal-delay-2">
+      <div class="shopify-badge"><span class="shopify-niche">Fashion &amp; Apparel</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c4fe9a9c7792ea26ac2d.png" alt="Shopify dashboard apparel"></div>
+      <div class="shopify-result"><span class="shopify-rev">₹40 Lakh</span><span class="shopify-period">June 2026</span></div>
+    </div>
+  </div>
+  <div class="shopify-grid" style="margin-top:2px">
+    <div class="shopify-card reveal">
+      <div class="shopify-badge"><span class="shopify-niche">Beauty &amp; Skincare</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5441635e466c1f12665.png" alt="Shopify dashboard beauty"></div>
+      <div class="shopify-result"><span class="shopify-rev">₹57 Lakh</span><span class="shopify-period">in a month</span></div>
+    </div>
+    <div class="shopify-card reveal reveal-delay-1">
+      <div class="shopify-badge"><span class="shopify-niche">Health &amp; Wellness</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5d59a9c7792ea271b96.png" alt="Shopify dashboard wellness"></div>
+      <div class="shopify-result"><span class="shopify-rev">₹70 Lakh</span><span class="shopify-period">in a month</span></div>
+    </div>
+    <div class="shopify-card reveal reveal-delay-2">
+      <div class="shopify-badge"><span class="shopify-niche">Food &amp; Beverages</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c7845c7fc4f61f8027ab.png" alt="Shopify dashboard food"></div>
+      <div class="shopify-result"><span class="shopify-rev">₹65 Lakh</span><span class="shopify-period">in a month</span></div>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:12px;color:var(--muted2);margin-top:20px">Actual Shopify analytics. Client data anonymised.</p>
+</section>
+
+<!-- 3. VIDEO TESTIMONIALS — horizontal scroll marquee -->
+<section class="sec video-section" aria-labelledby="vt-h">
+  <div class="eyebrow">Voices of Trust</div>
+  <h2 id="vt-h" class="s-title">Founders speak for <span class="hl-italic">themselves.</span></h2>
+  <p class="s-sub">Real founders. Real results. No scripts. Hover to watch.</p>
+
+  <div class="video-marquee-outer" id="video-marquee-outer">
+    <div class="video-marquee-track" id="video-marquee-track">
+
+      <!-- Card 1 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a69a9a9c7792eacfb784.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Ms. Shreya</div><div class="video-role">Marketing Head, Conosh</div><span class="video-result">D2C Food Brand</span></div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6aa9994d35aa04e6bc1.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Ms. Jahnvi</div><div class="video-role">Co-Founder, Hues Studio</div><span class="video-result">6x Revenue in 4 Months</span></div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6ad9994d35aa04e6c2a.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Mr. Suhas</div><div class="video-role">Founder, BookZoo</div><span class="video-result">India's Largest Book Collection</span></div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a69e9994d35aa04e4a2a.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Mr. Chaitanya</div><div class="video-role">Founder, Astro Chaitanya</div><span class="video-result">Energy Astrology Brand</span></div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6a18880872019b24b4d.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Mr. Charanjeev Singh</div><div class="video-role">D2C Founder, Singh Styled</div><span class="video-result">Shark Tank India</span></div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6a48880872019b25f13.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Ms. Riya</div><div class="video-role">Founder, Whimsy Beauty</div><span class="video-result">D2C Kids Beauty</span></div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="video-card">
+        <div class="video-thumb" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79bdc85c7fc4f61f740176.mp4" preload="metadata" playsinline loop muted></video>
+          <div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div>
+          <div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+        </div>
+        <div class="video-meta"><div class="video-person">Swapnil Dhaka</div><div class="video-role">Founder, FIRVT</div><span class="video-result">₹1.22L → ₹1.02Cr/month</span></div>
+      </div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a69a9a9c7792eacfb784.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Ms. Shreya</div><div class="video-role">Marketing Head, Conosh</div><span class="video-result">D2C Food Brand</span></div></div>
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6aa9994d35aa04e6bc1.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Ms. Jahnvi</div><div class="video-role">Co-Founder, Hues Studio</div><span class="video-result">6x Revenue in 4 Months</span></div></div>
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6ad9994d35aa04e6c2a.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Mr. Suhas</div><div class="video-role">Founder, BookZoo</div><span class="video-result">India's Largest Book Collection</span></div></div>
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a69e9994d35aa04e4a2a.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Mr. Chaitanya</div><div class="video-role">Founder, Astro Chaitanya</div><span class="video-result">Energy Astrology Brand</span></div></div>
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6a18880872019b24b4d.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Mr. Charanjeev Singh</div><div class="video-role">D2C Founder, Singh Styled</div><span class="video-result">Shark Tank India</span></div></div>
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79a6a48880872019b25f13.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Ms. Riya</div><div class="video-role">Founder, Whimsy Beauty</div><span class="video-result">D2C Kids Beauty</span></div></div>
+      <div class="video-card"><div class="video-thumb" onclick="playVid(this)"><video src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79bdc85c7fc4f61f740176.mp4" preload="none" playsinline loop muted></video><div class="play-btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polygon points="6,3 16,9 6,15" fill="white"/></svg></div><div class="video-mute-btn" onclick="toggleMute(event,this)"><svg class="icon-sound" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M11 5a4 4 0 0 1 0 6" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg><svg class="icon-mute" style="display:none" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 5.5h3l4-3v11l-4-3H2V5.5z" stroke="white" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 6l-3 4m0-4l3 4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg></div></div><div class="video-meta"><div class="video-person">Swapnil Dhaka</div><div class="video-role">Founder, FIRVT</div><span class="video-result">₹1.22L → ₹1.02Cr/month</span></div></div>
+
+    </div>
+  </div>
+  <!-- written quotes -->
+  <div class="testi-grid">
+    <div class="testi-card reveal"><span class="testi-qm">"</span><p class="testi-q">Per4mance Guru didn't just run ads for us. They built our entire growth system. From where we started to where we are today, this has been a genuine partnership. The numbers tell the story.</p><div class="testi-person"><div class="testi-name">Swapnil Dhaka</div><div class="testi-role">Founder, FIRVT — ₹1.22L to ₹1.02Cr/month</div></div></div>
+    <div class="testi-card reveal reveal-delay-1"><span class="testi-qm">"</span><p class="testi-q">43,000 customers had already told us our product was special. What we needed was the engine to reach the next 43,000. Per4mance Guru built that engine. In 5 months, we went from ₹9 lakh to ₹54 lakh a month.</p><div class="testi-person"><div class="testi-name">Jahnvi</div><div class="testi-role">Co-Founder, Hues Studio — 6x in 4 months</div></div></div>
+    <div class="testi-card reveal reveal-delay-2"><span class="testi-qm">"</span><p class="testi-q">Most agencies send you reports. Per4mance Guru sends decisions. They knew exactly what to cut, what to scale, and when. That clarity is rare and it's what separates them from everyone else.</p><div class="testi-person"><div class="testi-name">Charanjeev Singh</div><div class="testi-role">D2C Founder, Singh Styled — Shark Tank India</div></div></div>
+  </div>
+</section>
+
+<!-- 4. CLIENTS — horizontal scrolling marquee with hover stop + highlight -->
+<div class="marquee-wrap" aria-label="Our clients">
+  <div class="marquee-inner" id="client-marquee">
+    <span class="cl-item">Tata Play</span><span class="cl-item">HRX</span><span class="cl-item">JJ Valaya</span><span class="cl-item">AWS</span><span class="cl-item">Blue Heaven</span><span class="cl-item">Carlton London</span><span class="cl-item">Patanjali Nirvana</span><span class="cl-item">Manav Rachna</span><span class="cl-item">Mackly</span><span class="cl-item">Melooha<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Singh Styled<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Assembly Luggage<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Woolah Tea<span class="cl-shark">Shark Tank</span></span><span class="cl-item">The Sass Bar<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Firvt</span><span class="cl-item">Hues Studio</span><span class="cl-item">Zero Kaata</span><span class="cl-item">Oud Factory</span><span class="cl-item">August Bioscience</span><span class="cl-item">Zariin</span><span class="cl-item">Kashmir Box</span><span class="cl-item">Gadre Marine</span><span class="cl-item">Redesyn</span><span class="cl-item">Urban Muni</span><span class="cl-item">Table &amp; Twist</span>
+    <span class="cl-item">Tata Play</span><span class="cl-item">HRX</span><span class="cl-item">JJ Valaya</span><span class="cl-item">AWS</span><span class="cl-item">Blue Heaven</span><span class="cl-item">Carlton London</span><span class="cl-item">Patanjali Nirvana</span><span class="cl-item">Manav Rachna</span><span class="cl-item">Mackly</span><span class="cl-item">Melooha<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Singh Styled<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Assembly Luggage<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Woolah Tea<span class="cl-shark">Shark Tank</span></span><span class="cl-item">The Sass Bar<span class="cl-shark">Shark Tank</span></span><span class="cl-item">Firvt</span><span class="cl-item">Hues Studio</span><span class="cl-item">Zero Kaata</span><span class="cl-item">Oud Factory</span><span class="cl-item">August Bioscience</span><span class="cl-item">Zariin</span><span class="cl-item">Kashmir Box</span><span class="cl-item">Gadre Marine</span><span class="cl-item">Redesyn</span><span class="cl-item">Urban Muni</span><span class="cl-item">Table &amp; Twist</span>
+  </div>
+</div>
+
+<!-- 5. PROBLEM -->
+<section class="sec pain-section" aria-labelledby="pain-h">
+  <div class="eyebrow">The Problem</div>
+  <h2 id="pain-h" class="s-title">Sound familiar?</h2>
+  <div class="pain-grid">
+    <div class="pain-card reveal">
+      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6l5 5 4-4 7 7" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 14h4v-4" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <div class="pain-title">ROAS collapses when you scale</div>
+      <p class="pain-text">You increase budget and CPA spikes. The account can't hold efficiency. You're stuck under a ceiling you can't break.</p>
+    </div>
+    <div class="pain-card reveal reveal-delay-1">
+      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="2" stroke="#FF5C1A" stroke-width="1.6"/><path d="M3 8h16M8 3v5" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <div class="pain-title">Creatives are your biggest bottleneck</div>
+      <p class="pain-text">Your agency runs the same ad for 3 months. No creative testing cadence. No hook strategy. The algorithm gets bored.</p>
+    </div>
+    <div class="pain-card reveal reveal-delay-2">
+      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M2 3h2l2.5 10h10L19 7H6" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="18" r="1.5" fill="#FF5C1A"/><circle cx="16" cy="18" r="1.5" fill="#FF5C1A"/></svg></div>
+      <div class="pain-title">Google Shopping is wasting your budget</div>
+      <p class="pain-text">PMax eats spend with zero SKU-level control. No idea which products are profitable and which drain margins daily.</p>
+    </div>
+    <div class="pain-card reveal reveal-delay-3">
+      <div class="icon-box"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="4" y="2" width="14" height="18" rx="2" stroke="#FF5C1A" stroke-width="1.6"/><path d="M8 7h6M8 11h6M8 15h4" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <div class="pain-title">You get reports. Not decisions.</div>
+      <p class="pain-text">Weekly PDFs with CTR and impressions. No explanation of what to cut, what to scale, and why.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PROOF — case studies + numbers -->
+<section class="sec" aria-labelledby="cs-h" style="border-top:1px solid var(--border)">
+  <div class="eyebrow">Proof</div>
+  <h2 id="cs-h" class="s-title">Numbers that close <span class="hl-italic">arguments.</span></h2>
+  <p class="s-sub">Every number verified. Shopify dashboards. Live data. No estimates.</p>
+  <div class="cs-grid">
+    <div class="cs-card reveal"><div class="cs-brand">FIRVT — Premium Indian Streetwear</div><div class="cs-number">83x</div><div class="cs-period">Revenue growth over 4 years</div><div class="cs-metrics"><div><div class="cs-m-val">₹1.22L</div><div class="cs-m-lbl">Starting MRR</div></div><div><div class="cs-m-val">₹1.02Cr</div><div class="cs-m-lbl">Current MRR</div></div><div><div class="cs-m-val">0.40%→0.92%</div><div class="cs-m-lbl">CVR Lift</div></div></div><p class="cs-desc">Built paid media from zero. Full TOF/MOF/BOF. Creative testing every 7 to 10 days. CAC below ₹480 even at ₹10L+ spend.</p></div>
+    <div class="cs-card reveal reveal-delay-1"><div class="cs-brand">Hues Studio — Handcrafted Women's Bags</div><div class="cs-number">6x</div><div class="cs-period">Revenue growth in 4 months</div><div class="cs-metrics"><div><div class="cs-m-val">₹9.81L</div><div class="cs-m-lbl">Starting MRR</div></div><div><div class="cs-m-val">₹54.05L</div><div class="cs-m-lbl">After 4 Months</div></div><div><div class="cs-m-val">5x</div><div class="cs-m-lbl">Orders</div></div></div><p class="cs-desc">Meta built from near zero. Lifestyle Reels, UGC, catalogue retargeting. Sessions 3.5x. Orders 302 to 1,523/month.</p></div>
+    <div class="cs-card reveal reveal-delay-2"><div class="cs-brand">Mackly — Kids Innerwear, India + Sri Lanka</div><div class="cs-number">4.2x</div><div class="cs-period">Average ROAS across both markets</div><div class="cs-metrics"><div><div class="cs-m-val">2</div><div class="cs-m-lbl">Markets</div></div><div><div class="cs-m-val">India + LK</div><div class="cs-m-lbl">Simultaneous</div></div><div><div class="cs-m-val">Ongoing</div><div class="cs-m-lbl">Engagement</div></div></div><p class="cs-desc">Separate creative and audience strategy per market. Competitor review mining for hook banks. UGC framework around parent-first messaging.</p></div>
+    <div class="cs-card reveal reveal-delay-3"><div class="cs-brand">JJ Valaya — Luxury Indian Fashion</div><div class="cs-number">Premium</div><div class="cs-period">High-AOV luxury D2C performance</div><div class="cs-metrics"><div><div class="cs-m-val">Multi-Lakh</div><div class="cs-m-lbl">Monthly Budget</div></div><div><div class="cs-m-val">Ongoing</div><div class="cs-m-lbl">Partnership</div></div></div><p class="cs-desc">Precision targeting, high-AOV conversion architecture, creative built for an audience that doesn't respond to generic D2C playbooks.</p></div>
+  </div>
+  <div class="numbers-grid" style="margin-top:2px">
+    <div class="num-cell reveal"><div class="num-val">80<em>+</em></div><div class="num-lbl">D2C brands scaled across 5 countries</div></div>
+    <div class="num-cell reveal reveal-delay-1"><div class="num-val">83<em>x</em></div><div class="num-lbl">Peak revenue growth for a single brand in 4 years</div></div>
+    <div class="num-cell reveal reveal-delay-2"><div class="num-val">₹250<em>Cr+</em></div><div class="num-lbl">Total revenue driven across all clients</div></div>
+    <div class="num-cell reveal reveal-delay-3"><div class="num-val">₹<em>480</em></div><div class="num-lbl">Max blended CAC at ₹10L+ monthly ad spend</div></div>
+  </div>
+</section>
+
+<!-- 7. PROCESS -->
+<section class="sec" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="how-h">
+  <div class="eyebrow">Our Process</div>
+  <h2 id="how-h" class="s-title">How we build your <span class="hl-italic">growth engine.</span></h2>
+  <div class="how-grid">
+    <div class="how-step reveal"><div class="how-step-glow"></div><div class="step-n">01</div><div class="step-title">Audit & Diagnose</div><p class="step-text">We tear down your existing account structure, creative library, and attribution setup. We find exactly what's costing money and what's worth scaling.</p></div>
+    <div class="how-step reveal reveal-delay-1"><div class="how-step-glow"></div><div class="step-n">02</div><div class="step-title">Build the Infrastructure</div><p class="step-text">Full-funnel campaign architecture. TOF/MOF/BOF split. Bid strategy mapped to your growth phase. Creative testing every 7 to 10 days.</p></div>
+    <div class="how-step reveal reveal-delay-2"><div class="how-step-glow"></div><div class="step-n">03</div><div class="step-title">Scale With Discipline</div><p class="step-text">Winners get aggressive budget. Losers get cut fast. CAC stays controlled. Weekly decisions, not weekly reports. Growth that compounds.</p></div>
+  </div>
+</section>
+
+<!-- 8. SERVICES -->
+<section class="sec" id="services" aria-labelledby="svc-h" style="border-top:1px solid var(--border)">
+  <div class="eyebrow">Services</div>
+  <h2 id="svc-h" class="s-title">Two things. Done better than <span class="hl-italic">anyone else.</span></h2>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" fill="#FF5C1A"/><rect x="14" y="2" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".4"/><rect x="2" y="14" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".4"/><rect x="14" y="14" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".15"/></svg></div>
+      <div class="svc-title">Meta Ads</div>
+      <p class="svc-text">Full-funnel Meta campaigns for D2C brands serious about profitable scale. Campaign architecture, creative strategy, audience segmentation, bid management, and scaling protocols.</p>
+      <div class="tags"><span class="tag">TOF / MOF / BOF</span><span class="tag">Creative Testing</span><span class="tag">Cost Cap Scaling</span><span class="tag">UGC Strategy</span><span class="tag">Retargeting</span><span class="tag">Bid Discipline</span></div>
+    </div>
+    <div class="svc-card reveal reveal-delay-1">
+      <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="10" stroke="#FF5C1A" stroke-width="1.6"/><path d="M9 13h8M13 9v8" stroke="#FF5C1A" stroke-width="1.6" stroke-linecap="round"/><circle cx="13" cy="13" r="3" fill="#FF5C1A" opacity=".3"/></svg></div>
+      <div class="svc-title">Google Ads</div>
+      <p class="svc-text">Shopping, Search, and PMax managed with SKU-level discipline. We classify every product, control what PMax spends on, protect brand terms, and eliminate search term waste.</p>
+      <div class="tags"><span class="tag">Shopping Campaigns</span><span class="tag">PMax Control</span><span class="tag">Search Term Audit</span><span class="tag">Brand Protection</span><span class="tag">SKU Classification</span><span class="tag">ROAS Targeting</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. TEAM -->
+<section class="sec team-section" id="team" aria-labelledby="team-h">
+  <div class="eyebrow">The Team</div>
+  <h2 id="team-h" class="s-title">The people behind your <span class="hl-italic">results.</span></h2>
+  <p class="s-sub">Performance marketers, creative strategists, and media buyers who obsess over your numbers.</p>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abdd89994d35aa0b95722.webp" alt="Siddhant Aneja" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Siddhant Aneja</div><div class="team-role">Founder</div></div>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abde59994d35aa0b97086.webp" alt="Anchal Mehta" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Anchal Mehta</div><div class="team-role">Co-Founder</div></div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe0203343f290f2b505c.webp" alt="Abaash M" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Abaash M</div><div class="team-role">Senior Media Buyer</div></div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe109994d35aa0b9b716.webp" alt="Dheeraj" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Dheeraj</div><div class="team-role">Senior Media Buyer</div></div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe435a64f2b567c1e531.webp" alt="Gurmendra" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Gurmendra</div><div class="team-role">Senior Media Buyer</div></div>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5988808720190c8e41.webp" alt="Nasreen" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Nasreen</div><div class="team-role">Graphic Designer</div></div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5488808720190c6b12.webp" alt="Sallauddin Khan" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Sallauddin Khan</div><div class="team-role">Video Editor</div></div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe3303343f290f2bdd88.webp" alt="Ananya" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Ananya</div><div class="team-role">Content Strategist</div></div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe2e9a9c7792ea2822c4.webp" alt="Alifiya Amer" loading="lazy"></div>
+      <div class="team-info"><div class="team-name">Alifiya Amer</div><div class="team-role">Content Strategist</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. WHO THIS IS FOR -->
+<section class="sec qualifier-section" aria-labelledby="qual-h">
+  <div class="eyebrow">Who This Is For</div>
+  <h2 id="qual-h" class="s-title">We are selective about who we <span class="hl-italic">work with.</span></h2>
+  <p class="s-sub">Not because we are exclusive. Because this work only delivers when both sides are ready for it.</p>
+  <div class="qualifier-inner">
+    <div class="q-col reveal">
+      <div class="q-col-title for-title"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#22C55E" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>This is for you if</div>
+      <ul class="q-list">
+        <li><span class="q-dot q-dot-green"></span>Your D2C brand spends ₹2 lakh or more per month on paid ads</li>
+        <li><span class="q-dot q-dot-green"></span>You want a partner who owns results, not just execution</li>
+        <li><span class="q-dot q-dot-green"></span>You are ready to test new creatives every 7 to 10 days</li>
+        <li><span class="q-dot q-dot-green"></span>You have hit a ceiling and need someone to diagnose it honestly</li>
+        <li><span class="q-dot q-dot-green"></span>You want to scale to ₹1Cr/month and know it takes a proper system</li>
+      </ul>
+    </div>
+    <div class="q-col reveal reveal-delay-1">
+      <div class="q-col-title not-title"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#EF4444" stroke-width="1.5"/><path d="M7 7l6 6M13 7l-6 6" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round"/></svg>This is not for you if</div>
+      <ul class="q-list">
+        <li><span class="q-dot q-dot-red"></span>Your monthly ad budget is under ₹2 lakh</li>
+        <li><span class="q-dot q-dot-red"></span>You want an agency that just executes without pushing back</li>
+        <li><span class="q-dot q-dot-red"></span>You are not ready to invest in creative production consistently</li>
+        <li><span class="q-dot q-dot-red"></span>You want guaranteed results before a single campaign runs</li>
+        <li><span class="q-dot q-dot-red"></span>You are looking for the cheapest option in the market</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="sec faq-section" id="faq" aria-labelledby="faq-h">
+  <div style="text-align:center">
+    <div class="eyebrow" style="justify-content:center">FAQ</div>
+    <h2 id="faq-h" class="s-title" style="max-width:600px;margin:0 auto">Questions worth <span class="hl-italic">answering.</span></h2>
+  </div>
+  <div class="faq-center">
+    <div class="faq-item open">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the minimum budget to work with Per4mance Guru?</span><span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#FF5C1A" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+      <div class="faq-body"><p class="faq-ans">Strategy calls are open to brands spending ₹2 lakh or more per month on Meta or Google Ads. The systems we build only deliver meaningful returns at this level and above.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you work with brands outside India?</span><span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#FF5C1A" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+      <div class="faq-body"><p class="faq-ans">Yes. We actively manage campaigns across the UAE, US, UK, Australia, Canada, Sri Lanka, and Singapore with market-specific creative and audience strategies for each geography.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How long before we see results?</span><span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#FF5C1A" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+      <div class="faq-body"><p class="faq-ans">Most accounts show clear directional improvement in weeks 3 to 4. Meaningful revenue lift is visible by month 2. Hues Studio went 6x in 4 months. Timeline depends on starting point, product-market fit, and creative availability.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you handle creative production as well?</span><span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#FF5C1A" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+      <div class="faq-body"><p class="faq-ans">We build creative strategy, hooks, scripts, and briefs. We also produce AI-generated video and static creatives in-house. For UGC, we work with your existing creator network or help you build one.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What makes you different from other agencies?</span><span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#FF5C1A" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+      <div class="faq-body"><p class="faq-ans">We own the result, not just the execution. Our creative strategy is built on competitor review mining, real customer language, and hook banks. And we have a proven bid discipline framework that keeps CAC controlled even at aggressive scale.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you sign long-term contracts?</span><span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="#FF5C1A" stroke-width="1.5" stroke-linecap="round"/></svg></span></div>
+      <div class="faq-body"><p class="faq-ans">Initial engagements are 3-month minimum, followed by monthly rolling agreements. We do not lock you into 12-month contracts. We keep clients by delivering results, not by trapping them.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Per<span>4</span>mance Guru</a>
+  <div class="footer-links">
+    <a href="#results">Results</a>
+    <a href="#services">Services</a>
+    <a href="#team">Team</a>
+    <a href="#faq">FAQ</a>
+    <a href="#" onclick="openModal();return false">Book a Call</a>
+  </div>
+  <p class="footer-copy">&copy; <span id="yr"></span> Per4mance Guru. All rights reserved.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Book a Strategy Call</div>
+        <div class="modal-sub">We review your account before the call. No generic questions.</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-trust">
+      <div class="modal-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#22C55E" stroke-width="1.2"/><path d="M4 7l2 2 4-4" stroke="#22C55E" stroke-width="1.2" stroke-linecap="round"/></svg>30-min call, no pitch</div>
+      <div class="modal-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#22C55E" stroke-width="1.2"/><path d="M4 7l2 2 4-4" stroke="#22C55E" stroke-width="1.2" stroke-linecap="round"/></svg>We audit before we speak</div>
+      <div class="modal-trust-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#22C55E" stroke-width="1.2"/><path d="M4 7l2 2 4-4" stroke="#22C55E" stroke-width="1.2" stroke-linecap="round"/></svg>Open to ₹2L+ ad budgets</div>
+    </div>
+    <!-- iframe injected here dynamically on open -->
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- FLOATING BUTTON -->
+<div class="float-btn">
+  <div class="float-tooltip" id="float-tooltip">Ready to scale?<br>Book a free strategy call.</div>
+  <button class="float-cta" onclick="openModal()">
+    <span class="float-cta-dot"></span>
+    Book a Strategy Call
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), {passive:true});
+
+  // Scroll reveal
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+  }, {threshold:.07});
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  // Modal — inject GHL iframe dynamically so the embed script fires fresh each open
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modal-body');
+  let ghlLoaded = false;
+
+  function openModal() {
+    // Inject iframe + GHL script only once
+    if (!ghlLoaded) {
+      modalBody.innerHTML = `
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/6GTZ2J4NkvDNy3DDpUEN"
+          style="width:100%;min-height:880px;border:none;display:block"
+          id="modal-ghl-form"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Form 0"
+          data-height="880"
+          data-layout-iframe-id="modal-ghl-form"
+          data-form-id="6GTZ2J4NkvDNy3DDpUEN"
+          title="Per4mance Guru Strategy Call">
+        </iframe>`;
+      // Load GHL embed script
+      const s = document.createElement('script');
+      s.src = 'https://link.msgsndr.com/js/form_embed.js';
+      s.async = true;
+      document.body.appendChild(s);
+      ghlLoaded = true;
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function handleOverlayClick(e) {
+    if (e.target === modal) closeModal();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // FAQ accordion
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  }
+
+  // Tooltip hide
+  const tip = document.getElementById('float-tooltip');
+  if(tip){setTimeout(()=>{tip.style.transition='opacity .4s';tip.style.opacity='0';setTimeout(()=>tip.style.display='none',400);},4000);}
+
+  // Hamburger mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function toggleMobileMenu() {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Video player
+  function playVid(thumb){
+    const vid = thumb.querySelector('video');
+    if(vid.paused){
+      document.querySelectorAll('.video-thumb video').forEach(v=>{if(v!==vid){v.pause();v.closest('.video-thumb').classList.remove('playing');}});
+      vid.muted=false;vid.play();thumb.classList.add('playing');
+    } else {vid.pause();thumb.classList.remove('playing');}
+  }
+  function toggleMute(e,btn){
+    e.stopPropagation();
+    const vid = btn.closest('.video-thumb').querySelector('video');
+    vid.muted=!vid.muted;
+    btn.querySelector('.icon-sound').style.display=vid.muted?'none':'block';
+    btn.querySelector('.icon-mute').style.display=vid.muted?'block':'none';
+  }
+  document.querySelectorAll('.video-thumb video').forEach(v=>{
+    v.addEventListener('ended',()=>v.closest('.video-thumb').classList.remove('playing'));
+  });
+
+  // Meta Pixel Lead on GHL submit
+  window.addEventListener('message', e => {
+    if(e.data&&(e.data.type==='form_submitted'||e.data.event==='form_submitted'||(typeof e.data==='string'&&e.data.includes('form_submitted')))){
+      if(typeof fbq!=='undefined')fbq('track','Lead');
+      closeModal();
+    }
+  });
+</script>
+</body>
+</html>
