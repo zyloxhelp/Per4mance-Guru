@@ -77,6 +77,13 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 .stat-num{font-family:var(--D);font-size:40px;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1}
 .stat-num em{color:var(--orange);font-style:normal}
 .stat-label{font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.05em;text-transform:uppercase}
+/* stat container hover */
+.hero-stats > div{padding:8px 12px;border-radius:10px;transition:background .25s;cursor:default}
+.hero-stats > div:hover{background:rgba(255,92,26,.06)}
+.hero-stats > div:hover .stat-num{color:var(--orange);transition:color .25s}
+/* count-up flash animation */
+@keyframes countFlash{0%{opacity:.4;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
+.count-up.counting{display:inline-block;animation:countFlash .12s ease-out}
 
 /* SHARED SECTION */
 .sec{padding:96px 60px}
@@ -380,10 +387,10 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   <p class="hero-qualifier reveal reveal-delay-3">Open to brands spending ₹2L+ per month on Meta or Google Ads.</p>
 
   <div class="hero-stats reveal reveal-delay-4">
-    <div><div class="stat-num">80<em>+</em></div><div class="stat-label">Brands Scaled</div></div>
-    <div><div class="stat-num">5</div><div class="stat-label">Countries</div></div>
-    <div><div class="stat-num">83<em>x</em></div><div class="stat-label">Peak Growth</div></div>
-    <div><div class="stat-num">₹250<em>Cr+</em></div><div class="stat-label">Revenue Driven</div></div>
+    <div><div class="stat-num"><span class="count-up" data-target="80" data-suffix="+">0</span><em>+</em></div><div class="stat-label">Brands Scaled</div></div>
+    <div><div class="stat-num"><span class="count-up" data-target="5" data-suffix="">0</span></div><div class="stat-label">Countries</div></div>
+    <div><div class="stat-num"><span class="count-up" data-target="83" data-suffix="x">0</span><em>x</em></div><div class="stat-label">Peak Growth</div></div>
+    <div><div class="stat-num">₹<span class="count-up" data-target="250" data-suffix="">0</span><em>Cr+</em></div><div class="stat-label">Revenue Driven</div></div>
   </div>
 </section>
 
@@ -792,6 +799,43 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
     entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
   }, {threshold:.07});
   document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+  // ── COUNTER ANIMATION ──
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1800;
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutExpo(progress);
+      const current = Math.round(eased * target);
+      el.textContent = current;
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // trigger once when stats scroll into view
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.count-up').forEach(el => counterObs.observe(el));
 
   // Modal — inject GHL iframe dynamically so the embed script fires fresh each open
   const modal = document.getElementById('modal');
