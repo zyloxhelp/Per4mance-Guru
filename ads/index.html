@@ -9,16 +9,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Playfair+Display:ital,wght@1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- META PIXEL — replace PASTE_YOUR_PIXEL_ID_HERE -->
+  <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','PASTE_YOUR_PIXEL_ID_HERE');fbq('track','PageView');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1855837481924551');
+  fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=PASTE_YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/></noscript>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1855837481924551&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -97,16 +104,14 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 .shopify-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:40px}
 .shopify-card{background:var(--off-black);overflow:hidden;transition:background .25s}
 .shopify-card:hover{background:var(--surface)}
-.shopify-badge{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 10px;border-bottom:1px solid var(--border)}
-.shopify-niche{font-family:var(--D);font-size:13px;font-weight:700;color:var(--white)}
-.shopify-live{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase}
+.shopify-badge{display:flex;align-items:center;justify-content:space-between;padding:14px 18px 12px;border-bottom:1px solid var(--border);gap:12px}
+.shopify-niche{font-family:var(--D);font-size:13px;font-weight:700;color:var(--white);line-height:1.2}
+.shopify-caption{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.4}
+.shopify-caption strong{color:var(--orange);font-weight:700}
+.shopify-live{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--green);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;flex-shrink:0}
 .shopify-img{width:100%;overflow:hidden;background:var(--surface2)}
 .shopify-img img{width:100%;height:auto;display:block;transition:transform .5s ease}
 .shopify-card:hover .shopify-img img{transform:scale(1.02)}
-/* Revenue result row below image */
-.shopify-result{display:flex;align-items:center;justify-content:space-between;padding:12px 18px 14px;border-top:1px solid var(--border)}
-.shopify-rev{font-family:var(--D);font-size:18px;font-weight:800;color:var(--orange);letter-spacing:-.02em}
-.shopify-period{font-size:11px;color:var(--muted);font-weight:500}
 
 /* MARQUEE */
 .marquee-wrap{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;overflow:hidden}
@@ -207,20 +212,39 @@ nav.scrolled{background:rgba(8,8,10,.95);backdrop-filter:blur(20px);border-color
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-soft);border:1px solid rgba(255,92,26,.15);padding:5px 10px;border-radius:4px}
 
-/* TEAM */
+/* TEAM MARQUEE */
 .team-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border);margin-top:56px}
-.team-card{background:var(--off-black);overflow:hidden;transition:background .25s;position:relative}
-.team-card:hover{background:var(--surface)}
-.team-photo{width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--surface2);position:relative}
-.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s,filter .4s}
-.team-card:hover .team-photo img{transform:scale(1.05)}
-/* orange top accent on hover */
-.team-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .4s;z-index:1}
-.team-card:hover::before{transform:scaleX(1)}
-.team-info{padding:16px 18px 20px}
-.team-name{font-family:var(--D);font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px}
-.team-role{font-size:12px;color:var(--orange);font-weight:600;letter-spacing:.03em}
+.team-marquee-outer{overflow:hidden;margin-top:48px}
+.team-marquee-track{display:flex;gap:12px;animation:tmarquee 35s linear infinite;width:max-content}
+.team-marquee-track.paused{animation-play-state:paused}
+@keyframes tmarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.team-card-m{flex:0 0 200px;background:var(--off-black);border-radius:12px;overflow:hidden;border:1px solid var(--border);transition:background .25s,transform .3s,box-shadow .3s,border-color .3s}
+.team-card-m:hover{background:var(--surface);transform:scale(1.04);box-shadow:0 12px 40px rgba(0,0,0,.5);border-color:rgba(255,92,26,.35)}
+.team-photo{width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--surface2)}
+.team-photo img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
+.team-card-m:hover .team-photo img{transform:scale(1.06)}
+.team-info{padding:14px 16px 18px}
+.team-name{font-family:var(--D);font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
+.team-role{font-size:11px;color:var(--orange);font-weight:600;letter-spacing:.03em}
+
+/* PROPRIETARY TOOL */
+.tool-section{border-top:1px solid var(--border)}
+.tool-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);margin-top:52px;overflow:hidden;border-radius:4px}
+.tool-left{padding:52px 48px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.tool-badge{display:inline-flex;align-items:center;gap:8px;background:var(--orange-soft);border:1px solid rgba(255,92,26,.25);border-radius:6px;padding:6px 12px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:24px;width:fit-content}
+.tool-title{font-family:var(--D);font-size:clamp(24px,3vw,40px);font-weight:800;color:var(--white);letter-spacing:-.025em;line-height:1.08;margin-bottom:16px}
+.tool-title .hl-italic{font-family:var(--F);font-style:italic;font-weight:800;color:var(--orange)}
+.tool-desc{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.tool-features{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.tool-feat{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--off-white);line-height:1.5}
+.tool-feat-dot{width:18px;height:18px;border-radius:50%;background:var(--orange-soft);border:1px solid rgba(255,92,26,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.tool-right{position:relative;background:var(--black);overflow:hidden;min-height:400px}
+.tool-video{width:100%;height:100%;object-fit:cover;display:block}
+.tool-video-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,92,26,.06) 0%,transparent 60%);pointer-events:none}
+/* mute toggle button */
+.tool-mute-btn{position:absolute;bottom:16px;right:16px;display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:8px 14px;cursor:pointer;color:white;font-family:var(--B);font-size:12px;font-weight:600;letter-spacing:.02em;transition:background .2s,border-color .2s;z-index:3}
+.tool-mute-btn:hover{background:rgba(255,92,26,.7);border-color:rgba(255,92,26,.5)}
+.tool-mute-label{white-space:nowrap}
 
 /* CLIENTS */
 .clients-section{border-top:1px solid var(--border)}
@@ -316,9 +340,10 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   nav{padding:14px 20px}.nav-links{display:none}.hamburger{display:flex}
   .hero{padding:100px 24px 60px}.hero-stats{gap:24px}
   .sec{padding:64px 24px}
-  .pain-grid,.cs-grid,.svc-grid,.testi-grid,.qualifier-inner,.numbers-grid{grid-template-columns:1fr}
+  .pain-grid,.cs-grid,.svc-grid,.testi-grid,.qualifier-inner,.numbers-grid,.tool-inner{grid-template-columns:1fr}
   .how-grid{grid-template-columns:1fr}.how-step{border-right:none;border-bottom:1px solid var(--border)}.how-step:last-child{border-bottom:none}
   .q-col:first-child{border-right:none;border-bottom:1px solid var(--border)}
+  .tool-left{border-right:none;border-bottom:1px solid var(--border)}
   .team-grid{grid-template-columns:repeat(3,1fr)}
   .clients-grid{grid-template-columns:repeat(3,1fr)}.client-cell:nth-child(3n){border-right:none}
   .shopify-grid{grid-template-columns:1fr}
@@ -401,36 +426,66 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   <p class="s-sub">These are actual Shopify analytics from brands we manage. Not mock-ups. Not estimates.</p>
   <div class="shopify-grid">
     <div class="shopify-card reveal">
-      <div class="shopify-badge"><span class="shopify-niche">Bags &amp; Accessories</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-badge">
+        <div>
+          <div class="shopify-niche">Bags &amp; Accessories</div>
+          <div class="shopify-caption">scaled to <strong>₹1 Crore</strong> a month</div>
+        </div>
+        <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
+      </div>
       <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9994d35aa0b408a0.jpeg" alt="Shopify dashboard bags"></div>
-      <div class="shopify-result"><span class="shopify-rev">₹1 Crore</span><span class="shopify-period">in a month</span></div>
     </div>
     <div class="shopify-card reveal reveal-delay-1">
-      <div class="shopify-badge"><span class="shopify-niche">Home &amp; Furniture</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-badge">
+        <div>
+          <div class="shopify-niche">Home &amp; Furniture</div>
+          <div class="shopify-caption">scaled to <strong>₹63 Lakhs</strong> a month</div>
+        </div>
+        <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
+      </div>
       <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c3cf9a9c7792ea259c91.jpeg" alt="Shopify dashboard furniture"></div>
-      <div class="shopify-result"><span class="shopify-rev">₹63 Lakh</span><span class="shopify-period">May 2026</span></div>
     </div>
     <div class="shopify-card reveal reveal-delay-2">
-      <div class="shopify-badge"><span class="shopify-niche">Fashion &amp; Apparel</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-badge">
+        <div>
+          <div class="shopify-niche">Fashion &amp; Apparel</div>
+          <div class="shopify-caption">scaled to <strong>₹40 Lakhs</strong> a month</div>
+        </div>
+        <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
+      </div>
       <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c4fe9a9c7792ea26ac2d.png" alt="Shopify dashboard apparel"></div>
-      <div class="shopify-result"><span class="shopify-rev">₹40 Lakh</span><span class="shopify-period">June 2026</span></div>
     </div>
   </div>
   <div class="shopify-grid" style="margin-top:2px">
     <div class="shopify-card reveal">
-      <div class="shopify-badge"><span class="shopify-niche">Beauty &amp; Skincare</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-badge">
+        <div>
+          <div class="shopify-niche">Beauty &amp; Skincare</div>
+          <div class="shopify-caption">scaled to <strong>₹57 Lakhs</strong> a month</div>
+        </div>
+        <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
+      </div>
       <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5441635e466c1f12665.png" alt="Shopify dashboard beauty"></div>
-      <div class="shopify-result"><span class="shopify-rev">₹57 Lakh</span><span class="shopify-period">in a month</span></div>
     </div>
     <div class="shopify-card reveal reveal-delay-1">
-      <div class="shopify-badge"><span class="shopify-niche">Health &amp; Wellness</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-badge">
+        <div>
+          <div class="shopify-niche">Health &amp; Wellness</div>
+          <div class="shopify-caption">scaled to <strong>₹70 Lakhs</strong> a month</div>
+        </div>
+        <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
+      </div>
       <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c5d59a9c7792ea271b96.png" alt="Shopify dashboard wellness"></div>
-      <div class="shopify-result"><span class="shopify-rev">₹70 Lakh</span><span class="shopify-period">in a month</span></div>
     </div>
     <div class="shopify-card reveal reveal-delay-2">
-      <div class="shopify-badge"><span class="shopify-niche">Food &amp; Beverages</span><span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span></div>
+      <div class="shopify-badge">
+        <div>
+          <div class="shopify-niche">Food &amp; Beverages</div>
+          <div class="shopify-caption">scaled to <strong>₹65 Lakhs</strong> a month</div>
+        </div>
+        <span class="shopify-live"><svg width="6" height="6" viewBox="0 0 6 6"><circle cx="3" cy="3" r="3" fill="#22C55E"/></svg>Live</span>
+      </div>
       <div class="shopify-img"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a79c7845c7fc4f61f8027ab.png" alt="Shopify dashboard food"></div>
-      <div class="shopify-result"><span class="shopify-rev">₹65 Lakh</span><span class="shopify-period">in a month</span></div>
     </div>
   </div>
   <p style="text-align:center;font-size:12px;color:var(--muted2);margin-top:20px">Actual Shopify analytics. Client data anonymised.</p>
@@ -542,6 +597,49 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   </div>
 </div>
 
+<!-- PROPRIETARY TOOL SECTION -->
+<section class="sec tool-section" aria-labelledby="tool-h">
+  <div class="eyebrow">Our Proprietary Technology</div>
+  <h2 id="tool-h" class="s-title">Your brand's performance, <span class="hl-italic">live.</span></h2>
+  <p class="s-sub">We built our own client dashboard so you never have to ask "how are the ads doing?" again.</p>
+  <div class="tool-inner">
+    <div class="tool-left reveal">
+      <div class="tool-badge">
+        <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#FF5C1A"/></svg>
+        Built In-House
+      </div>
+      <div class="tool-title">Real-time performance.<br>Zero <span class="hl-italic">confusion.</span></div>
+      <p class="tool-desc">Every client gets access to our proprietary performance dashboard — a live view of their ad account, revenue, ROAS, CAC, creative performance, and spend pacing. No more waiting for weekly reports.</p>
+      <div class="tool-features">
+        <div class="tool-feat"><span class="tool-feat-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#FF5C1A" stroke-width="1.4" stroke-linecap="round"/></svg></span>Live Shopify revenue synced with ad spend</div>
+        <div class="tool-feat"><span class="tool-feat-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#FF5C1A" stroke-width="1.4" stroke-linecap="round"/></svg></span>Creative-level performance broken down by hook, format, and placement</div>
+        <div class="tool-feat"><span class="tool-feat-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#FF5C1A" stroke-width="1.4" stroke-linecap="round"/></svg></span>ROAS, CAC, and blended spend tracked daily</div>
+        <div class="tool-feat"><span class="tool-feat-dot"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#FF5C1A" stroke-width="1.4" stroke-linecap="round"/></svg></span>Decisions, not just data — recommendations built in</div>
+      </div>
+      <button class="btn-primary" onclick="openModal()" style="width:fit-content">
+        Get Access
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="tool-right">
+      <video class="tool-video" id="tool-vid" src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af7e22e83bdde330b467c.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="tool-video-overlay"></div>
+      <button class="tool-mute-btn" id="tool-mute-btn" onclick="toggleToolMute()" aria-label="Toggle sound">
+        <svg class="tool-icon-muted" width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 6.5h3l4-3v11l-4-3H2V6.5z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M14 6l-3.5 5M10.5 6L14 11" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <svg class="tool-icon-sound" width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:none">
+          <path d="M2 6.5h3l4-3v11l-4-3H2V6.5z" stroke="white" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M12 5.5a5 5 0 0 1 0 7" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M14 3.5a8 8 0 0 1 0 11" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span class="tool-mute-label">Tap to unmute</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- 5. PROBLEM -->
 <section class="sec pain-section" aria-labelledby="pain-h">
   <div class="eyebrow">The Problem</div>
@@ -603,8 +701,8 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
 <!-- 8. SERVICES -->
 <section class="sec" id="services" aria-labelledby="svc-h" style="border-top:1px solid var(--border)">
   <div class="eyebrow">Services</div>
-  <h2 id="svc-h" class="s-title">Two things. Done better than <span class="hl-italic">anyone else.</span></h2>
-  <div class="svc-grid">
+  <h2 id="svc-h" class="s-title">Three things. Done better than <span class="hl-italic">anyone else.</span></h2>
+  <div class="svc-grid" style="grid-template-columns:repeat(3,1fr)">
     <div class="svc-card reveal">
       <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" fill="#FF5C1A"/><rect x="14" y="2" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".4"/><rect x="2" y="14" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".4"/><rect x="14" y="14" width="10" height="10" rx="2" fill="#FF5C1A" opacity=".15"/></svg></div>
       <div class="svc-title">Meta Ads</div>
@@ -617,6 +715,12 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
       <p class="svc-text">Shopping, Search, and PMax managed with SKU-level discipline. We classify every product, control what PMax spends on, protect brand terms, and eliminate search term waste.</p>
       <div class="tags"><span class="tag">Shopping Campaigns</span><span class="tag">PMax Control</span><span class="tag">Search Term Audit</span><span class="tag">Brand Protection</span><span class="tag">SKU Classification</span><span class="tag">ROAS Targeting</span></div>
     </div>
+    <div class="svc-card reveal reveal-delay-2">
+      <div class="svc-icon-box" style="background:rgba(255,92,26,.10);border:1px solid rgba(255,92,26,.2)"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="5" width="20" height="14" rx="2" stroke="#FF5C1A" stroke-width="1.6"/><path d="M10 10l6 3-6 3V10z" fill="#FF5C1A"/></svg></div>
+      <div class="svc-title">Performance Creatives</div>
+      <p class="svc-text">Ad creatives built to convert, not just look good. Hook strategy, competitor review mining, UGC briefs, AI-generated video, static ads, and a testing cadence that feeds the algorithm what it needs.</p>
+      <div class="tags"><span class="tag">Hook Writing</span><span class="tag">UGC Briefs</span><span class="tag">AI Video Ads</span><span class="tag">Static Creatives</span><span class="tag">Review Mining</span><span class="tag">Creative Strategy</span></div>
+    </div>
   </div>
 </section>
 
@@ -625,42 +729,47 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   <div class="eyebrow">The Team</div>
   <h2 id="team-h" class="s-title">The people behind your <span class="hl-italic">results.</span></h2>
   <p class="s-sub">Performance marketers, creative strategists, and media buyers who obsess over your numbers.</p>
-  <div class="team-grid">
-    <div class="team-card reveal">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abdd89994d35aa0b95722.webp" alt="Siddhant Aneja" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Siddhant Aneja</div><div class="team-role">Founder</div></div>
-    </div>
-    <div class="team-card reveal reveal-delay-1">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abde59994d35aa0b97086.webp" alt="Anchal Mehta" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Anchal Mehta</div><div class="team-role">Co-Founder</div></div>
-    </div>
-    <div class="team-card reveal reveal-delay-2">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe0203343f290f2b505c.webp" alt="Abaash M" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Abaash M</div><div class="team-role">Senior Media Buyer</div></div>
-    </div>
-    <div class="team-card reveal reveal-delay-3">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe109994d35aa0b9b716.webp" alt="Dheeraj" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Dheeraj</div><div class="team-role">Senior Media Buyer</div></div>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe435a64f2b567c1e531.webp" alt="Gurmendra" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Gurmendra</div><div class="team-role">Senior Media Buyer</div></div>
-    </div>
-    <div class="team-card reveal reveal-delay-1">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5988808720190c8e41.webp" alt="Nasreen" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Nasreen</div><div class="team-role">Graphic Designer</div></div>
-    </div>
-    <div class="team-card reveal reveal-delay-2">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5488808720190c6b12.webp" alt="Sallauddin Khan" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Sallauddin Khan</div><div class="team-role">Video Editor</div></div>
-    </div>
-    <div class="team-card reveal reveal-delay-3">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe3303343f290f2bdd88.webp" alt="Ananya" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Ananya</div><div class="team-role">Content Strategist</div></div>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe2e9a9c7792ea2822c4.webp" alt="Alifiya Amer" loading="lazy"></div>
-      <div class="team-info"><div class="team-name">Alifiya Amer</div><div class="team-role">Content Strategist</div></div>
+  <div class="team-marquee-outer" id="team-marquee-outer">
+    <div class="team-marquee-track" id="team-marquee-track">
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abdd89994d35aa0b95722.webp" alt="Siddhant Aneja" loading="lazy"></div><div class="team-info"><div class="team-name">Siddhant Aneja</div><div class="team-role">Co-Founder</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abde59994d35aa0b97086.webp" alt="Anchal Mehta" loading="lazy"></div><div class="team-info"><div class="team-name">Anchal Mehta</div><div class="team-role">Co-Founder</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af6372e83bdde33061fb7.webp" alt="Abhigyan Gupta" loading="lazy"></div><div class="team-info"><div class="team-name">Abhigyan Gupta</div><div class="team-role">Creative Head</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe0203343f290f2b505c.webp" alt="Abaash M" loading="lazy"></div><div class="team-info"><div class="team-name">Abaash M</div><div class="team-role">Senior Media Buyer</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe109994d35aa0b9b716.webp" alt="Dheeraj" loading="lazy"></div><div class="team-info"><div class="team-name">Dheeraj</div><div class="team-role">Senior Media Buyer</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe435a64f2b567c1e531.webp" alt="Gurmendra" loading="lazy"></div><div class="team-info"><div class="team-name">Gurmendra</div><div class="team-role">Senior Media Buyer</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af67f6364dd0dcc930595.webp" alt="Ashwini" loading="lazy"></div><div class="team-info"><div class="team-name">Ashwini</div><div class="team-role">Sr. Google Ads Specialist</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af64a2e83bdde33064d5e.webp" alt="Pushti Shah" loading="lazy"></div><div class="team-info"><div class="team-name">Pushti Shah</div><div class="team-role">Sr. Google Ads Specialist</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5988808720190c8e41.webp" alt="Nasreen" loading="lazy"></div><div class="team-info"><div class="team-name">Nasreen</div><div class="team-role">Graphic Designer</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5488808720190c6b12.webp" alt="Sallauddin Khan" loading="lazy"></div><div class="team-info"><div class="team-name">Sallauddin Khan</div><div class="team-role">Video Editor</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe3303343f290f2bdd88.webp" alt="Ananya" loading="lazy"></div><div class="team-info"><div class="team-name">Ananya</div><div class="team-role">Content Strategist</div></div></div>
+
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe2e9a9c7792ea2822c4.webp" alt="Alifiya Amer" loading="lazy"></div><div class="team-info"><div class="team-name">Alifiya Amer</div><div class="team-role">Content Strategist</div></div></div>
+
+      <!-- Duplicate set for seamless loop -->
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abdd89994d35aa0b95722.webp" alt="Siddhant Aneja" loading="lazy"></div><div class="team-info"><div class="team-name">Siddhant Aneja</div><div class="team-role">Co-Founder</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abde59994d35aa0b97086.webp" alt="Anchal Mehta" loading="lazy"></div><div class="team-info"><div class="team-name">Anchal Mehta</div><div class="team-role">Co-Founder</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af6372e83bdde33061fb7.webp" alt="Abhigyan Gupta" loading="lazy"></div><div class="team-info"><div class="team-name">Abhigyan Gupta</div><div class="team-role">Creative Head</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe0203343f290f2b505c.webp" alt="Abaash M" loading="lazy"></div><div class="team-info"><div class="team-name">Abaash M</div><div class="team-role">Senior Media Buyer</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe109994d35aa0b9b716.webp" alt="Dheeraj" loading="lazy"></div><div class="team-info"><div class="team-name">Dheeraj</div><div class="team-role">Senior Media Buyer</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe435a64f2b567c1e531.webp" alt="Gurmendra" loading="lazy"></div><div class="team-info"><div class="team-name">Gurmendra</div><div class="team-role">Senior Media Buyer</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af67f6364dd0dcc930595.webp" alt="Ashwini" loading="lazy"></div><div class="team-info"><div class="team-name">Ashwini</div><div class="team-role">Sr. Google Ads Specialist</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7af64a2e83bdde33064d5e.webp" alt="Pushti Shah" loading="lazy"></div><div class="team-info"><div class="team-name">Pushti Shah</div><div class="team-role">Sr. Google Ads Specialist</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5988808720190c8e41.webp" alt="Nasreen" loading="lazy"></div><div class="team-info"><div class="team-name">Nasreen</div><div class="team-role">Graphic Designer</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe5488808720190c6b12.webp" alt="Sallauddin Khan" loading="lazy"></div><div class="team-info"><div class="team-name">Sallauddin Khan</div><div class="team-role">Video Editor</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe3303343f290f2bdd88.webp" alt="Ananya" loading="lazy"></div><div class="team-info"><div class="team-name">Ananya</div><div class="team-role">Content Strategist</div></div></div>
+      <div class="team-card-m"><div class="team-photo"><img src="https://assets.cdn.filesafe.space/hoZD6ppfhCnr00WPrcLL/media/6a7abe2e9a9c7792ea2822c4.webp" alt="Alifiya Amer" loading="lazy"></div><div class="team-info"><div class="team-name">Alifiya Amer</div><div class="team-role">Content Strategist</div></div></div>
+
     </div>
   </div>
 </section>
@@ -917,6 +1026,25 @@ footer{border-top:1px solid var(--border);padding:40px 60px;display:flex;justify
   if (clientMarquee) {
     clientMarquee.addEventListener('mouseover', () => clientMarquee.style.animationPlayState = 'paused');
     clientMarquee.addEventListener('mouseout', () => clientMarquee.style.animationPlayState = 'running');
+  }
+
+  // Tool video mute toggle
+  function toggleToolMute() {
+    const vid = document.getElementById('tool-vid');
+    const btn = document.getElementById('tool-mute-btn');
+    const iconMuted = btn.querySelector('.tool-icon-muted');
+    const iconSound = btn.querySelector('.tool-icon-sound');
+    const label = btn.querySelector('.tool-mute-label');
+    vid.muted = !vid.muted;
+    iconMuted.style.display = vid.muted ? 'block' : 'none';
+    iconSound.style.display = vid.muted ? 'none' : 'block';
+    label.textContent = vid.muted ? 'Tap to unmute' : 'Tap to mute';
+  }
+  const teamOuter = document.getElementById('team-marquee-outer');
+  const teamTrack = document.getElementById('team-marquee-track');
+  if (teamOuter && teamTrack) {
+    teamOuter.addEventListener('mouseenter', () => teamTrack.classList.add('paused'));
+    teamOuter.addEventListener('mouseleave', () => teamTrack.classList.remove('paused'));
   }
 
   // ── VIDEO MARQUEE ──
