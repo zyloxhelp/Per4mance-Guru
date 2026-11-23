@@ -26,19 +26,8 @@ a[href="#apply"]:hover{box-shadow:0 10px 24px rgba(244,116,59,.4)}
 #pg-logos{scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
 #pg-logos::-webkit-scrollbar{display:none}
 #pg-logos>div{flex:0 0 236px!important;max-width:none!important;height:128px!important;padding:24px 30px!important;border-radius:14px!important}
-body{overflow-x:clip}
-#pg-ads{scrollbar-width:none}
-#pg-ads::-webkit-scrollbar{display:none}
-#pg-statics{width:100vw;margin-left:calc(50% - 50vw);flex:none;display:flex;flex-direction:column;gap:10px;overflow:hidden}
-.pg-mrow{display:flex;overflow:hidden}
-.pg-mtrack{display:flex;flex:none;width:max-content;animation:pgm 55s linear infinite}
-.pg-mrow.pg-rev .pg-mtrack{animation-direction:reverse;margin-left:-155px}
-.pg-set{display:flex;gap:10px;padding-right:10px;flex:none}
-.pg-set img{width:300px;height:300px;object-fit:cover;display:block;flex:none}
-#pg-statics:hover .pg-mtrack{animation-play-state:paused}
-@keyframes pgm{from{transform:translateX(0)}to{transform:translateX(-33.3333%)}}
-@media (max-width:600px){.pg-set img{width:220px;height:220px}.pg-mrow.pg-rev .pg-mtrack{margin-left:-110px}}
-@media (prefers-reduced-motion: reduce){.pg-mtrack{animation:none}.pg-mrow{overflow-x:auto;scrollbar-width:none}.pg-mrow::-webkit-scrollbar{display:none}}
+#pg-ads,#pg-statics{scrollbar-width:none}
+#pg-ads::-webkit-scrollbar,#pg-statics::-webkit-scrollbar{display:none}
 @keyframes pghl{from{background-size:0% 100%}to{background-size:100% 100%}}
 #pg-hl{animation:pghl .9s .45s cubic-bezier(.2,.7,.2,1) both}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.rv-init{opacity:1;transform:none}#pg-hl{animation:none}}
@@ -422,11 +411,6 @@ body{overflow-x:clip}
 <div style="flex: 0 0 200px"><img src="assets/295ab32c68387c7b8dba03cf170a44ce.webp" alt="Story-led talking-head ad" style="width: 200px; height: 356px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Story-led film</div></div>
 <div style="flex: 0 0 200px"><img src="assets/0d1be580beb08ed84fbcf06de293e88f.webp" alt="Luxury leather launch film" style="width: 200px; height: 356px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Luxury launch film</div></div>
 </div>
-<div style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 18px; margin-top: 8px">Static ads</div>
-<div id="pg-statics">
-<div class="pg-mrow"><div class="pg-mtrack"><div class="pg-set"><img src="assets/static-assembly-luggage.jpg" alt="Luggage brand static ad" loading="lazy"><img src="assets/static-hl-formal-shoes.jpg" alt="Formal leather shoes static ad" loading="lazy"><img src="assets/static-three-sixty-armchair.jpg" alt="Leather armchair static ad" loading="lazy"><img src="assets/static-three-sixty-sofa.jpg" alt="Leather sofa static ad" loading="lazy"><img src="assets/static-natbliss-gut-ease.jpg" alt="Gut health supplement static ad" loading="lazy"><img src="assets/static-natbliss-sugar-ease.jpg" alt="Ayurvedic supplement static ad" loading="lazy"></div><div class="pg-set" aria-hidden="true"><img src="assets/static-assembly-luggage.jpg" alt="" loading="lazy"><img src="assets/static-hl-formal-shoes.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-armchair.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-sofa.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-gut-ease.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-sugar-ease.jpg" alt="" loading="lazy"></div><div class="pg-set" aria-hidden="true"><img src="assets/static-assembly-luggage.jpg" alt="" loading="lazy"><img src="assets/static-hl-formal-shoes.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-armchair.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-sofa.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-gut-ease.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-sugar-ease.jpg" alt="" loading="lazy"></div></div></div>
-<div class="pg-mrow pg-rev"><div class="pg-mtrack"><div class="pg-set" aria-hidden="true"><img src="assets/static-three-sixty-sofa.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-gut-ease.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-sugar-ease.jpg" alt="" loading="lazy"><img src="assets/static-assembly-luggage.jpg" alt="" loading="lazy"><img src="assets/static-hl-formal-shoes.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-armchair.jpg" alt="" loading="lazy"></div><div class="pg-set" aria-hidden="true"><img src="assets/static-three-sixty-sofa.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-gut-ease.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-sugar-ease.jpg" alt="" loading="lazy"><img src="assets/static-assembly-luggage.jpg" alt="" loading="lazy"><img src="assets/static-hl-formal-shoes.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-armchair.jpg" alt="" loading="lazy"></div><div class="pg-set" aria-hidden="true"><img src="assets/static-three-sixty-sofa.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-gut-ease.jpg" alt="" loading="lazy"><img src="assets/static-natbliss-sugar-ease.jpg" alt="" loading="lazy"><img src="assets/static-assembly-luggage.jpg" alt="" loading="lazy"><img src="assets/static-hl-formal-shoes.jpg" alt="" loading="lazy"><img src="assets/static-three-sixty-armchair.jpg" alt="" loading="lazy"></div></div></div>
-</div>
 </div>
 </div>
 
@@ -441,6 +425,18 @@ body{overflow-x:clip}
 <div style="flex: 1 1 230px; background: #FFFFFF; border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 10px"><div style="font-family: Montserrat, sans-serif; font-weight: 900; font-size: 30px; color: #B8420F">4</div><div style="font-weight: 700; font-size: 18px">Launch and weekly reviews</div><div style="font-size: 15px; color: #3D3D3D">A dedicated team on your account, with a review call every week.</div></div>
 </div>
 <div><a href="#apply" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: #F4743B; color: #0E0E0E; font-weight: 700; font-size: 17px; text-decoration: none; border-radius: 8px">Get my free audit</a></div>
+</div>
+</div>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 18px">Static ads</div>
+<div id="pg-statics" style="display: flex; gap: 16px; overflow-x: auto; padding-bottom: 10px">
+<div style="flex: 0 0 260px"><img src="assets/static-assembly-luggage.jpg" alt="Luggage brand static ad" loading="lazy" style="width: 260px; height: 260px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Luggage</div></div>
+<div style="flex: 0 0 260px"><img src="assets/static-hl-formal-shoes.jpg" alt="Formal leather shoes static ad" loading="lazy" style="width: 260px; height: 260px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Formal footwear</div></div>
+<div style="flex: 0 0 260px"><img src="assets/static-three-sixty-armchair.jpg" alt="Leather armchair static ad" loading="lazy" style="width: 260px; height: 260px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Leather armchair</div></div>
+<div style="flex: 0 0 260px"><img src="assets/static-three-sixty-sofa.jpg" alt="Leather sofa static ad" loading="lazy" style="width: 260px; height: 260px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Leather sofa</div></div>
+<div style="flex: 0 0 260px"><img src="assets/static-natbliss-gut-ease.jpg" alt="Gut health supplement static ad" loading="lazy" style="width: 260px; height: 260px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Gut health supplement</div></div>
+<div style="flex: 0 0 260px"><img src="assets/static-natbliss-sugar-ease.jpg" alt="Ayurvedic supplement static ad" loading="lazy" style="width: 260px; height: 260px; object-fit: cover; border-radius: 12px; display: block"><div style="font-size: 14px; font-weight: 600; margin-top: 8px">Ayurvedic supplement</div></div>
 </div>
 </div>
 
@@ -618,7 +614,7 @@ function pgInit() {
     window.addEventListener('resize', onScroll);
     onScroll();
     off.push(function () { window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); });
-    ['pg-ads', 'pg-logos'].forEach(function (stripId) {
+    ['pg-ads', 'pg-statics', 'pg-logos'].forEach(function (stripId) {
     var ads = document.getElementById(stripId);
     if (ads && !reduce) {
       var dir = 1, paused = false, pos = 0, raf = 0;
