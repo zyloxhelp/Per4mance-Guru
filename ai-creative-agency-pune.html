@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0A0A">
+<title>AI Creative Agency in Pune | Per4mance Guru</title>
+<meta name="description" content="AI creative agency in Pune producing ad videos and catalogue visuals with Kling, Runway and Midjourney for SaaS, D2C and education brands.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://per4mance.guru/ai-creative-agency-pune.html">
+<link rel="icon" href="/assets/per4mance-guru.webp" type="image/webp">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://per4mance.guru/ai-creative-agency-pune.html">
+<meta property="og:title" content="AI Creative Agency in Pune | Per4mance Guru">
+<meta property="og:description" content="AI creative agency in Pune producing ad videos and catalogue visuals with Kling, Runway and Midjourney for SaaS, D2C and education brands.">
+<meta property="og:image" content="https://per4mance.guru/og-image.jpg">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Per4mance Guru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Creative Agency in Pune | Per4mance Guru">
+<style>
+/* ── RESET + TOKENS ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+:root{
+  --coral:#E8543A;
+  --coral-light:#FF6B52;
+  --coral-dim:rgba(232,84,58,0.12);
+  --black:#0A0A0A;
+  --black-soft:#111111;
+  --card:#161616;
+  --border:rgba(255,255,255,0.07);
+  --border-coral:rgba(232,84,58,0.18);
+  --cream:#F5EDE3;
+  --white:#FFFFFF;
+  --gray:#6B6B6B;
+  --text-muted:rgba(255,255,255,0.45);
+  --text-mid:rgba(255,255,255,0.65);
+  --font:'Calibri','Trebuchet MS',Arial,sans-serif;
+  --max:1200px;
+  --radius:8px;
+  --radius-lg:14px;
+}
+body{font-family:var(--font);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 4rem;
+  background:rgba(10,10,10,0.95);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border-coral);
+  transition:padding .3s;
+}
+.nav-logo img{width:38px;height:38px;border-radius:6px;object-fit:contain;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.82rem;color:var(--text-mid);transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-cta{
+  background:var(--coral);color:var(--white);
+  padding:.5rem 1.25rem;border-radius:4px;
+  font-size:.82rem;font-weight:700;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:var(--coral-light);transform:translateY(-1px);}
+.nav-ham{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;line-height:1;padding:.25rem;}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:7rem 4rem 5rem;
+  position:relative;overflow:hidden;
+  background:var(--black);
+}
+.hero-grid{
+  position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:1fr 460px;gap:4rem;align-items:center;
+}
+.hero-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--border-coral) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border-coral) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 30%,transparent 100%);
+}
+.hero-glow{
+  position:absolute;width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,84,58,0.07) 0%,transparent 65%);
+  top:-250px;right:-200px;pointer-events:none;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--coral-dim);border:1px solid var(--border-coral);
+  color:var(--coral);padding:.35rem .9rem;border-radius:100px;
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:1.75rem;
+}
+.hero-tag::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--coral);animation:blink 2s ease-in-out infinite;flex-shrink:0;
+}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(1.5);}}
+
+h1.hero-h1{
+  font-size:clamp(2.4rem,5vw,4.2rem);
+  font-weight:800;line-height:1.0;
+  letter-spacing:-.04em;
+  color:var(--white);
+  margin-bottom:1.5rem;
+}
+h1.hero-h1 em{color:var(--coral);font-style:normal;}
+
+.hero-sub{
+  font-size:1rem;color:var(--text-mid);line-height:1.8;
+  max-width:520px;margin-bottom:2.25rem;font-weight:300;
+}
+.hero-actions{display:flex;gap:.875rem;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--font);font-weight:700;font-size:.88rem;
+  border-radius:4px;padding:.85rem 1.75rem;cursor:pointer;
+  transition:all .2s;border:none;line-height:1;
+}
+.btn-coral{background:var(--coral);color:var(--white);}
+.btn-coral:hover{background:var(--coral-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,84,58,.3);}
+.btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.2);}
+.btn-outline:hover{border-color:var(--coral);color:var(--white);background:var(--coral-dim);}
+
+/* Hero stats card (kept for other templates) */
+.hero-stats-card{
+  background:var(--card);border:1px solid var(--border-coral);
+  border-radius:var(--radius-lg);overflow:hidden;
+}
+.hstat-row{display:grid;grid-template-columns:1fr 1fr;}
+.hstat{
+  padding:2.25rem 2rem;border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  transition:background .25s;
+}
+.hstat:nth-child(even){border-right:none;}
+.hstat:nth-child(3),.hstat:nth-child(4){border-bottom:none;}
+.hstat:hover{background:rgba(232,84,58,0.05);}
+.hstat-num{font-size:2.5rem;font-weight:800;color:var(--coral);letter-spacing:-.04em;line-height:1;margin-bottom:.4rem;}
+.hstat-lbl{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;line-height:1.4;}
+
+.hero-wa{
+  margin-top:1.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  color:var(--text-muted);font-size:.78rem;
+}
+.hero-wa a{color:var(--coral);}
+.hero-wa a:hover{text-decoration:underline;}
+
+/* ── TICKER ── */
+.ticker{
+  background:rgba(232,84,58,.06);
+  border-top:1px solid var(--border-coral);
+  border-bottom:1px solid var(--border-coral);
+  overflow:hidden;padding:.85rem 0;
+}
+.ticker-track{
+  display:flex;gap:3rem;width:max-content;
+  animation:scroll 20s linear infinite;
+}
+.ticker-track:hover{animation-play-state:paused;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.ticker-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.72rem;font-weight:600;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.09em;white-space:nowrap;flex-shrink:0;
+}
+.ticker-item .dot{width:5px;height:5px;border-radius:50%;background:var(--coral);flex-shrink:0;}
+.ticker-item span{color:var(--white);}
+
+/* ── SECTION COMMONS ── */
+section{padding:6rem 4rem;}
+.inner{max-width:var(--max);margin:0 auto;}
+.label{font-size:.68rem;font-weight:700;color:var(--coral);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.6rem;}
+.sec-h2{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:1.25rem;}
+.sec-h2 em{color:var(--coral);font-style:normal;}
+.sec-sub{font-size:.95rem;color:var(--text-mid);line-height:1.85;max-width:600px;}
+
+/* ── CLIENTS ── */
+.clients-sec{background:var(--black-soft);padding:4rem;}
+.clients-label{font-size:.68rem;font-weight:700;color:var(--text-muted);letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-bottom:2.25rem;}
+.logos-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:2rem 3rem;
+}
+.logo-item{
+  display:flex;align-items:center;justify-content:center;
+  opacity:.45;transition:opacity .25s;filter:grayscale(1) brightness(1.5);
+}
+.logo-item:hover{opacity:.9;filter:grayscale(0);}
+.logo-item img{height:32px;width:auto;object-fit:contain;}
+
+/* ── WHY SECTION (cream) ── */
+.why-sec{background:var(--cream);}
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(10,10,10,0.1);
+  margin-top:3rem;border-radius:var(--radius);overflow:hidden;
+}
+.why-card{
+  background:#fff;padding:2.25rem;
+  transition:background .2s;
+}
+.why-card:hover{background:#fdf7f5;}
+.why-icon{font-size:1.75rem;margin-bottom:1rem;}
+.why-card h3{font-size:.95rem;font-weight:700;color:var(--black);margin-bottom:.45rem;line-height:1.3;}
+.why-card p{font-size:.82rem;color:#666;line-height:1.7;}
+.why-sec .sec-h2{color:var(--black);}
+.why-sec .sec-sub{color:#555;}
+.why-sec .label{color:var(--coral);}
+
+/* ── SERVICES ── */
+.svcs-sec{background:var(--black);}
+.svcs-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--border);
+  margin-top:3rem;border-radius:var(--radius);overflow:hidden;
+}
+.svc-card{
+  background:var(--black-soft);padding:2.5rem;
+  position:relative;overflow:hidden;
+  text-decoration:none;display:block;
+  transition:background .25s;
+}
+.svc-card::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:3px;background:var(--coral);transition:width .35s;
+}
+.svc-card:hover{background:rgba(232,84,58,.05);}
+.svc-card:hover::after{width:100%;}
+.svc-num{font-size:.7rem;color:var(--coral);font-weight:700;letter-spacing:.1em;margin-bottom:1rem;display:block;}
+.svc-card h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.6rem;line-height:1.3;}
+.svc-card p{font-size:.8rem;color:var(--text-muted);line-height:1.7;}
+.svc-arrow{margin-top:1.5rem;color:var(--coral);font-size:.85rem;font-weight:700;}
+
+/* ── PROCESS ── */
+.process-sec{background:#0f0f0f;}
+.process-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:var(--border);
+  margin-top:3rem;border-radius:var(--radius);overflow:hidden;
+}
+.p-step{background:var(--card);padding:2rem 1.5rem;position:relative;}
+.p-step-num{
+  font-size:2rem;font-weight:800;color:var(--border-coral);
+  letter-spacing:-.04em;line-height:1;margin-bottom:1rem;
+  display:block;
+}
+.p-step h3{font-size:.88rem;font-weight:700;color:var(--white);margin-bottom:.5rem;line-height:1.3;}
+.p-step p{font-size:.75rem;color:var(--text-muted);line-height:1.6;}
+
+/* ── FAQ ── */
+.faq-sec{background:var(--cream);}
+.faq-sec .sec-h2{color:var(--black);}
+.faq-sec .label{color:var(--coral);}
+.faq-list{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(10,10,10,.1);}
+.faq-item{background:var(--white);border-bottom:1px solid rgba(10,10,10,.08);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{
+  width:100%;background:none;border:none;cursor:pointer;
+  padding:1.35rem 1.75rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  text-align:left;
+  font-family:var(--font);font-size:.9rem;font-weight:700;color:var(--black);
+  line-height:1.4;transition:color .2s;
+}
+.faq-q:hover{color:var(--coral);}
+.faq-icon{flex-shrink:0;font-size:1.2rem;color:var(--coral);transition:transform .3s;font-weight:300;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a p{font-size:.875rem;color:#555;line-height:1.8;padding:0 1.75rem 1.5rem;}
+
+/* ── BOOKING / CTA ── */
+.booking-sec{
+  background:var(--black);
+  border-top:1px solid var(--border);
+}
+.booking-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:start;
+  max-width:var(--max);margin:0 auto;
+}
+.booking-copy .sec-h2{color:var(--white);}
+.booking-copy .sec-sub{color:var(--text-mid);}
+.contact-stack{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem;}
+.contact-item{
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.85rem;color:var(--text-mid);
+}
+.contact-item a{color:var(--coral);}
+.contact-item a:hover{text-decoration:underline;}
+.booking-form-wrap{
+  background:var(--card);border:1px solid var(--border-coral);
+  border-radius:var(--radius-lg);padding:2.25rem;
+}
+.booking-form-wrap h3{
+  font-size:1.1rem;font-weight:800;color:var(--white);
+  margin-bottom:.5rem;letter-spacing:-.02em;
+}
+.booking-form-wrap p.form-sub{font-size:.8rem;color:var(--text-muted);margin-bottom:1.75rem;line-height:1.5;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;}
+.form-full{margin-bottom:.75rem;}
+.form-input{
+  width:100%;background:rgba(255,255,255,.05);
+  border:1.5px solid var(--border);border-radius:4px;
+  padding:.8rem 1rem;
+  font-family:var(--font);font-size:.85rem;color:var(--white);
+  transition:border-color .2s;outline:none;
+}
+.form-input::placeholder{color:rgba(255,255,255,.25);}
+.form-input:focus{border-color:var(--coral);}
+.form-select{appearance:none;-webkit-appearance:none;cursor:pointer;}
+.form-btn{
+  width:100%;background:var(--coral);color:var(--white);
+  padding:.95rem;border:none;border-radius:4px;
+  font-family:var(--font);font-size:.9rem;font-weight:700;
+  cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  margin-top:.5rem;
+}
+.form-btn:hover{background:var(--coral-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,84,58,.3);}
+.form-success{display:none;text-align:center;padding:2rem;}
+.form-success .check{font-size:2.5rem;margin-bottom:1rem;}
+.form-success h4{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:.5rem;}
+.form-success p{font-size:.82rem;color:var(--text-mid);}
+
+/* ── FINAL CTA BAND ── */
+.cta-band{
+  background:var(--coral);padding:5rem 4rem;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-band::before{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:40px 40px;pointer-events:none;
+}
+.cta-band-inner{position:relative;z-index:2;max-width:680px;margin:0 auto;}
+.cta-band h2{font-size:clamp(1.9rem,4vw,3.25rem);font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.25rem;}
+.cta-band p{font-size:.95rem;color:rgba(255,255,255,.88);line-height:1.8;margin-bottom:2rem;}
+.btn-white{background:var(--white);color:var(--coral);padding:1rem 2.5rem;border-radius:4px;font-weight:800;font-size:.92rem;display:inline-block;transition:all .25s;}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.2);}
+.cta-contacts{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:1.75rem;}
+.cta-contacts a{color:rgba(255,255,255,.9);font-size:.88rem;font-weight:600;}
+.cta-contacts a:hover{color:var(--white);text-decoration:underline;}
+
+/* ── FOOTER ── */
+footer{
+  background:#0d0d0d;padding:1.75rem 4rem;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+footer p{font-size:.72rem;color:rgba(255,255,255,.2);}
+footer a{color:var(--coral);font-size:.72rem;text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+.footer-links{display:flex;gap:1.5rem;}
+footer p.footer-addr{flex-basis:100%;color:rgba(255,255,255,.45);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  nav{padding:1rem 2rem;}
+  .hero,.clients-sec,section,.cta-band,footer{padding-left:2rem;padding-right:2rem;}
+  .hero-grid{grid-template-columns:1fr;gap:3rem;}
+  .hero-stats-card{max-width:400px;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .svcs-grid{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .booking-inner{grid-template-columns:1fr;gap:3rem;}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .nav-ham{display:block;}
+  nav.open .nav-links{
+    display:flex;flex-direction:column;position:absolute;
+    top:100%;left:0;right:0;background:#141414;
+    padding:1.5rem 1.5rem;gap:.875rem;
+    border-bottom:1px solid var(--border-coral);
+  }
+  .hero,.clients-sec,section,.cta-band,footer{padding-left:1.25rem;padding-right:1.25rem;}
+  .hero{padding-top:5.5rem;min-height:auto;padding-bottom:3.5rem;}
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-stats-card{max-width:100%;}
+  h1.hero-h1{font-size:clamp(2rem,9vw,2.8rem);}
+  .why-grid{grid-template-columns:1fr;}
+  .svcs-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;}
+  .logos-grid{gap:1.25rem 2rem;}
+  .logo-item img{height:26px;}
+  .form-row{grid-template-columns:1fr;}
+  .cta-contacts{gap:1rem;}
+  footer{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+}
+@media(max-width:480px){
+  h1.hero-h1{font-size:1.9rem;}
+  .hstat-num{font-size:2rem;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions .btn{justify-content:center;}
+  .process-steps{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+.content-sec{background:#F5EDE3;padding:5rem 4rem;}.content-sec-dark{background:#0f0f0f;padding:5rem 4rem;}.content-inner{max-width:1200px;margin:0 auto;}.content-body{margin-top:1.5rem;}.content-body p{font-size:.92rem;color:#555;line-height:1.9;margin-bottom:1.25rem;}.content-sec-dark .content-body p{color:rgba(255,255,255,.55);}.content-body strong{color:#0A0A0A;font-weight:700;}.content-sec-dark .content-body strong{color:#fff;}.content-body a{color:#E8543A;text-decoration:underline;text-underline-offset:3px;}@media(max-width:768px){.content-sec,.content-sec-dark{padding:3.5rem 1.5rem;}}
+
+/* ── TESTIMONIALS ── */
+.testi-sec{background:var(--black-soft);padding:6rem 4rem;}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.testi-card{background:var(--card);border:1px solid var(--border-coral);border-radius:var(--radius-lg);padding:2rem;display:flex;flex-direction:column;}
+.testi-stars{color:var(--coral);font-size:.85rem;letter-spacing:.15em;margin-bottom:1rem;}
+.testi-quote{font-size:.88rem;color:var(--text-mid);line-height:1.8;flex-grow:1;margin-bottom:1.5rem;}
+.testi-author{border-top:1px solid var(--border);padding-top:1rem;}
+.testi-author-name{font-size:.85rem;font-weight:700;color:var(--white);}
+.testi-author-role{font-size:.75rem;color:var(--text-muted);margin-top:.15rem;}
+@media(max-width:1024px){.testi-grid{grid-template-columns:1fr;}}
+
+/* ── DATA / COMPARISON TABLES ── */
+.data-table-wrap{overflow-x:auto;margin:1.5rem 0 2rem;border-radius:var(--radius);border:1px solid rgba(10,10,10,.1);}
+.content-sec-dark .data-table-wrap{border-color:var(--border);}
+table.data-table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff;}
+.content-sec-dark table.data-table{background:var(--card);}
+table.data-table th{background:var(--coral);color:#fff;text-align:left;padding:.85rem 1.1rem;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+table.data-table td{padding:.85rem 1.1rem;border-bottom:1px solid rgba(10,10,10,.08);color:#444;line-height:1.6;}
+.content-sec-dark table.data-table td{border-bottom:1px solid var(--border);color:rgba(255,255,255,.65);}
+table.data-table tr:last-child td{border-bottom:none;}
+table.data-table td:first-child,table.data-table th:first-child{font-weight:700;color:#0A0A0A;}
+.content-sec-dark table.data-table td:first-child,.content-sec-dark table.data-table th:first-child{color:#fff;}
+table.data-table .yes{color:#1a8a4a;font-weight:700;}
+table.data-table .no{color:#999;}
+
+/* ── BYLINE / FRESHNESS STRIP ── */
+.byline-strip{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center;font-size:.78rem;color:var(--text-muted);margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(10,10,10,.1);}
+.byline-strip strong{color:#0A0A0A;font-weight:700;}
+
+/* ── NEW: MEDIA FRAMES (keeps layout intact while images are placeholders) ── */
+.media-frame{
+  position:relative;width:100%;aspect-ratio:16/9;
+  background:var(--card) linear-gradient(135deg,rgba(232,84,58,.10),transparent 60%);
+  border:1px solid var(--border-coral);border-radius:var(--radius-lg);overflow:hidden;
+}
+.media-frame img{width:100%;height:100%;object-fit:cover;}
+.media-frame.light{background:#fff linear-gradient(135deg,rgba(232,84,58,.08),transparent 60%);border-color:rgba(10,10,10,.1);}
+
+/* ── NEW: STATS BAR ── */
+.stats-sec{background:var(--black-soft);padding:2.5rem 4rem;border-top:1px solid var(--border);}
+.stats-bar{max-width:var(--max);margin:0 auto;}
+.stat-item{padding:1rem .5rem;}
+.stat-num{font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:800;color:var(--coral);letter-spacing:-.04em;line-height:1;margin-bottom:.4rem;}
+.stat-lbl{font-size:.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;line-height:1.4;}
+
+/* ── NEW: INTRO BLOCK ── */
+.intro-sec{background:#0f0f0f;}
+.intro-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:4rem;align-items:start;margin-top:.5rem;}
+.intro-body h3{font-size:1rem;font-weight:700;color:var(--white);margin:1.75rem 0 .5rem;line-height:1.35;}
+.intro-body h3:first-child{margin-top:0;}
+.intro-body p{font-size:.92rem;color:var(--text-mid);line-height:1.9;}
+.intro-body a{color:var(--coral);text-decoration:underline;text-underline-offset:3px;}
+.intro-aside{position:sticky;top:6rem;}
+.intro-note{margin-top:1rem;font-size:.78rem;color:var(--text-muted);line-height:1.6;}
+.intro-note strong{color:var(--white);}
+
+/* ── NEW: SERVICES ICON + IMAGE ── */
+.svc-head{display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:end;}
+.svc-icon{display:block;font-size:1.5rem;margin-bottom:.75rem;line-height:1;}
+
+/* ── NEW: RESULTS ── */
+.results-sec{background:var(--black-soft);}
+.results-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem;}
+.results-grid{display:flex;flex-direction:column;gap:1rem;}
+.result-card{background:var(--card);border:1px solid var(--border-coral);border-radius:var(--radius-lg);padding:1.5rem 1.75rem;display:grid;grid-template-columns:110px 1fr;gap:1.25rem;align-items:center;}
+.result-num{font-size:2.1rem;font-weight:800;color:var(--coral);letter-spacing:-.04em;line-height:1;}
+.result-card h3{font-size:.92rem;font-weight:700;color:var(--white);margin-bottom:.3rem;line-height:1.3;}
+.result-card p{font-size:.8rem;color:var(--text-muted);line-height:1.65;}
+.results-foot{margin-top:1.5rem;font-size:.75rem;color:var(--text-muted);}
+
+/* ── NEW: FAQ H3 wrapper + form extras ── */
+.faq-item h3{font-size:inherit;font-weight:inherit;margin:0;}
+textarea.form-input{resize:vertical;min-height:110px;line-height:1.6;}
+.form-select option{color:#0A0A0A;}
+#contact{position:relative;top:-80px;display:block;height:0;}
+#contact-form{scroll-margin-top:70px;}
+
+/* MOBILE RESPONSIVE — Required on all pages
+   (merged with the site's existing grid so it does not override the design system) */
+img{max-width:100%;height:auto;}
+.stats-bar{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+.stat-item{flex:1;min-width:140px;text-align:center;}
+@media(max-width:1024px){
+  .stats-sec{padding-left:2rem;padding-right:2rem;}
+  .intro-grid,.svc-head,.results-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .intro-aside{position:static;}
+}
+@media(max-width:768px){
+  .stats-sec{padding:2rem 1.25rem;}
+  .stat-item{flex:1 1 calc(50% - 16px);}
+  .cta-buttons{flex-direction:column;align-items:stretch;}
+  .cta-buttons .btn{justify-content:center;}
+  #auditForm .form-input{font-size:16px;} /* prevents iOS zoom */
+  .result-card{grid-template-columns:1fr;gap:.5rem;}
+  .faq-q{padding:1.15rem 1.25rem;}
+  .faq-a p{padding:0 1.25rem 1.25rem;}
+}
+@media(max-width:480px){
+  .booking-form-wrap{padding:1.5rem;}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://per4mance.guru/#organization","name":"Per4mance Guru","url":"https://per4mance.guru","logo":"https://per4mance.guru/assets/per4mance-guru.webp","description":"AI-powered performance marketing agency managing Meta Ads, Google Ads, and SEO for 80+ brands across India, UAE, Sri Lanka, and Canada.","foundingDate":"2018","email":"hello@per4mance.guru","telephone":"+91-9811096907","address":{"@type":"PostalAddress","streetAddress":"B-41, 3rd Floor, GT Karnal Industrial Area","addressLocality":"Delhi","addressRegion":"DL","postalCode":"110033","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","email":"hello@per4mance.guru","telephone":"+91-9811096907","contactType":"customer service","areaServed":["IN","AE","LK","CA"],"availableLanguage":["English","Hindi"]},"sameAs":["https://www.instagram.com/per4manceguru","https://www.linkedin.com/company/per4manceguru"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://per4mance.guru/ai-creative-agency-pune.html#localbusiness","name":"Per4mance Guru","description":"Per4mance Guru produces AI-generated ad videos, product visuals, catalogue imagery and performance creatives for Pune SaaS, D2C, education and automotive brands using Kling, Runway, Midjourney and Seedance, operating remotely from Delhi.","url":"https://per4mance.guru/ai-creative-agency-pune.html","logo":"https://per4mance.guru/assets/per4mance-guru.webp","image":"https://per4mance.guru/og-image.jpg","telephone":"+91-9811096907","email":"hello@per4mance.guru","address":{"@type":"PostalAddress","streetAddress":"B-41, 3rd Floor, GT Karnal Industrial Area","addressLocality":"Delhi","addressRegion":"DL","postalCode":"110033","addressCountry":"IN"},"areaServed":[{"@type":"City","name":"Pune"}],"serviceType":"AI Creative Agency","knowsAbout":["AI video production","AI image generation","Performance creative","Kling","Runway","Midjourney","Seedance"],"openingHours":["Mo-Fr 09:00-19:00","Sa 10:00-17:00"],"priceRange":"₹₹₹","parentOrganization":{"@id":"https://per4mance.guru/#organization"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does an AI creative agency in Pune produce?","acceptedAnswer":{"@type":"Answer","text":"An AI creative agency in Pune generates ad videos, product visuals, catalogue imagery, carousel graphics and short-form reels using tools like Kling, Runway, Midjourney and Seedance. Per4mance Guru ties each asset to a performance goal — click-through rate, cost per acquisition or return on ad spend — so creative decisions are data-driven rather than subjective. Output ranges from fifteen-second Instagram reels to full product-launch video suites."}},{"@type":"Question","name":"Which AI tools does Per4mance Guru use for creative production?","acceptedAnswer":{"@type":"Answer","text":"The primary stack includes Kling for video generation, Runway for motion graphics and scene editing, Midjourney for high-fidelity product and lifestyle imagery, and Seedance for short-form video templates. These tools let the team produce dozens of creative variants in the time a traditional studio spends on one, feeding the multivariate testing frameworks that identify winning hooks and formats faster."}},{"@type":"Question","name":"Can AI creative replace a traditional production house for Pune brands?","acceptedAnswer":{"@type":"Answer","text":"For performance advertising it usually can. AI-generated video and imagery deliver the volume and speed that paid-media testing demands — ten to twenty variants a week instead of one polished hero every month. Brand campaigns requiring human talent, physical sets or emotional storytelling still benefit from traditional production, but the day-to-day ad creative that fills Meta and Google feeds is where AI tools earn their keep."}},{"@type":"Question","name":"How does AI creative improve ad performance for D2C brands?","acceptedAnswer":{"@type":"Answer","text":"D2C brands in Baner and Koregaon Park need a constant stream of fresh catalogue images, lifestyle shots and short product demos to avoid creative fatigue on Meta. AI tools generate these variants at a fraction of the cost and turnaround of a photoshoot. Each variant enters a structured test where the ad platform's algorithm allocates spend to the best performer, compressing the discovery cycle from weeks to days."}},{"@type":"Question","name":"Does Per4mance Guru have a creative studio in Pune?","acceptedAnswer":{"@type":"Answer","text":"No. All creative production happens remotely from B-41, 3rd Floor, GT Karnal Industrial Area, Delhi 110033. Pune clients share brand assets, product images and guidelines through a shared drive, and the team delivers finished creatives within agreed turnaround windows. Revisions, feedback and approvals run through a WhatsApp channel and weekly video calls with the creative strategist."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://per4mance.guru/"},{"@type":"ListItem","position":2,"name":"Locations","item":"https://per4mance.guru/locations.html"},{"@type":"ListItem","position":3,"name":"AI Creative Agency Pune","item":"https://per4mance.guru/ai-creative-agency-pune.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AI Creative Agency in Pune | Per4mance Guru","url":"https://per4mance.guru/ai-creative-agency-pune.html","inLanguage":"en-IN","datePublished":"2026-11-23","dateModified":"2026-11-23","author":{"@type":"Person","name":"Siddhant Aneja","jobTitle":"Co-Founder & CEO","url":"https://per4mance.guru/team.html"},"about":{"@type":"Service","name":"AI Creative Production","provider":{"@id":"https://per4mance.guru/#organization"}},"speakable":{"@type":"SpeakableSpecification","cssSelector":[".hero-sub",".intro-body",".faq-a"]}}</script>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="sitenav">
+  <a href="/" class="nav-logo" aria-label="Per4mance Guru Home">
+    <img src="/assets/per4mance-guru.webp" alt="Per4mance Guru" width="38" height="38" loading="eager">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/services.html">Services</a></li>
+    <li><a href="/locations.html">Locations</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-ham" id="navHam" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <a href="https://api.leadconnectorhq.com/widget/booking/NAeu7pP8iCHJOsgvcZVv" target="_blank" rel="noopener" class="nav-cta">Free Audit →</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero hero-section" aria-labelledby="hero-h1">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-tag">🎬 Pune — AI Creative</div>
+      <h1 class="hero-h1" id="hero-h1">
+        AI Creative <em>Agency in Pune.</em><br>Ad Visuals That Test Themselves Before You Spend.
+      </h1>
+      <p class="hero-sub">Per4mance Guru produces AI-generated ad videos, product imagery and performance creatives for Pune SaaS, D2C, education and automotive brands — built to feed multivariate testing, not mood boards.</p>
+      <div class="hero-actions cta-buttons">
+        <a href="#contact-form" class="btn btn-coral">📅 Get a Free Audit</a>
+        <a href="/services.html" class="btn btn-outline">View Our Work →</a>
+      </div>
+      <p class="hero-wa">Questions? <a href="https://wa.me/919811096907">+91 98110 96907</a> · <a href="mailto:hello@per4mance.guru">hello@per4mance.guru</a></p>
+    </div>
+    <div class="hero-right">
+      <!-- IMAGE NEEDED: AI-generated creative variants for a Pune D2C brand — multiple ad visuals side by side. Landscape 16:9, 1600x900, save as /assets/images/ai-creative-agency-pune-team.jpg -->
+      <figure class="media-frame">
+        <img src="/assets/images/placeholder.jpg" alt="AI creative agency in Pune — Per4mance Guru team" width="800" height="450" loading="eager" fetchpriority="high">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-sec" role="region" aria-label="Per4mance Guru results at a glance">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">80+</div><div class="stat-lbl">Brands Scaled</div></div>
+    <div class="stat-item"><div class="stat-num">₹100Cr+</div><div class="stat-lbl">Ad Spend Managed</div></div>
+    <div class="stat-item"><div class="stat-num">3.8x</div><div class="stat-lbl">Average ROAS</div></div>
+    <div class="stat-item"><div class="stat-num">4.9★</div><div class="stat-lbl">Google Rating</div></div>
+  </div>
+</div>
+
+<!-- ── INTRO ── -->
+<section class="intro-sec" aria-labelledby="intro-h2">
+  <div class="inner">
+    <div class="label">AI Creative in Pune</div>
+    <h2 class="sec-h2" id="intro-h2">Why Pune Brands Need an <em>AI Creative Agency</em></h2>
+    <div class="intro-grid">
+      <div class="intro-body">
+        <h3>The volume problem Pune advertisers face</h3>
+        <p>An AI creative agency in Pune solves a production bottleneck that every performance marketer hits: the ad platforms reward fresh creative, but traditional studios deliver one polished video every few weeks. Per4mance Guru uses tools like Kling, Runway, Midjourney and Seedance to generate ten to twenty ad variants in the time a conventional team finishes one, then feeds them into structured tests where the algorithm picks winners. The practice sits at the intersection of <a href="https://en.wikipedia.org/wiki/Digital_marketing" target="_blank" rel="noopener noreferrer">digital marketing</a> and generative AI — creative output scaled to the velocity that paid media demands. Since 2018 the agency has served 80-plus brands across India, the UAE, Sri Lanka and Canada, managing more than one hundred crore in ad spend.</p>
+
+        <h3>SaaS demo videos and B2B explainers</h3>
+        <p>Software firms in Hinjewadi and Kharadi need short product demos, feature-highlight clips and LinkedIn-ready explainers on a cadence that an internal design team cannot sustain. AI video tools generate screen-capture overlays, motion-graphic transitions and voiceover-ready narration tracks in hours rather than days. Each variant enters an A/B framework where click-through rate and demo-request conversion determine which version earns the next round of budget. For the audience-modelling layer that decides who sees these ads, see <a href="/ai-marketing-agency-pune.html">AI marketing in Pune</a>.</p>
+
+        <h3>D2C catalogue and lifestyle creative</h3>
+        <p>Consumer brands shipping from Baner, Koregaon Park and Wakad burn through creative faster than any other vertical. A single product needs flat-lay shots, lifestyle context, before-after sequences and short unboxing reels — multiplied across every SKU and seasonal promotion. Midjourney handles product imagery that would otherwise require a studio booking, while Kling and Seedance produce the short-form video content that feeds Instagram Reels and Facebook In-Stream placements. The result is a library of testable assets refreshed weekly instead of quarterly.</p>
+
+        <h3>Education, automotive and everything in between</h3>
+        <p>Admission campaigns for institutions along FC Road and Deccan need testimonial-style clips, campus-tour snippets and course-highlight carousels — all within a window that opens twice a year and tolerates zero creative delays. Automotive-component manufacturers around Chakan want specification-focused explainers that procurement teams can share internally. AI tools handle both: templated formats that maintain brand consistency while the content layer swaps per campaign. The full <a href="/services.html">services list</a> shows every channel and capability we offer.</p>
+      </div>
+      <aside class="intro-aside">
+        <!-- IMAGE NEEDED: AI-generated ad creative variants — Pune D2C product shots + SaaS demo thumbnails. Landscape 16:9, save as /assets/images/ai-creative-pune-campaigns.jpg -->
+        <figure class="media-frame">
+          <img src="/assets/images/placeholder.jpg" alt="AI creative campaigns for Pune businesses" width="800" height="450" loading="lazy">
+        </figure>
+        <p class="intro-note">Written by <strong>Siddhant Aneja</strong>, Co-Founder &amp; CEO, Per4mance Guru. Published November 2026.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="svcs-sec" aria-labelledby="svcs-h2">
+  <div class="inner">
+    <div class="svc-head">
+      <div>
+        <div class="label">Our Services</div>
+        <h2 class="sec-h2" id="svcs-h2">AI Creative Capabilities for <em>Pune Brands</em></h2>
+        <p class="sec-sub" style="color:var(--text-mid);">Six production streams covering video, imagery, testing and reporting — designed for the creative velocity paid media demands.</p>
+      </div>
+      <!-- IMAGE NEEDED: AI creative production pipeline — multiple ad variants on screen. Landscape 16:9, save as /assets/images/ai-creative-services-pune.jpg -->
+      <figure class="media-frame">
+        <img src="/assets/images/placeholder.jpg" alt="AI creative services for Pune businesses" width="800" height="450" loading="lazy">
+      </figure>
+    </div>
+    <div class="svcs-grid">
+      <a href="/services.html#ai-video" class="svc-card"><span class="svc-icon" aria-hidden="true">🎥</span><span class="svc-num">01</span><h3>AI Ad Video Production</h3><p>Fifteen-to-sixty-second ad videos generated with Kling and Runway — product demos, testimonial-style clips, explainers and short reels delivered in batches for structured testing.</p><div class="svc-arrow">Explore →</div></a>
+      <a href="/services.html#creative" class="svc-card"><span class="svc-icon" aria-hidden="true">🖼️</span><span class="svc-num">02</span><h3>Product &amp; Lifestyle Imagery</h3><p>Midjourney-generated flat-lays, lifestyle composites and catalogue shots that eliminate studio bookings while maintaining the visual consistency D2C feeds demand.</p><div class="svc-arrow">Explore →</div></a>
+      <a href="/services.html#creative" class="svc-card"><span class="svc-icon" aria-hidden="true">🔁</span><span class="svc-num">03</span><h3>Creative Testing &amp; Rotation</h3><p>Multivariate frameworks that test hook, thumbnail, format and CTA combinations simultaneously, allocating impressions to the variants earning the lowest cost per action.</p><div class="svc-arrow">Explore →</div></a>
+      <a href="/services.html#creative" class="svc-card"><span class="svc-icon" aria-hidden="true">📐</span><span class="svc-num">04</span><h3>SaaS Demo &amp; Explainer Clips</h3><p>Screen-capture overlays, animated feature highlights and motion-graphic transitions packaged as LinkedIn and YouTube ads for Hinjewadi and Kharadi software companies.</p><div class="svc-arrow">Explore →</div></a>
+      <a href="/services.html#creative" class="svc-card"><span class="svc-icon" aria-hidden="true">🎓</span><span class="svc-num">05</span><h3>Education Campaign Creative</h3><p>Testimonial-style clips, campus-tour snippets and course-highlight carousels built on templates that swap content per admission cycle while keeping brand elements fixed.</p><div class="svc-arrow">Explore →</div></a>
+      <a href="/services.html#analytics" class="svc-card"><span class="svc-icon" aria-hidden="true">📊</span><span class="svc-num">06</span><h3>Creative Performance Reporting</h3><p>Weekly reports mapping each creative variant to its cost-per-action, click-through rate and conversion data, with recommendations on what to scale, pause or iterate.</p><div class="svc-arrow">Explore →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process-sec" aria-labelledby="process-h2">
+  <div class="inner">
+    <div class="label">How We Work</div>
+    <h2 class="sec-h2" id="process-h2">How <em>Per4mance Guru</em> Works</h2>
+    <p class="sec-sub" style="color:var(--text-mid);">Four phases from raw brand assets to a rotating library of tested, performance-scored creative.</p>
+    <div class="process-steps">
+      <div class="p-step"><span class="p-step-num">01</span><h3>Audit</h3><p>We review your existing ad creative, identify fatigue signals, check format coverage across placements and benchmark hook rates against category averages.</p></div>
+      <div class="p-step"><span class="p-step-num">02</span><h3>Strategy</h3><p>A creative brief maps each product line to the formats, hooks and visual styles that historical data says perform best in your category and audience segment.</p></div>
+      <div class="p-step"><span class="p-step-num">03</span><h3>Launch</h3><p>The first batch of AI-generated variants goes live within ten days. Each asset carries tracking parameters so its performance is isolated from the rest of the account.</p></div>
+      <div class="p-step"><span class="p-step-num">04</span><h3>Optimise</h3><p>Weekly creative refreshes retire fatigued assets and introduce new variants informed by what the previous round's data revealed about winning angles, thumbnails and CTAs.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTS ── -->
+<section class="results-sec" aria-labelledby="results-h2">
+  <div class="inner">
+    <div class="label">Proof</div>
+    <h2 class="sec-h2" id="results-h2">Results Our <em>Clients See</em></h2>
+    <p class="sec-sub">These figures come from Per4mance Guru engagements across India. We share them because the creative challenges match what Pune brands face daily.</p>
+    <div class="results-layout">
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-num">₹47L</div>
+          <div><h3>Monthly revenue — Delhi NCR fashion retail</h3><p>Replacing stale hero videos with AI-generated hook variants and format experiments lifted monthly paid-social revenue from eighteen lakh to forty-seven lakh over half a year, measured through Conversions API.</p></div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">3.6x</div>
+          <div><h3>Return on ad spend — pan-India D2C wellness</h3><p>Weekly creative batches tested hook, thumbnail and CTA combinations simultaneously. The algorithm surfaced winning angles by the third batch, and monthly spend scaled to five lakh while maintaining a 3.6x return.</p></div>
+        </div>
+        <div class="result-card">
+          <div class="result-num">₹3,200</div>
+          <div><h3>Cost per lead — Bangalore B2B SaaS</h3><p>AI-produced demo clips and feature-highlight videos paired with restructured Google Ads campaigns cut cost per qualified lead from eight thousand to thirty-two hundred within two months.</p></div>
+        </div>
+      </div>
+      <!-- IMAGE NEEDED: AI creative variants with performance metrics overlay. Landscape 16:9, save as /assets/images/ai-creative-results-pune.jpg -->
+      <figure class="media-frame">
+        <img src="/assets/images/placeholder.jpg" alt="AI creative results for Pune brands" width="800" height="450" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-sec" aria-labelledby="faq-h2">
+  <div class="inner">
+    <div class="label">FAQs</div>
+    <h2 class="sec-h2" id="faq-h2">Frequently Asked <em>Questions</em></h2>
+    <div class="faq-list" role="list">
+      <div class="faq-item" role="listitem">
+        <h3><button class="faq-q" aria-expanded="false">What does an AI creative agency in Pune produce? <span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><p>An AI creative agency in Pune generates ad videos, product visuals, catalogue imagery, carousel graphics and short-form reels using tools like Kling, Runway, Midjourney and Seedance. Per4mance Guru ties each asset to a performance goal — click-through rate, cost per acquisition or return on ad spend — so creative decisions are data-driven rather than subjective. Output ranges from fifteen-second Instagram reels to full product-launch video suites.</p></div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <h3><button class="faq-q" aria-expanded="false">Which AI tools does Per4mance Guru use for creative production? <span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><p>The primary stack includes Kling for video generation, Runway for motion graphics and scene editing, Midjourney for high-fidelity product and lifestyle imagery, and Seedance for short-form video templates. These tools let the team produce dozens of creative variants in the time a traditional studio spends on one, feeding the multivariate testing frameworks that identify winning hooks and formats faster.</p></div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <h3><button class="faq-q" aria-expanded="false">Can AI creative replace a traditional production house for Pune brands? <span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><p>For performance advertising it usually can. AI-generated video and imagery deliver the volume and speed that paid-media testing demands — ten to twenty variants a week instead of one polished hero every month. Brand campaigns requiring human talent, physical sets or emotional storytelling still benefit from traditional production, but the day-to-day ad creative that fills Meta and Google feeds is where AI tools earn their keep.</p></div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <h3><button class="faq-q" aria-expanded="false">How does AI creative improve ad performance for D2C brands? <span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><p>D2C brands in Baner and Koregaon Park need a constant stream of fresh catalogue images, lifestyle shots and short product demos to avoid creative fatigue on Meta. AI tools generate these variants at a fraction of the cost and turnaround of a photoshoot. Each variant enters a structured test where the ad platform's algorithm allocates spend to the best performer, compressing the discovery cycle from weeks to days.</p></div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <h3><button class="faq-q" aria-expanded="false">Does Per4mance Guru have a creative studio in Pune? <span class="faq-icon" aria-hidden="true">+</span></button></h3>
+        <div class="faq-a"><p>No. All creative production happens remotely from B-41, 3rd Floor, GT Karnal Industrial Area, Delhi 110033. Pune clients share brand assets, product images and guidelines through a shared drive, and the team delivers finished creatives within agreed turnaround windows. Revisions, feedback and approvals run through a WhatsApp channel and weekly video calls with the creative strategist.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT FORM ── -->
+<section class="booking-sec contact-section" id="contact-form" aria-labelledby="booking-h2">
+  <div class="inner booking-inner container">
+    <div class="booking-copy">
+      <div class="label">Get in Touch</div>
+      <h2 class="sec-h2" id="booking-h2">Get a Free <em>Creative Audit</em></h2>
+      <p class="sec-sub">Share your current ad creatives and we will return a fatigue analysis within 24 hours — which assets are exhausted, which formats are missing, and the first batch of AI variants we would produce.</p>
+      <div class="contact-stack">
+        <div class="contact-item">💬 <a href="https://wa.me/919811096907" target="_blank" rel="noopener">WhatsApp: +91 98110 96907</a></div>
+        <div class="contact-item">✉️ <a href="mailto:hello@per4mance.guru">hello@per4mance.guru</a></div>
+        <div class="contact-item">📍 B-41, 3rd Floor, GT Karnal Industrial Area, Delhi, 110033</div>
+        <div class="contact-item">🗺️ Serving Pune teams remotely from Delhi</div>
+      </div>
+    </div>
+    <div class="booking-form-wrap">
+      <h3>Book Your Free Audit</h3>
+      <p class="form-sub">Response within 24 hours. Senior strategist — not a sales person.</p>
+      <form id="auditForm" novalidate>
+        <div class="form-row">
+          <input class="form-input" type="text" name="name" placeholder="Your Full Name" required autocomplete="name" aria-label="Full Name">
+          <input class="form-input" type="email" name="email" placeholder="Business Email" required autocomplete="email" aria-label="Email">
+        </div>
+        <div class="form-row">
+          <input class="form-input" type="tel" name="phone" placeholder="Phone / WhatsApp Number" required autocomplete="tel" aria-label="Phone Number">
+          <input class="form-input" type="text" name="brand" placeholder="Brand / Company Name" required autocomplete="organization" aria-label="Brand Name">
+        </div>
+        <div class="form-full">
+          <select class="form-input form-select" name="service" aria-label="Service Required">
+            <option value="">Select Service</option>
+            <option value="meta-ads">Meta Ads (Facebook + Instagram)</option>
+            <option value="google-ads">Google Ads</option>
+            <option value="ai-creative" selected>AI Creative Production</option>
+            <option value="seo">SEO / AEO / GEO</option>
+            <option value="full-service">Full-Service Performance Marketing</option>
+          </select>
+        </div>
+        <div class="form-full">
+          <select class="form-input form-select" name="budget" aria-label="Monthly Ad Budget">
+            <option value="">Monthly Ad Budget</option>
+            <option value="below-1l">Below ₹1 Lakh</option>
+            <option value="1l-5l">₹1 Lakh to ₹5 Lakh</option>
+            <option value="5l-20l">₹5 Lakh to ₹20 Lakh</option>
+            <option value="above-20l">Above ₹20 Lakh</option>
+          </select>
+        </div>
+        <div class="form-full">
+          <textarea class="form-input" name="message" rows="4" placeholder="Tell us about your current challenges or goals (optional)" aria-label="Message"></textarea>
+        </div>
+        <button type="submit" class="form-btn cta-button" id="formBtn">📅 Get My Free Audit</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="check">🎯</div>
+        <h4>You're in.</h4>
+        <p>We've received your request. A senior strategist will reach out within 24 hours to schedule your audit call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 <strong style="color:var(--coral)">Per4mance Guru</strong> — AI Creative Agency Pune | <a href="/sitemap.xml">Sitemap</a></p>
+  <div class="footer-links">
+    <a href="/about.html">About</a>
+    <a href="/services.html">Services</a>
+    <a href="/locations.html">Locations</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+  <p class="footer-addr">📍 B-41, 3rd Floor, GT Karnal Industrial Area, Delhi, 110033 · ✉️ <a href="mailto:hello@per4mance.guru">hello@per4mance.guru</a></p>
+</footer>
+
+<script>
+(function(){var nav=document.getElementById('sitenav');var ham=document.getElementById('navHam');if(!ham||!nav)return;ham.addEventListener('click',function(){var open=nav.classList.toggle('open');ham.setAttribute('aria-expanded',open);ham.textContent=open?'✕':'☰';});document.addEventListener('click',function(e){if(!nav.contains(e.target)){nav.classList.remove('open');ham.textContent='☰';ham.setAttribute('aria-expanded','false');}});})();
+document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var item=btn.closest('.faq-item');var ans=item.querySelector('.faq-a');var isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';btn.setAttribute('aria-expanded','true');}});});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var target=document.querySelector(a.getAttribute('href'));if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}});});
+window.PG_LEAD_SOURCE='ai-creative-pune';
+</script>
+<script src="/assets/lead-capture.js" defer></script>
+</body>
+</html>
